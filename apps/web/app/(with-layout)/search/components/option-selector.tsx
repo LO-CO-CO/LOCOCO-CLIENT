@@ -1,10 +1,9 @@
 'use client';
 
-import { SEARCH_OPTION } from 'constants/option';
-import { SearchOption } from 'types/option';
-
 import { Button } from '@lococo/design-system/button';
 import { cn } from '@lococo/utils';
+
+import { SEARCH_OPTION, SearchOption } from '../../../../constants/option';
 
 interface TabsProps {
   selectedTab: SearchOption;
@@ -17,9 +16,9 @@ export default function OptionSelector({
 }: TabsProps) {
   return (
     <div className="mx-auto flex w-[1366px] items-center px-[11.9rem]">
-      {Object.values(SEARCH_OPTION).map((value) => {
+      {Object.keys(SEARCH_OPTION).map((key) => {
+        const value = key as keyof typeof SEARCH_OPTION;
         const isSelected = selectedTab === value;
-
         return (
           <Button
             key={value}
@@ -32,7 +31,7 @@ export default function OptionSelector({
               `${isSelected ? 'en-title2 border-gray-800' : 'jp-title2 border-gray-300'}`
             )}
           >
-            {value}
+            {SEARCH_OPTION[value]}
           </Button>
         );
       })}

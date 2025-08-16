@@ -1,14 +1,11 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
-
 import { useRouter, useSearchParams } from 'next/navigation';
 
-import { SEARCH_OPTION } from 'constants/option';
-import { CategoryNameEng, CategoryOptionEng } from 'types/category';
-import { SearchOption } from 'types/option';
 import { isValidCategoryKey, isValidCategoryOption } from 'utils/category';
+import { isValidSearchType } from 'utils/option';
 
+import { SearchOption } from '../../../constants/option';
 import OptionSelector from './components/option-selector';
 import SearchBreadCrumbSection from './components/search-bread-crumb-section';
 import SearchProductsSection from './components/search-products-section';
@@ -17,50 +14,36 @@ import SearchReviewSection from './components/search-reviews-section';
 export default function SearchPageClient() {
   const searchParams = useSearchParams();
   const router = useRouter();
-  const [isClient, setIsClient] = useState(false);
 
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
+  const middleCategoryParam = searchParams.get('middleCategory') || '';
+  const middleCategory = isValidCategoryKey(middleCategoryParam)
+    ? middleCategoryParam
+    : null;
 
-  const rawMiddle = searchParams.get('middleCategory') || '';
-  const rawSub = searchParams.get('subCategory') || '';
-  const rawSearchType = searchParams.get('searchType') || '';
+  const subCategoryParam = searchParams.get('subCategory') || '';
+  const subCategory = isValidCategoryOption(subCategoryParam, middleCategory)
+    ? subCategoryParam
+    : null;
+
+  const searchTypeParam = searchParams.get('searchType') || '';
+  const searchType = isValidSearchType(searchTypeParam)
+    ? searchTypeParam
+    : 'PRODUCT';
+
   const keyword = searchParams.get('keyword') || '';
 
-  const middleCategory: CategoryNameEng | '' = isValidCategoryKey(rawMiddle)
-    ? rawMiddle
-    : '';
-  const subCategory: CategoryOptionEng | '' =
-    middleCategory && isValidCategoryOption(rawSub, middleCategory)
-      ? rawSub
-      : '';
-
-  const selectedTab: SearchOption = useMemo(() => {
-    if (rawSearchType === 'REVIEW') return SEARCH_OPTION.REVIEW;
-    return SEARCH_OPTION.PRODUCT;
-  }, [rawSearchType]);
+  const PAGE_SIZE = 8;
+  const PAGE_NUMBER = 0;
 
   const handleClickTab = (option: SearchOption) => {
     const params = new URLSearchParams(searchParams.toString());
-
-    if (option === SEARCH_OPTION.REVIEW) {
+    if (option === 'REVIEW') {
       params.set('searchType', 'REVIEW');
     } else {
       params.set('searchType', 'PRODUCT');
     }
-
     router.push(`/search?${params.toString()}`);
   };
-
-  const tabRender = {
-    [SEARCH_OPTION.PRODUCT]: <SearchProductsSection />,
-    [SEARCH_OPTION.REVIEW]: <SearchReviewSection />,
-  }[selectedTab];
-
-  if (!isClient) {
-    return <div className="min-h-screen w-full bg-white" />;
-  }
 
   return (
     <div className="flex min-h-screen w-full flex-col items-start">
@@ -81,10 +64,27 @@ export default function SearchPageClient() {
         </div>
       )}
       <OptionSelector
-        selectedTab={selectedTab}
+        selectedTab={searchType}
         handleClickTab={handleClickTab}
       />
-      {tabRender}
+      {searchType === 'PRODUCT' && (
+        <SearchProductsSection
+          keyword={keyword}
+          middleCategory={middleCategory}
+          subCategory={subCategory}
+          page={PAGE_NUMBER}
+          size={PAGE_SIZE}
+        />
+      )}
+      {searchType === 'REVIEW' && (
+        <SearchReviewSection
+          keyword={keyword}
+          middleCategory={middleCategory}
+          subCategory={subCategory}
+          page={PAGE_NUMBER}
+          size={PAGE_SIZE}
+        />
+      )}
     </div>
   );
 }

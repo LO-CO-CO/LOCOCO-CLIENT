@@ -42,39 +42,6 @@ export interface ReviewResponse {
   reviewId: number;
 }
 
-export interface ReviewAdminRequest {
-  /** @format int64 */
-  productOptionId?: number;
-  /** @format int32 */
-  rating: number;
-  /**
-   * @minLength 15
-   * @maxLength 1500
-   */
-  positiveComment: string;
-  /**
-   * @minLength 15
-   * @maxLength 1500
-   */
-  negativeComment: string;
-  mediaType?: "IMAGE" | "VIDEO";
-  videoUrl?: string;
-  /**
-   * @maxItems 2147483647
-   * @minItems 1
-   */
-  imageUrl?: string[];
-  receiptUrl?: string;
-}
-
-export interface ApiResponseVoid {
-  success?: boolean;
-  /** @format int32 */
-  status?: number;
-  message?: string;
-  data?: any;
-}
-
 export interface ReviewReceiptRequest {
   mediaType: string;
 }
@@ -138,6 +105,14 @@ export interface ApiResponseToggleLikeResponse {
 
 export interface ToggleLikeResponse {
   isLiked: boolean;
+}
+
+export interface ApiResponseVoid {
+  success?: boolean;
+  /** @format int32 */
+  status?: number;
+  message?: string;
+  data?: any;
 }
 
 export interface TestLoginRequest {
@@ -366,12 +341,56 @@ export interface PageableResponse {
   isLast: boolean;
 }
 
-export interface ApiResponseObject {
-  success?: boolean;
+export interface ProductListItemResponse {
+  /** @format int64 */
+  productId: number;
+  url: string;
+  productName: string;
+  brandName: string;
+  unit: string;
+  /** @format int64 */
+  reviewCount: number;
+  /** @format double */
+  rating: number;
+  isLiked: boolean;
+}
+
+export interface SearchProductsResponse {
+  searchQuery: string;
+  products: ProductListItemResponse[];
+  pageInfo: PageableResponse;
+}
+
+export interface KeywordVideoReviewListResponse {
+  searchQuery: string;
+  reviews: VideoReviewResponse[];
+  pageInfo: PageableResponse;
+}
+
+export interface VideoReviewResponse {
+  /** @format int64 */
+  reviewId: number;
+  brandName: string;
+  productName: string;
   /** @format int32 */
-  status?: number;
-  message?: string;
-  data?: any;
+  likeCount: number;
+  url: string;
+}
+
+export interface ImageReviewResponse {
+  /** @format int64 */
+  reviewId: number;
+  brandName: string;
+  productName: string;
+  /** @format int32 */
+  likeCount: number;
+  url: string;
+}
+
+export interface KeywordImageReviewListResponse {
+  searchQuery: string;
+  reviews: ImageReviewResponse[];
+  pageInfo: PageableResponse;
 }
 
 export interface ApiResponseProductDetailResponse {
@@ -442,6 +461,27 @@ export interface ApiResponseProductYoutubeResponse {
 
 export interface ProductYoutubeResponse {
   youtubeUrls: string[];
+}
+
+export interface ProductsByCategoryResponse {
+  searchQuery: string;
+  parentCategoryName: string;
+  products: ProductListItemResponse[];
+  pageInfo: PageableResponse;
+}
+
+export interface VideoReviewListResponse {
+  searchQuery: string;
+  parentCategoryName: string;
+  reviews: VideoReviewResponse[];
+  pageInfo: PageableResponse;
+}
+
+export interface ImageReviewListResponse {
+  searchQuery: string;
+  parentCategoryName: string;
+  reviews: ImageReviewResponse[];
+  pageInfo: PageableResponse;
 }
 
 export interface ApiResponsePopularProductsByCategoryResponse {

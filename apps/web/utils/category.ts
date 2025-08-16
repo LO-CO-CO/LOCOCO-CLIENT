@@ -1,6 +1,5 @@
-import { CATEGORY_NAME, CATEGORY_OPTIONS } from 'constants/category';
+import { CATEGORY_OPTIONS } from 'constants/category';
 import type {
-  CategoryName,
   CategoryNameEng,
   CategoryOption,
   CategoryOptionEng,
@@ -14,8 +13,9 @@ function isCategoryKey(key: string): key is CategoryNameEng {
 /** CategoryOptionEng 타입인지 확인하는 타입 가드 */
 function isCategoryOptionKey(
   key: string,
-  category: CategoryNameEng
+  category: CategoryNameEng | null
 ): key is CategoryOptionEng {
+  if (!category) return false;
   return key in CATEGORY_OPTIONS[category];
 }
 
@@ -36,7 +36,7 @@ export function isValidCategoryKey(value: string): value is CategoryNameEng {
  */
 export function isValidCategoryOption(
   value: string,
-  categoryKey: CategoryNameEng
+  categoryKey: CategoryNameEng | null
 ): value is CategoryOptionEng {
   return value !== '' && isCategoryOptionKey(value, categoryKey);
 }
@@ -57,36 +57,4 @@ export function getOptionLabel(
   >;
 
   return options[optionKey];
-}
-
-/**
- * 카테고리 메타데이터 인터페이스
- * 헤더의 카테고리 바와 옵션 바에서 사용
- */
-export interface CategoryMetadata {
-  key: CategoryNameEng;
-  name: CategoryName;
-  options: CategoryOptionEng[];
-}
-
-/**
- * 모든 카테고리의 메타데이터를 반환하는 유틸
- * 헤더의 카테고리 바 렌더링에 사용
- * @returns CategoryMetadata[] - 모든 카테고리의 키, 이름, 옵션 정보
- */
-export function getAllCategoryMetadata(): CategoryMetadata[] {
-  return Object.keys(CATEGORY_OPTIONS)
-    .filter(isCategoryKey)
-    .map((categoryKey) => {
-      const options = Object.keys(CATEGORY_OPTIONS[categoryKey]).filter(
-        (optionKey): optionKey is CategoryOptionEng =>
-          isCategoryOptionKey(optionKey, categoryKey)
-      );
-
-      return {
-        key: categoryKey,
-        name: CATEGORY_NAME[categoryKey],
-        options,
-      };
-    });
 }

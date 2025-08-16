@@ -1,59 +1,11 @@
-'use client';
+import { MainHeader } from './main-header';
+import TopUtil from './top-util';
 
-import React from 'react';
-
-import { cn } from '@lococo/utils';
-
-import { CategoryBar, TopUtil } from './header-content';
-import { useHeaderAction } from './use-header-action';
-
-const header = React.memo(function Header() {
-  const {
-    categories,
-    selectedCategory,
-    selectedOption,
-    isSearching,
-    searchValue,
-    activeMenu,
-    handleSelectCategory,
-    handleSelectOption,
-    handleOpenSearchBar,
-    handleMouseLeaveCategory,
-    handleChangeSearchValue,
-    handleSearchIconClick,
-  } = useHeaderAction();
-
+export default function Header() {
   return (
     <>
-      <div className="pointer-events-none absolute left-0 top-0 h-1 w-full bg-transparent" />
-      <div
-        className={cn(
-          'sticky top-0 z-30 mx-auto flex w-full min-w-[1366px] flex-col bg-white',
-          (isSearching || selectedCategory) &&
-            'border-b border-dashed border-pink-500',
-          !selectedCategory &&
-            !isSearching &&
-            'border-b-[0.1rem] border-gray-500'
-        )}
-      >
-        <TopUtil />
-        <CategoryBar
-          categories={categories}
-          selectedCategory={selectedCategory}
-          handleSelectCategory={handleSelectCategory}
-          handleOpenSearchBar={handleOpenSearchBar}
-          isSearching={isSearching}
-          handleMouseLeaveCategory={handleMouseLeaveCategory}
-          activeMenu={activeMenu}
-          selectedOption={selectedOption}
-          handleSelectOption={handleSelectOption}
-          searchValue={searchValue}
-          handleChangeSearchValue={handleChangeSearchValue}
-          handleSearchIconClick={handleSearchIconClick}
-        />
-      </div>
+      <TopUtil />
+      <MainHeader />
     </>
   );
-});
-
-export default header;
+}
