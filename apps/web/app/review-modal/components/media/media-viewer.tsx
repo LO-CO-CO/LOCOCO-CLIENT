@@ -1,8 +1,7 @@
 'use client';
 
-import { MediaItem } from '../types';
-import ImageCarousel from './image-carousel';
-import VideoPlayer from './video-player';
+import { MediaItem } from '../../types';
+import { ImageCarousel, VideoPlayer } from './';
 
 interface MediaViewerProps {
   mediaList: MediaItem[];
