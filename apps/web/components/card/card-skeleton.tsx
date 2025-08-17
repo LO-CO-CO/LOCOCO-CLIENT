@@ -1,5 +1,7 @@
 'use client';
 
+import { cn } from '@lococo/utils';
+
 interface CardSkeletonProps {
   type: 'PRODUCT' | 'REVIEW_IMAGE' | 'REVIEW_VIDEO';
 }
@@ -34,12 +36,19 @@ export function CardSkeleton({ type }: CardSkeletonProps) {
 export default function CardSkeletonWrapper({
   type,
   count = 4,
+  className,
 }: {
   type: 'PRODUCT' | 'REVIEW_IMAGE' | 'REVIEW_VIDEO';
   count?: number;
+  className?: string;
 }) {
   return (
-    <div className="flex w-full items-center gap-[2.4rem] self-stretch">
+    <div
+      className={cn(
+        `flex w-full items-center gap-[2.4rem] self-stretch`,
+        className
+      )}
+    >
       {Array.from({ length: count }, (_, index) => (
         <CardSkeleton key={index} type={type} />
       ))}

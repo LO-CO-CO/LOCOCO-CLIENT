@@ -33,3 +33,7 @@ export default function middleware(req: NextRequest) {
 
   return NextResponse.next();
 }
+
+export const config = {
+  matcher: ['/product-detail/(.*)', '/login', '/api/auth/(.*)'],
+};

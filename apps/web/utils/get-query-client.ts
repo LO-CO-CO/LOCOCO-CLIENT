@@ -8,7 +8,11 @@ function makeQueryClient() {
   return new QueryClient({
     defaultOptions: {
       queries: {
-        staleTime: 60 * 1000,
+        staleTime: 5 * 60 * 1000, // 5분으로 증가
+        refetchOnWindowFocus: false, // 추가
+        refetchOnMount: false, // 추가
+        refetchOnReconnect: false, // 추가
+        retry: 1, // 재시도 제한
       },
       dehydrate: {
         shouldDehydrateQuery: (query) =>

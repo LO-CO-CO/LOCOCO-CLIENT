@@ -9,7 +9,10 @@ import { apiRequest } from 'app/api/apiRequest';
 import CardProduct from 'components/card/card-product';
 import { CardSkeleton } from 'components/card/card-skeleton';
 import { CATEGORY_NAME } from 'constants/category';
-import { ApiResponseNewProductsByCategoryResponse } from 'swagger-codegen/data-contracts';
+import {
+  ApiResponseNewProductsByCategoryResponse,
+  ProductBasicResponse,
+} from 'swagger-codegen/data-contracts';
 import { CategoryNameEng } from 'types/category';
 
 import { Tab, TabContainer } from '@lococo/design-system/tab';
@@ -18,6 +21,7 @@ type ProductSortType = 'new' | 'popular';
 
 interface HomeSectionProductProps {
   productSortType: ProductSortType;
+  initialProducts: ProductBasicResponse[];
 }
 
 export const PRODUCT_QUERIES = {
@@ -34,6 +38,7 @@ export const PRODUCT_QUERIES = {
 
 export default function HomeSectionProduct({
   productSortType = 'new',
+  initialProducts,
 }: HomeSectionProductProps) {
   const [selectedTab, setSelectedTab] =
     useState<CategoryNameEng>('FACIAL_CARE');
@@ -41,13 +46,17 @@ export default function HomeSectionProduct({
 
   const { data, isLoading } = useQuery({
     queryKey: PRODUCT_QUERIES.CATEGORY(selectedTab, productSortType),
-    queryFn: () =>
-      apiRequest<ApiResponseNewProductsByCategoryResponse>({
-        endPoint: `/api/products/categories/${productSortType}?middleCategory=${selectedTab}&page=0&size=4`,
-      }),
+    queryFn: async (): Promise<ProductBasicResponse[]> => {
+      const response =
+        await apiRequest<ApiResponseNewProductsByCategoryResponse>({
+          endPoint: `/api/products/categories/${productSortType}?middleCategory=${selectedTab}&page=0&size=4`,
+        });
+      return response.data?.products || [];
+    },
+    initialData: selectedTab === 'FACIAL_CARE' ? initialProducts : undefined,
   });
 
-  const products = data?.data?.products;
+  const products = data;
 
   return (
     <div className="flex w-full flex-col gap-4">
