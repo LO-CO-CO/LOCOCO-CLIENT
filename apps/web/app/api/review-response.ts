@@ -1,3 +1,4 @@
+//TODO: 해당 파일 지우기
 // 기존 인터페이스 (컴포넌트에서 사용)
 export interface VideoReviewResponse {
   reviewId: number;

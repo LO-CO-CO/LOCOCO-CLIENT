@@ -1,51 +1,111 @@
-import { useSearchParams } from 'next/navigation';
+'use client';
 
-import { useCategoryProductSearch, useProductSearch } from 'hooks/headers-api';
+import { useQuery } from '@tanstack/react-query';
+import { apiRequest } from 'app/api/apiRequest';
+import { PRODUCT_KEYS } from 'constants/query-key';
 import { CategoryNameEng, CategoryOptionEng } from 'types/category';
-import { isValidCategoryKey, isValidCategoryOption } from 'utils/category';
 
-export default function useProductSectionData() {
-  const searchParams = useSearchParams();
+import { ApiResponseSearchProductsResponse } from '../types/search';
 
-  const keyword = searchParams.get('keyword') || '';
-  const rawMiddle = searchParams.get('middleCategory') || '';
-  const rawSub = searchParams.get('subCategory') || '';
+interface UseProductSectionDataProps {
+  keyword?: string;
+  middleCategory?: CategoryNameEng | '';
+  subCategory?: CategoryOptionEng | '';
+  page?: number;
+  size?: number;
+  enabled?: boolean;
+}
 
-  const middleCategory: CategoryNameEng | '' = isValidCategoryKey(rawMiddle)
-    ? rawMiddle
-    : '';
-  const subCategory: CategoryOptionEng | '' =
-    middleCategory && isValidCategoryOption(rawSub, middleCategory)
-      ? rawSub
-      : '';
+//search바로 상품 검색
+export const useProductSearch = ({
+  keyword = '',
+  page = 0,
+  size = 8,
+  enabled = true,
+}: UseProductSectionDataProps) => {
+  return useQuery<ApiResponseSearchProductsResponse>({
+    queryKey: [...PRODUCT_KEYS.PRODUCT_LIST({ page, size }), 'search', keyword],
+    queryFn: () =>
+      apiRequest<ApiResponseSearchProductsResponse>({
+        endPoint: `/api/products/search`,
+        method: 'GET',
+        params: {
+          keyword,
+          searchType: 'PRODUCT',
+          page: page.toString(),
+          size: size.toString(),
+        },
+      }),
+    enabled: enabled && !!keyword.trim(),
+  });
+};
 
-  const PAGE_SIZE = 8;
-  const PAGE_NUMBER = 0;
+// 카테고리별 상품 검색
+export const useCategoryProductSearch = ({
+  middleCategory = '',
+  subCategory,
+  page = 0,
+  size = 8,
+  enabled = true,
+}: UseProductSectionDataProps) => {
+  if (subCategory === 'ALL') {
+    subCategory = undefined;
+  }
 
-  const {
-    data: searchData,
-    isLoading: isSearchLoading,
-    isError: isSearchError,
-  } = useProductSearch(keyword, PAGE_NUMBER, PAGE_SIZE, !!keyword);
+  return useQuery<ApiResponseSearchProductsResponse>({
+    queryKey: [
+      ...PRODUCT_KEYS.PRODUCT_LIST({ page, size }),
+      'category',
+      middleCategory,
+      subCategory,
+    ],
+    queryFn: () =>
+      apiRequest<ApiResponseSearchProductsResponse>({
+        endPoint: `/api/products/categories/search`,
+        method: 'GET',
+        params: {
+          middleCategory: middleCategory,
+          searchType: 'PRODUCT',
+          page: page.toString(),
+          size: size.toString(),
+          ...(subCategory && { subCategory }),
+        },
+      }),
+    enabled: enabled && !!middleCategory,
+  });
+};
 
-  const {
-    data: categoryData,
-    isLoading: isCategoryLoading,
-    isError: isCategoryError,
-  } = useCategoryProductSearch(
-    middleCategory,
-    subCategory,
-    PAGE_NUMBER,
-    PAGE_SIZE,
-    !!middleCategory
-  );
+export default function useProductSectionData({
+  keyword = '',
+  middleCategory,
+  subCategory,
+  page = 0,
+  size = 8,
+}: UseProductSectionDataProps) {
+  const searchResult = useProductSearch({
+    keyword,
+    page,
+    size,
+    enabled: !!keyword,
+  });
 
-  const products = keyword
-    ? searchData?.data?.products || []
-    : categoryData?.data?.products || [];
+  const categoryResult = useCategoryProductSearch({
+    middleCategory: middleCategory || '',
+    subCategory: subCategory || '',
+    page,
+    size,
+    enabled: !!middleCategory && !keyword,
+  });
 
-  const isLoading = keyword ? isSearchLoading : isCategoryLoading;
-  const hasError = keyword ? isSearchError : isCategoryError;
-
-  return { products, isLoading, hasError };
+  if (keyword) {
+    return {
+      data: searchResult.data,
+      isPending: searchResult.isPending,
+    };
+  } else {
+    return {
+      data: categoryResult.data,
+      isPending: categoryResult.isPending,
+    };
+  }
 }

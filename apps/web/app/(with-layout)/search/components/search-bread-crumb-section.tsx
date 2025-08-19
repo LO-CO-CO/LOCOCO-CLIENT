@@ -10,8 +10,8 @@ import {
 import { SvgHomeFill } from '@lococo/icons';
 
 type RenderBreadCrumbProps = {
-  middleCategory: CategoryNameEng | '';
-  subCategory: CategoryOptionEng | '';
+  middleCategory: CategoryNameEng | null;
+  subCategory: CategoryOptionEng | null;
 };
 
 export default function SearchBreadCrumbSection({

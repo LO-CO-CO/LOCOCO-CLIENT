@@ -1,52 +1,138 @@
-import { useSearchParams } from 'next/navigation';
-
-import { useCategoryReviewSearch, useReviewSearch } from 'hooks/headers-api';
+import { useQuery } from '@tanstack/react-query';
+import { apiRequest } from 'app/api/apiRequest';
 import { CategoryNameEng, CategoryOptionEng } from 'types/category';
-import { isValidCategoryKey, isValidCategoryOption } from 'utils/category';
 
-export default function useReviewSectionData(reviewType: 'VIDEO' | 'IMAGE') {
-  const searchParams = useSearchParams();
+import { REVIEW_KEYS } from '../../../../constants/query-key';
+import {
+  ApiKeywordImageReviewListResponse,
+  ApiKeywordVideoReviewListResponse,
+} from '../types/search';
 
-  const keyword = searchParams.get('keyword') || '';
-  const rawMiddle = searchParams.get('middleCategory') || '';
-  const rawSub = searchParams.get('subCategory') || '';
+interface UseReviewSectionDataProps {
+  keyword?: string;
+  middleCategory?: CategoryNameEng | '';
+  subCategory?: CategoryOptionEng | '';
+  reviewType?: 'VIDEO' | 'IMAGE';
+  page?: number;
+  size?: number;
+  enabled?: boolean;
+}
 
-  const middleCategory: CategoryNameEng | '' = isValidCategoryKey(rawMiddle)
-    ? rawMiddle
-    : '';
-  const subCategory: CategoryOptionEng | '' =
-    middleCategory && isValidCategoryOption(rawSub, middleCategory)
-      ? rawSub
-      : '';
+// 검색바로 검색할 때 사용하는 쿼리
+export const useReviewSearch = ({
+  keyword = '',
+  reviewType = 'VIDEO',
+  page = 0,
+  size = 8,
+  enabled = true,
+}: UseReviewSectionDataProps) => {
+  const queryKey =
+    reviewType === 'VIDEO'
+      ? REVIEW_KEYS.VIDEO_LIST({ page, size })
+      : REVIEW_KEYS.IMAGE_LIST({ page, size });
 
-  const PAGE_SIZE = 8;
-  const PAGE_NUMBER = 0;
+  return useQuery<
+    ApiKeywordVideoReviewListResponse | ApiKeywordImageReviewListResponse
+  >({
+    queryKey: [...queryKey, 'search', keyword],
+    queryFn: () =>
+      apiRequest<
+        ApiKeywordVideoReviewListResponse | ApiKeywordImageReviewListResponse
+      >({
+        endPoint: `/api/products/search`,
+        method: 'GET',
+        params: {
+          keyword,
+          searchType: 'REVIEW',
+          mediaType: reviewType,
+          page: page.toString(),
+          size: size.toString(),
+        },
+      }),
+    enabled: enabled && !!keyword.trim(),
+  });
+};
 
-  const {
-    data: searchData,
-    isLoading: isSearchLoading,
-    isError: isSearchError,
-  } = useReviewSearch(keyword, reviewType, PAGE_NUMBER, PAGE_SIZE, !!keyword);
+// 카테고리별 리뷰 검색
+export const useCategoryReviewSearch = ({
+  middleCategory = '',
+  reviewType = 'VIDEO',
+  subCategory,
+  page = 0,
+  size = 8,
+  enabled = true,
+}: UseReviewSectionDataProps) => {
+  // ALL 옵션 처리
+  if (subCategory === 'ALL') {
+    subCategory = undefined;
+  }
 
-  const {
-    data: categoryData,
-    isLoading: isCategoryLoading,
-    isError: isCategoryError,
-  } = useCategoryReviewSearch(
-    middleCategory,
+  return useQuery<
+    ApiKeywordVideoReviewListResponse | ApiKeywordImageReviewListResponse
+  >({
+    queryKey: [
+      ...REVIEW_KEYS[reviewType === 'VIDEO' ? 'VIDEO_LIST' : 'IMAGE_LIST']({
+        page,
+        size,
+      }),
+      'category',
+      middleCategory,
+      subCategory,
+      reviewType,
+    ],
+    queryFn: () =>
+      apiRequest<
+        ApiKeywordImageReviewListResponse | ApiKeywordVideoReviewListResponse
+      >({
+        endPoint: `/api/products/categories/search`,
+        method: 'GET',
+        params: {
+          middleCategory: middleCategory,
+          searchType: 'REVIEW',
+          mediaType: reviewType,
+          page: page.toString(),
+          size: size.toString(),
+          ...(subCategory && { subCategory }),
+        },
+      }),
+    enabled: enabled && !!middleCategory,
+  });
+};
+
+export default function useReviewSectionData({
+  keyword = '',
+  middleCategory,
+  subCategory,
+  reviewType,
+  page = 0,
+  size = 8,
+}: UseReviewSectionDataProps) {
+  const searchResult = useReviewSearch({
+    keyword,
     reviewType,
-    subCategory,
-    PAGE_NUMBER,
-    PAGE_SIZE,
-    !!middleCategory
-  );
+    page,
+    size,
+    enabled: !!keyword,
+  });
 
-  const reviewData = keyword
-    ? searchData?.data?.reviews || []
-    : categoryData?.data?.reviews || [];
+  const categoryResult = useCategoryReviewSearch({
+    middleCategory: middleCategory,
+    reviewType,
+    subCategory: subCategory,
+    page,
+    size,
+    enabled: !!middleCategory && !keyword,
+  });
 
-  const isLoading = keyword ? isSearchLoading : isCategoryLoading;
-  const hasError = keyword ? isSearchError : isCategoryError;
-
-  return { reviewData, isLoading, hasError };
+  if (keyword) {
+    return {
+      data: searchResult.data,
+      isPending: searchResult.isPending,
+    };
+  } else {
+    return {
+      data: categoryResult.data,
+      isPending: categoryResult.isPending,
+    };
+  }
 }

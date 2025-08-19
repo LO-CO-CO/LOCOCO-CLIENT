@@ -21,7 +21,6 @@ import {
   ApiResponseVideoReviewDetailResponse,
   ApiResponseVideoReviewProductDetailResponse,
   ApiResponseVoid,
-  ReviewAdminRequest,
   ReviewMediaRequest,
   ReviewReceiptRequest,
   ReviewRequest,
@@ -47,29 +46,6 @@ export class Review<
   ) =>
     this.request<ApiResponseReviewResponse, any>({
       path: `/api/reviews/${productId}`,
-      method: "POST",
-      body: data,
-      secure: true,
-      type: ContentType.Json,
-      ...params,
-    });
-  /**
-   * No description
-   *
-   * @tags REVIEW
-   * @name CreateAdminReview
-   * @summary 어드민용 리뷰 작성 (기획 전용)
-   * @request POST:/api/reviews/{productId}/{userId}
-   * @secure
-   */
-  createAdminReview = (
-    productId: number,
-    userId: number,
-    data: ReviewAdminRequest,
-    params: RequestParams = {},
-  ) =>
-    this.request<ApiResponseVoid, any>({
-      path: `/api/reviews/${productId}/${userId}`,
       method: "POST",
       body: data,
       secure: true,
