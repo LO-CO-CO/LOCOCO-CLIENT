@@ -19,7 +19,7 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
   const swiperRef = useRef<SwiperType | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const navBtnClass = 'border-1 size-[3.2rem]  border-gray-200 bg-white';
+  const navBtnClass = 'border-1 size-[3.2rem] border-gray-200 bg-white';
 
   return (
     <>
@@ -33,7 +33,7 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
           <SwiperSlide key={i}>
             <Image
               src={img}
-              alt="리뷰 이미지"
+              alt="review image"
               fill
               className="relative h-full w-full object-cover"
             />
@@ -48,7 +48,7 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
             size="sm"
             rounded
             color="secondary"
-            aria-label="이전 이미지"
+            aria-label="previous image"
             onClick={() => swiperRef.current?.slidePrev()}
             className={navBtnClass}
           />
@@ -61,7 +61,7 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
             size="sm"
             rounded
             color="secondary"
-            aria-label="다음 이미지"
+            aria-label="next image"
             onClick={() => swiperRef.current?.slideNext()}
             className={navBtnClass}
           />
