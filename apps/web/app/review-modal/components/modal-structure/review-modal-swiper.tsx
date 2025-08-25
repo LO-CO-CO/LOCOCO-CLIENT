@@ -7,8 +7,8 @@ import 'swiper/css';
 import { FreeMode, Mousewheel } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import type { ReviewDetail } from '../types';
-import ReviewModalLayout from './review-modal-layout';
+import type { ReviewDetail } from '../../types';
+import { ReviewModalLayout } from './';
 
 interface ReviewModalSwiperProps {
   currentIndex: number;
@@ -35,7 +35,7 @@ export default function ReviewModalSwiper({
       direction="vertical"
       slidesPerView={1.2}
       centeredSlides
-      spaceBetween={-window.innerHeight * 0.2}
+      spaceBetween={-window.innerHeight * 0.1}
       modules={[Mousewheel, FreeMode]}
       mousewheel={{
         sensitivity: 0.8,

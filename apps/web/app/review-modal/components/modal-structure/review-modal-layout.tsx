@@ -1,9 +1,8 @@
 import React from 'react';
 
-import { MediaItem } from '../types';
-import MediaInfo from './media-info';
-import MediaViewer from './media-viewer';
-import ReviewInfo from './review-info';
+import { MediaItem } from '../../types';
+import { MediaInfo, MediaViewer } from '../media';
+import { ReviewInfo } from '../review';
 
 export type Media = MediaItem;
 export interface User {
@@ -46,6 +45,7 @@ export default function ReviewModallayout({
   productImageUrl,
   isReceipt,
   onClose,
+  children,
 }: ReviewModallayoutProps) {
   return (
     <div className="relative flex h-full w-full items-center justify-center">
@@ -78,6 +78,7 @@ export default function ReviewModallayout({
           />
         </div>
       </div>
+      {children}
     </div>
   );
 }
