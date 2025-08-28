@@ -1,9 +1,9 @@
 'use client';
 
+import { SEARCH_OPTION, SearchOption } from 'constants/option';
+
 import { Button } from '@lococo/design-system/button';
 import { cn } from '@lococo/utils';
-
-import { SEARCH_OPTION, SearchOption } from '../../../../constants/option';
 
 interface TabsProps {
   selectedTab: SearchOption;

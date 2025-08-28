@@ -2,11 +2,11 @@
 
 import { useRouter } from 'next/navigation';
 
+import type { ProductListItemResponse } from '@typescript-swagger/data-contracts';
 import CardProduct from 'components/card/card-product';
 import CardSkeletonWrapper from 'components/card/card-skeleton';
 import { CategoryNameEng, CategoryOptionEng } from 'types/category';
 
-import type { ProductListItemResponse } from '../../../../swagger-codegen/data-contracts';
 import useProductSectionData from '../hook/use-product-section';
 import ProductNotFoundSection from './product-not-found';
 

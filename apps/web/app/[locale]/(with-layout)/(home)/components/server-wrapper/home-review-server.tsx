@@ -2,12 +2,12 @@ import React from 'react';
 
 import { SvgJapaneseReview } from '@lococo/icons';
 
+import HomeSection from '../home-section';
 import {
   emptyReviewData,
   getImageReviews,
   getVideoReviews,
-} from '../../utils/getReviewItems';
-import HomeSection from '../home-section';
+} from './../../utils/getReviewItems';
 
 export default async function HomeReviewServer() {
   const [reviewImageData, reviewVideoData] = await Promise.all([

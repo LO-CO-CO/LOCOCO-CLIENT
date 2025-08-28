@@ -1,8 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
 import { apiRequest } from 'app/api/apiRequest';
+import { REVIEW_KEYS } from 'constants/query-key';
 import { CategoryNameEng, CategoryOptionEng } from 'types/category';
 
-import { REVIEW_KEYS } from '../../../../constants/query-key';
 import {
   ApiKeywordImageReviewListResponse,
   ApiKeywordVideoReviewListResponse,

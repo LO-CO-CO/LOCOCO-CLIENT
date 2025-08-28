@@ -1,10 +1,11 @@
 'use client';
 
 import Link from 'next/link';
-import { useParams, useRouter } from 'next/navigation';
+import { useParams } from 'next/navigation';
 
 import { useProductLike } from 'components/card/hooks/use-product-like';
 import { useAuth } from 'hooks/use-auth';
+import { useRouter } from 'i18n/navigation';
 import { formatJPY } from 'utils/formatJPY';
 
 import { Button } from '@lococo/design-system/button';

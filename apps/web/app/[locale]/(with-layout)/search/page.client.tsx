@@ -2,9 +2,9 @@
 
 import { useRouter, useSearchParams } from 'next/navigation';
 
+import { SearchOption } from 'constants/option';
 import { CategoryNameEng, CategoryOptionEng } from 'types/category';
 
-import { SearchOption } from '../../../constants/option';
 import OptionSelector from './components/option-selector';
 import SearchBreadCrumbSection from './components/search-bread-crumb-section';
 import SearchProductsSection from './components/search-products-section';

@@ -2,13 +2,12 @@
 
 import React, { useState } from 'react';
 
-import { useRouter } from 'next/navigation';
-
 import { useQuery } from '@tanstack/react-query';
 import { apiRequest } from 'app/api/apiRequest';
 import CardProduct from 'components/card/card-product';
 import { CardSkeleton } from 'components/card/card-skeleton';
 import { CATEGORY_NAME } from 'constants/category';
+import { useRouter } from 'i18n/navigation';
 import {
   ApiResponseNewProductsByCategoryResponse,
   ProductBasicResponse,

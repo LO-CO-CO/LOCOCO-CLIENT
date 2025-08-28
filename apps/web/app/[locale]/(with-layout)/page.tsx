@@ -10,7 +10,7 @@ import HomeReviewServer from './(home)/components/server-wrapper/home-review-ser
 import HomeYoutubeFallback from './(home)/components/server-wrapper/home-youtube-fallback';
 import HomeYoutubeServer from './(home)/components/server-wrapper/home-youtube-server';
 
-export default function Main() {
+export default async function Main() {
   return (
     <div className="flex w-full flex-col">
       <HomeBanner />

@@ -7,14 +7,13 @@ import {
   useQueryClient,
 } from '@tanstack/react-query';
 import { apiRequest } from 'app/api/apiRequest';
+import { REVIEW_KEYS } from 'constants/query-key';
 import {
   ApiResponseImageReviewDetailResponse,
   ApiResponseMainImageReviewResponse,
   ApiResponseMainVideoReviewResponse,
   ApiResponseVideoReviewDetailResponse,
 } from 'swagger-codegen/data-contracts';
-
-import { REVIEW_KEYS } from '../../../constants/query-key';
 
 export const useImageReviews = (productId?: number) => {
   return useQuery({
