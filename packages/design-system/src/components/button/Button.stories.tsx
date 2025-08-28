@@ -13,13 +13,14 @@ const meta: Meta<typeof Button> = {
       control: 'radio',
       options: ['primary', 'secondary'],
     },
-    rounded: { control: 'boolean' },
     size: { control: 'radio', options: ['lg', 'md', 'sm'] },
+    disabled: { control: 'boolean' },
   },
 };
 export default meta;
 type Story = StoryObj<typeof Button>;
 
+// FILLED VARIANTS
 export const FilledPrimary: Story = {
   args: {
     children: 'Label',
@@ -29,13 +30,21 @@ export const FilledPrimary: Story = {
   },
 };
 
-export const FilledPrimaryRounded: Story = {
+export const FilledPrimaryMedium: Story = {
   args: {
     children: 'Label',
     variant: 'filled',
     color: 'primary',
-    rounded: true,
     size: 'md',
+  },
+};
+
+export const FilledPrimarySmall: Story = {
+  args: {
+    children: 'Label',
+    variant: 'filled',
+    color: 'primary',
+    size: 'sm',
   },
 };
 
@@ -59,6 +68,47 @@ export const FilledPrimaryWithRightIcon: Story = {
   },
 };
 
+export const FilledPrimaryMediumWithLeftIcon: Story = {
+  args: {
+    children: 'Label',
+    variant: 'filled',
+    color: 'primary',
+    size: 'md',
+    iconLeft: <SvgErrorFill />,
+  },
+};
+
+export const FilledPrimaryMediumWithRightIcon: Story = {
+  args: {
+    children: 'Label',
+    variant: 'filled',
+    color: 'primary',
+    size: 'md',
+    iconRight: <SvgErrorFill />,
+  },
+};
+
+export const FilledPrimarySmallWithLeftIcon: Story = {
+  args: {
+    children: 'Label',
+    variant: 'filled',
+    color: 'primary',
+    size: 'sm',
+    iconLeft: <SvgErrorFill />,
+  },
+};
+
+export const FilledPrimarySmallWithRightIcon: Story = {
+  args: {
+    children: 'Label',
+    variant: 'filled',
+    color: 'primary',
+    size: 'sm',
+    iconRight: <SvgErrorFill />,
+  },
+};
+
+// OUTLINE VARIANTS
 export const OutlineDefault: Story = {
   args: {
     children: 'Label',
@@ -68,6 +118,45 @@ export const OutlineDefault: Story = {
   },
 };
 
+export const OutlineDefaultMedium: Story = {
+  args: {
+    children: 'Label',
+    variant: 'outline',
+    color: 'primary',
+    size: 'md',
+  },
+};
+
+export const OutlineDefaultSmall: Story = {
+  args: {
+    children: 'Label',
+    variant: 'outline',
+    color: 'primary',
+    size: 'sm',
+  },
+};
+
+export const OutlineDefaultWithLeftIcon: Story = {
+  args: {
+    children: 'Label',
+    variant: 'outline',
+    color: 'primary',
+    size: 'lg',
+    iconLeft: <SvgErrorFill />,
+  },
+};
+
+export const OutlineDefaultWithRightIcon: Story = {
+  args: {
+    children: 'Label',
+    variant: 'outline',
+    color: 'primary',
+    size: 'lg',
+    iconRight: <SvgErrorFill />,
+  },
+};
+
+// TEXT VARIANTS
 export const TextPrimary: Story = {
   args: {
     children: 'Label',
@@ -77,6 +166,45 @@ export const TextPrimary: Story = {
   },
 };
 
+export const TextPrimaryMedium: Story = {
+  args: {
+    children: 'Label',
+    variant: 'text',
+    color: 'primary',
+    size: 'md',
+  },
+};
+
+export const TextPrimarySmall: Story = {
+  args: {
+    children: 'Label',
+    variant: 'text',
+    color: 'primary',
+    size: 'sm',
+  },
+};
+
+export const TextPrimaryWithLeftIcon: Story = {
+  args: {
+    children: 'Label',
+    variant: 'text',
+    color: 'primary',
+    size: 'lg',
+    iconLeft: <SvgErrorFill />,
+  },
+};
+
+export const TextPrimaryWithRightIcon: Story = {
+  args: {
+    children: 'Label',
+    variant: 'text',
+    color: 'primary',
+    size: 'lg',
+    iconRight: <SvgErrorFill />,
+  },
+};
+
+// SECONDARY VARIANTS
 export const FilledSecondary: Story = {
   args: {
     children: 'Label',
@@ -86,7 +214,45 @@ export const FilledSecondary: Story = {
   },
 };
 
-export const LargeTextSecondary: Story = {
+export const FilledSecondaryMedium: Story = {
+  args: {
+    children: 'Label',
+    variant: 'filled',
+    color: 'secondary',
+    size: 'md',
+  },
+};
+
+export const FilledSecondarySmall: Story = {
+  args: {
+    children: 'Label',
+    variant: 'filled',
+    color: 'secondary',
+    size: 'sm',
+  },
+};
+
+export const FilledSecondaryWithLeftIcon: Story = {
+  args: {
+    children: 'Label',
+    variant: 'filled',
+    color: 'secondary',
+    size: 'lg',
+    iconLeft: <SvgErrorFill />,
+  },
+};
+
+export const FilledSecondaryWithRightIcon: Story = {
+  args: {
+    children: 'Label',
+    variant: 'filled',
+    color: 'secondary',
+    size: 'lg',
+    iconRight: <SvgErrorFill />,
+  },
+};
+
+export const TextSecondary: Story = {
   args: {
     children: 'Label',
     variant: 'text',
@@ -95,20 +261,41 @@ export const LargeTextSecondary: Story = {
   },
 };
 
-export const MediumFilledPrimary: Story = {
+export const TextSecondaryMedium: Story = {
   args: {
     children: 'Label',
-    variant: 'filled',
-    color: 'primary',
+    variant: 'text',
+    color: 'secondary',
     size: 'md',
   },
 };
 
-export const SmallTextPrimary: Story = {
+export const TextSecondarySmall: Story = {
+  args: {
+    children: 'Label',
+    variant: 'text',
+    color: 'secondary',
+    size: 'sm',
+  },
+};
+
+// DISABLED VARIANTS
+export const FilledPrimaryDisabled: Story = {
+  args: {
+    children: 'Label',
+    variant: 'filled',
+    color: 'primary',
+    size: 'lg',
+    disabled: true,
+  },
+};
+
+export const TextPrimaryDisabled: Story = {
   args: {
     children: 'Label',
     variant: 'text',
     color: 'primary',
-    size: 'sm',
+    size: 'lg',
+    disabled: true,
   },
 };
