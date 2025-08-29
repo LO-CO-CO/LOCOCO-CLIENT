@@ -2,17 +2,19 @@ import { useState } from 'react';
 
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
+import { Avatar } from '../avatar';
 import {
   Select,
   SelectContent,
   SelectItem,
+  SelectRoot,
   SelectTrigger,
   SelectValue,
 } from './Select';
 
-const meta: Meta<typeof Select> = {
+const meta: Meta<typeof SelectRoot> = {
   title: 'components/Select',
-  component: Select,
+  component: SelectRoot,
   tags: ['autodocs'],
 };
 export default meta;
@@ -23,7 +25,7 @@ const OptionSelectOverflow = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <Select open={isOpen} onOpenChange={() => setIsOpen(!isOpen)}>
+    <SelectRoot open={isOpen} onOpenChange={() => setIsOpen(!isOpen)}>
       <SelectTrigger open={isOpen}>
         <SelectValue placeholder="Select a fruit" />
       </SelectTrigger>
@@ -34,13 +36,13 @@ const OptionSelectOverflow = () => {
           </SelectItem>
         ))}
       </SelectContent>
-    </Select>
+    </SelectRoot>
   );
 };
 
 const OptionSelect = () => {
   return (
-    <Select>
+    <SelectRoot>
       <SelectTrigger open>
         <SelectValue placeholder="Select a fruit" />
       </SelectTrigger>
@@ -51,13 +53,13 @@ const OptionSelect = () => {
           </SelectItem>
         ))}
       </SelectContent>
-    </Select>
+    </SelectRoot>
   );
 };
 
 const ReviewSelect = () => {
   return (
-    <Select>
+    <SelectRoot>
       <SelectTrigger open>
         <SelectValue placeholder="Select a fruit" />
       </SelectTrigger>
@@ -68,16 +70,34 @@ const ReviewSelect = () => {
           </SelectItem>
         ))}
       </SelectContent>
-    </Select>
+    </SelectRoot>
   );
 };
 
-export const OptionOverflow: StoryObj<typeof Select> = {
+const NewSelect = () => {
+  return (
+    <Select
+      variant="reverse"
+      placeholder="ddddddd"
+      options={[
+        { label: '빨강', icon: <Avatar sizes="16p" /> },
+        { label: '파랑' },
+        { label: '초록' },
+      ]}
+      isError={true}
+      errorText="에러메쎄제에이에이예"
+    ></Select>
+  );
+};
+
+export const New: StoryObj<typeof Select> = { render: () => <NewSelect /> };
+
+export const OptionOverflow: StoryObj<typeof SelectRoot> = {
   render: () => <OptionSelectOverflow />,
 };
-export const Option: StoryObj<typeof Select> = {
+export const Option: StoryObj<typeof SelectRoot> = {
   render: () => <OptionSelect />,
 };
-export const Review: StoryObj<typeof Select> = {
+export const Review: StoryObj<typeof SelectRoot> = {
   render: () => <ReviewSelect />,
 };

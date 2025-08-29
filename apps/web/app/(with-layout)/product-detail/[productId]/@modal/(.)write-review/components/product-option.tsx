@@ -3,9 +3,9 @@ import type { ReviewFormData } from 'types/review';
 
 import { ErrorNotice } from '@lococo/design-system/error-notice';
 import {
-  Select,
   SelectContent,
   SelectItem,
+  SelectRoot,
   SelectTrigger,
   SelectValue,
 } from '@lococo/design-system/select';
@@ -35,7 +35,7 @@ export default function ProductOption({
       className="flex w-full flex-col"
       required
     >
-      <Select
+      <SelectRoot
         value={value ? String(value) : ''}
         onValueChange={handleValueChange}
       >
@@ -49,7 +49,7 @@ export default function ProductOption({
             </SelectItem>
           ))}
         </SelectContent>
-      </Select>
+      </SelectRoot>
       {error && <ErrorNotice message={error} />}
     </ContentWithLabel>
   );

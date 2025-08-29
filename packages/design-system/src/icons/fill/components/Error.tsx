@@ -1,0 +1,8 @@
+import type { SVGProps } from "react";
+interface Props extends SVGProps<SVGSVGElement> {
+  size?: number;
+  fill?: string;
+}
+export function SvgError(props: Props) {
+  return <svg width={props.size || 24} height={props.size || 24} viewBox="0 0 16 17" fill={props.fill || "currentColor"} xmlns="http://www.w3.org/2000/svg" {...props}><path d="M7.99992 1.8335C4.31992 1.8335 1.33325 4.82016 1.33325 8.50016C1.33325 12.1802 4.31992 15.1668 7.99992 15.1668C11.6799 15.1668 14.6666 12.1802 14.6666 8.50016C14.6666 4.82016 11.6799 1.8335 7.99992 1.8335ZM8.66659 11.8335H7.33325V10.5002H8.66659V11.8335ZM8.66659 9.16683H7.33325V5.16683H8.66659V9.16683Z" /></svg>;
+}
