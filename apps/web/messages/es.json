@@ -1,6 +1,28 @@
 {
   "aabc": "aabc",
   "abc": "abc",
+  "card": {
+    "campaignThumbnailImage": "",
+    "card": "",
+    "goToApply": ""
+  },
+  "creatorSnsLinksPage": {
+    "snsDescription": "",
+    "submitLabel": "",
+    "title": ""
+  },
+  "fileUploader": {
+    "cannotUploadFile": "",
+    "emptyFile": "",
+    "fileTooLarge": "",
+    "notAllowedFileType": ""
+  },
+  "gnb": {
+    "campaigns": "",
+    "howItWorks": "",
+    "logOut": "",
+    "myPage": ""
+  },
   "home": {
     "description": "Información del producto",
     "homeSection": {
@@ -15,5 +37,160 @@
   "main": {
     "kBeautyCampaigns": "",
     "openingSoon": ""
+  },
+  "myPage": {
+    "addressModal": {
+      "addressLine1": "",
+      "addressLine1Required": "",
+      "addressLine2": "",
+      "city": "",
+      "cityRequired": "",
+      "country": "",
+      "countryRequired": "",
+      "description": "",
+      "edit": "",
+      "getDelivery": "",
+      "state": "",
+      "stateRequired": "",
+      "title": "",
+      "zip": ""
+    },
+    "contentSubmissions": {
+      "campaignProductMediaInput": {
+        "description": "",
+        "selectFile": "",
+        "title": ""
+      },
+      "campaignSelect": {
+        "description": "",
+        "selectCampaign": "",
+        "title": ""
+      },
+      "contentTypeSelect": {
+        "instagramPost": "",
+        "instagramReels": "",
+        "selectContentType": "",
+        "tiktokVideo": "",
+        "title": ""
+      },
+      "hashtagsInput": {
+        "description": "",
+        "title": ""
+      }
+    },
+    "editProfile": {
+      "addressLine1Required": "",
+      "basicInformation": {
+        "id": "",
+        "idCheck": "",
+        "idCheckSuccess": "",
+        "title": ""
+      },
+      "cityRequired": "",
+      "contentLanguageRequired": "",
+      "countryCodeRequired": "",
+      "countryRequired": "",
+      "dateRequired": "",
+      "emailRequired": "",
+      "firstNameRequired": "",
+      "genderRequired": "",
+      "homeAddress": {
+        "addressLine1": "",
+        "addressLine2": "",
+        "city": "",
+        "country": "",
+        "description": "",
+        "state": "",
+        "title": "",
+        "zip": ""
+      },
+      "idRequired": "",
+      "lastNameRequired": "",
+      "monthRequired": "",
+      "personalInformation": {
+        "birth": "",
+        "contentLanguage": "",
+        "countryCode": "",
+        "date": "",
+        "email": "",
+        "firstName": "",
+        "gender": "",
+        "lastName": "",
+        "month": "",
+        "phoneNumber": "",
+        "title": "",
+        "year": ""
+      },
+      "phoneNumberRequired": "",
+      "profileImageRequired": "",
+      "profilePhoto": {
+        "changePhoto": "",
+        "title": ""
+      },
+      "skin": {
+        "description": "",
+        "skinTone": "",
+        "skinToneOptions": {
+          "shade1": "",
+          "shade10": "",
+          "shade11": "",
+          "shade12": "",
+          "shade13": "",
+          "shade14": "",
+          "shade15": "",
+          "shade16": "",
+          "shade17": "",
+          "shade18": "",
+          "shade19": "",
+          "shade2": "",
+          "shade20": "",
+          "shade3": "",
+          "shade4": "",
+          "shade5": "",
+          "shade6": "",
+          "shade7": "",
+          "shade8": "",
+          "shade9": ""
+        },
+        "skinType": "",
+        "skinTypeOptions": {
+          "combination": "",
+          "dry": "",
+          "normal": "",
+          "oily": "",
+          "others": "",
+          "sensitive": ""
+        },
+        "title": ""
+      },
+      "skinToneRequired": "",
+      "skinTypeRequired": "",
+      "stateRequired": "",
+      "yearRequired": ""
+    },
+    "menus": {
+      "connectSNS": "",
+      "contentSubmissions": "",
+      "editProfile": "",
+      "myCampaign": ""
+    },
+    "saveFormModal": {
+      "description": "",
+      "save": "",
+      "title": ""
+    }
+  },
+  "snsConnection": {
+    "connectButtons": {
+      "instagram": "",
+      "tiktok": ""
+    },
+    "connectedStatus": "",
+    "errorMessage": "",
+    "platforms": {
+      "instagram": "",
+      "tiktok": ""
+    },
+    "title": ""
   }
 }

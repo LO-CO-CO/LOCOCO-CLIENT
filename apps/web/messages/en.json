@@ -1,6 +1,30 @@
 {
   "aabc": "aabc",
   "abc": "abc",
+  "card": {
+    "campaignThumbnailImage": "campaign thumbnail image",
+    "card": "card",
+    "goToApply": "Go To Apply"
+  },
+  "creatorSnsLinksPage": {
+    "snsDescription": "We will go through your SNS account, and let you know if you are verified.",
+    "submitLabel": "Join",
+    "title": "Join Lococo Creator Community!"
+  },
+  "fileUploader": {
+    "cannotUploadFile": "Cannot upload file",
+    "emptyFile": "Empty file",
+    "fileTooLarge": "File too large",
+    "notAllowedFileType": "Not allowed file type"
+  },
+  "gnb": {
+    "campaigns": "campaigns",
+    "howItWorks": "how it works",
+    "logOut": "Log Out",
+    "myPage": "My Page",
+    "logIn": "Log in",
+    "signUp": "Sign up"
+  },
   "home": {
     "description": "productDescription",
     "homeSection": {
@@ -16,16 +40,159 @@
     "kBeautyCampaigns": "K-Beauty Campaigns",
     "openingSoon": "Opening Soon"
   },
-  "campaigns": {},
-  "gnb": {
-    "campaigns": "campaigns",
-    "howItWorks": "how it works",
-    "myPage": "My Page",
-    "logOut": "Log Out"
+  "myPage": {
+    "addressModal": {
+      "addressLine1": "Address Line 1",
+      "addressLine1Required": "Address line 1 is required",
+      "addressLine2": "Address Line 2",
+      "city": "City/Town",
+      "cityRequired": "City is required",
+      "country": "Country",
+      "countryRequired": "Country is required",
+      "description": "Please check your home address for product delivery.",
+      "edit": "Edit",
+      "getDelivery": "Get the delivery",
+      "state": "State/Region/Province",
+      "stateRequired": "State is required",
+      "title": "Address",
+      "zip": "Zip/Postal Code"
+    },
+    "contentSubmissions": {
+      "campaignProductMediaInput": {
+        "description": "Drag and drop or click to upload the file.",
+        "selectFile": "Select File",
+        "title": "Campaign Product Media"
+      },
+      "campaignSelect": {
+        "description": "Please select a campaign",
+        "selectCampaign": "Select a Campaign",
+        "title": "Select a Campaign"
+      },
+      "contentTypeSelect": {
+        "instagramPost": "Instagram Post",
+        "instagramReels": "Instagram Reels",
+        "selectContentType": "Select a Content Type",
+        "tiktokVideo": "Tiktok Video",
+        "title": "Content Type"
+      },
+      "hashtagsInput": {
+        "description": "Please paste the exact caption and hashtags you used on",
+        "title": "Submit Your Caption & Hashtags"
+      }
+    },
+    "editProfile": {
+      "addressLine1Required": "Address line 1 is required",
+      "basicInformation": {
+        "id": "ID",
+        "idCheck": "Check availability",
+        "idCheckSuccess": "ID Check Success",
+        "title": "Basic Information"
+      },
+      "cityRequired": "City is required",
+      "contentLanguageRequired": "Content language is required",
+      "countryCodeRequired": "Country code is required",
+      "countryRequired": "Country is required",
+      "dateRequired": "Date is required",
+      "emailRequired": "Email is required",
+      "firstNameRequired": "First name is required",
+      "genderRequired": "Gender is required",
+      "homeAddress": {
+        "addressLine1": "Address Line 1",
+        "addressLine2": "Address Line 2",
+        "city": "City / Town",
+        "country": "Country",
+        "description": "Please provide your home address for product delivery.",
+        "state": "State/Region/Province",
+        "title": "Home Address",
+        "zip": "Zip/Postal Code"
+      },
+      "idRequired": "ID is required",
+      "lastNameRequired": "Last name is required",
+      "monthRequired": "Month is required",
+      "personalInformation": {
+        "birth": "Birth",
+        "contentLanguage": "Content Language",
+        "countryCode": "Country Code",
+        "date": "Date",
+        "email": "Email",
+        "firstName": "First Name",
+        "gender": "Gender",
+        "lastName": "Last Name",
+        "month": "Month",
+        "phoneNumber": "Phone Number",
+        "title": "Personal Information",
+        "year": "Year"
+      },
+      "phoneNumberRequired": "Phone number is required",
+      "profileImageRequired": "Profile image is required",
+      "profilePhoto": {
+        "changePhoto": "Change Photo",
+        "title": "Profile Photo"
+      },
+      "skin": {
+        "description": "Tell us about you more!",
+        "skinTone": "Skin Tone",
+        "skinToneOptions": {
+          "shade1": "Shade 1",
+          "shade10": "Shade 10",
+          "shade11": "Shade 11",
+          "shade12": "Shade 12",
+          "shade13": "Shade 13",
+          "shade14": "Shade 14",
+          "shade15": "Shade 15",
+          "shade16": "Shade 16",
+          "shade17": "Shade 17",
+          "shade18": "Shade 18",
+          "shade19": "Shade 19",
+          "shade2": "Shade 2",
+          "shade20": "Shade 20",
+          "shade3": "Shade 3",
+          "shade4": "Shade 4",
+          "shade5": "Shade 5",
+          "shade6": "Shade 6",
+          "shade7": "Shade 7",
+          "shade8": "Shade 8",
+          "shade9": "Shade 9"
+        },
+        "skinType": "Skin Type",
+        "skinTypeOptions": {
+          "combination": "Combination",
+          "dry": "Dry",
+          "normal": "Normal",
+          "oily": "Oily",
+          "others": "Others",
+          "sensitive": "Sensitive"
+        },
+        "title": "Skin"
+      },
+      "skinToneRequired": "Skin tone is required",
+      "skinTypeRequired": "Skin type is required",
+      "stateRequired": "State is required",
+      "yearRequired": "Year is required"
+    },
+    "menus": {
+      "connectSNS": "Connect SNS",
+      "contentSubmissions": "Content Submissions",
+      "editProfile": "Edit Profile",
+      "myCampaign": "My Campaign"
+    },
+    "saveFormModal": {
+      "description": "Your changes have been saved.",
+      "save": "Okay",
+      "title": "Saved successfully"
+    }
   },
-  "card": {
-    "card": "card",
-    "campaignThumbnailImage": "campaign thumbnail image",
-    "goToApply": "Go To Apply"
+  "snsConnection": {
+    "connectButtons": {
+      "instagram": "Connect with Instagram",
+      "tiktok": "Connect with Tiktok"
+    },
+    "connectedStatus": "Connected!",
+    "errorMessage": "Please add your account link at least one.",
+    "platforms": {
+      "instagram": "Instagram",
+      "tiktok": "Tiktok"
+    },
+    "title": "SNS Link"
   }
 }
