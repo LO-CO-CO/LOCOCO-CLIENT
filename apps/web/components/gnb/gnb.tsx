@@ -9,10 +9,11 @@ export default function Gnb() {
     <header className="body1 flex h-[7.2rem] w-full min-w-[93rem] items-center justify-between px-[11.9rem] font-[700]">
       <div className="h-[2.7rem] w-[16.2rem] flex-shrink-0">
         <Image
-          src="/images/logo.png"
+          src="/logo.svg"
           alt="logo"
           width={162}
           height={27}
+          quality={100}
           className="h-full w-full object-contain"
         />
       </div>
