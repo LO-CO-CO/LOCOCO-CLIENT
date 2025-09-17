@@ -18,7 +18,7 @@ export default function GnbAuth() {
   const t = useTranslations('gnb');
   return (
     <div className="flex h-[5.6rem] items-center gap-4">
-      {!isLoggedIn ? (
+      {isLoggedIn ? (
         <DropdownMenu>
           <DropdownMenuTrigger asChild className="relative">
             <button className="flex h-[5.6rem] items-center gap-[1rem] px-[1rem] py-[1.6rem] text-black">
