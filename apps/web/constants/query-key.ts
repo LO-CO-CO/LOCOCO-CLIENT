@@ -29,3 +29,8 @@ export const REVIEW_KEYS = {
   IMAGE_DETAILS: () => [...REVIEW_KEYS.IMAGE(), 'detail'],
   IMAGE_DETAIL: (id: number) => [...REVIEW_KEYS.IMAGE_DETAILS(), id],
 } as const;
+
+export const CONNECT_SNS_KEYS = {
+  ALL: ['connectSns'],
+  CONNECT_SNS: () => [...CONNECT_SNS_KEYS.ALL, 'connectSns'],
+};

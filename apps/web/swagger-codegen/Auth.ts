@@ -11,9 +11,13 @@
  */
 
 import {
+  ApiResponseAfterLoginUserNameResponse,
+  ApiResponseGoogleLoginResponse,
   ApiResponseJwtLoginResponse,
   ApiResponseLineLoginResponse,
+  ApiResponseRoleUpdateResponse,
   ApiResponseVoid,
+  RoleUpdateRequest,
   TestLoginRequest,
 } from "./data-contracts";
 import { ContentType, HttpClient, RequestParams } from "./http-client";
@@ -21,6 +25,24 @@ import { ContentType, HttpClient, RequestParams } from "./http-client";
 export class Auth<
   SecurityDataType = unknown,
 > extends HttpClient<SecurityDataType> {
+  /**
+   * No description
+   *
+   * @tags AUTH
+   * @name UpdateUserRole
+   * @summary 사용자 역할 설정
+   * @request POST:/api/auth/role
+   * @secure
+   */
+  updateUserRole = (data: RoleUpdateRequest, params: RequestParams = {}) =>
+    this.request<ApiResponseRoleUpdateResponse, any>({
+      path: `/api/auth/role`,
+      method: "POST",
+      body: data,
+      secure: true,
+      type: ContentType.Json,
+      ...params,
+    });
   /**
    * No description
    *
@@ -75,6 +97,22 @@ export class Auth<
    * No description
    *
    * @tags AUTH
+   * @name GetUserDisplayName
+   * @summary 로그인한 사용자의 이름을 표시하는 API입니다.
+   * @request GET:/api/auth/name
+   * @secure
+   */
+  getUserDisplayName = (params: RequestParams = {}) =>
+    this.request<ApiResponseAfterLoginUserNameResponse, any>({
+      path: `/api/auth/name`,
+      method: "GET",
+      secure: true,
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags AUTH
    * @name RedirectToLineAuth
    * @summary 라인 소셜 로그인, 리다이렉션
    * @request GET:/api/auth/line/redirect
@@ -105,6 +143,45 @@ export class Auth<
   ) =>
     this.request<ApiResponseLineLoginResponse, any>({
       path: `/api/auth/line/login`,
+      method: "GET",
+      query: query,
+      secure: true,
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags AUTH
+   * @name RedirectToGoogleAuth
+   * @summary 구글 소셜 로그인, 리다이렉션
+   * @request GET:/api/auth/google/redirect
+   * @secure
+   */
+  redirectToGoogleAuth = (params: RequestParams = {}) =>
+    this.request<void, any>({
+      path: `/api/auth/google/redirect`,
+      method: "GET",
+      secure: true,
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags AUTH
+   * @name GoogleLogin
+   * @summary 구글 소셜 로그인, JWT 토큰 발급 후 저장
+   * @request GET:/api/auth/google/login
+   * @secure
+   */
+  googleLogin = (
+    query: {
+      code: string;
+      state: string;
+    },
+    params: RequestParams = {},
+  ) =>
+    this.request<ApiResponseGoogleLoginResponse, any>({
+      path: `/api/auth/google/login`,
       method: "GET",
       query: query,
       secure: true,

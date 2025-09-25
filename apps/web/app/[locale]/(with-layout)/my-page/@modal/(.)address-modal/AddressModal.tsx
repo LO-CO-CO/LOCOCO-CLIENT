@@ -11,6 +11,8 @@ import {
 import { ModalButton } from '@lococo/design-system/modal-button';
 import { ModalHeader } from '@lococo/design-system/modal-header';
 
+import { useFetchAddress } from './hooks/fetch-address';
+
 interface AddressModalProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
@@ -19,10 +21,11 @@ interface AddressModalProps {
 export function AddressModal({ open, onOpenChange }: AddressModalProps) {
   const router = useRouter();
   const t = useTranslations('myPage.addressModal');
+  const { data: address } = useFetchAddress();
 
   const handleEditModal = () => {
     onOpenChange(false);
-    router.push('/my-page?tab=edit-profile&returnTo=address-modal');
+    router.push('/my-page/edit-profile?returnTo=address-modal');
   };
 
   const handleGetDeliveryModal = () => {
@@ -40,11 +43,42 @@ export function AddressModal({ open, onOpenChange }: AddressModalProps) {
 
         <ModalHeader text="Missing required fields" />
 
-        <section className="flex h-[52rem] flex-col gap-[1.6rem] overflow-y-auto bg-white p-[4rem]">
+        <section className="flex h-[52rem] flex-col gap-[1.6rem] overflow-y-auto bg-white px-[4rem] py-[3rem]">
           <div className="flex flex-col gap-[0.4rem]">
             <p className="title2 text-gray-800">{t('title')}</p>
             <p className="caption3 text-gray-500">{t('description')}</p>
           </div>
+          <AddressItem
+            label={t('country')}
+            value={address?.data?.country ?? ''}
+            required={true}
+          />
+          <AddressItem
+            label={t('state')}
+            value={address?.data?.stateOrProvince ?? ''}
+            required={true}
+          />
+          <AddressItem
+            label={t('city')}
+            value={address?.data?.cityOrTown ?? ''}
+            required={true}
+          />
+
+          <AddressItem
+            label={t('addressLine1')}
+            value={address?.data?.addressLine1 ?? ''}
+            required={true}
+          />
+          <AddressItem
+            label={t('addressLine2')}
+            value={address?.data?.addressLine2 ?? ''}
+            required={false}
+          />
+          <AddressItem
+            label={t('zip')}
+            value={address?.data?.postalCode ?? ''}
+            required={false}
+          />
         </section>
         <div className="flex items-center border-t border-pink-500">
           <ModalButton
@@ -61,5 +95,29 @@ export function AddressModal({ open, onOpenChange }: AddressModalProps) {
         </div>
       </DialogContent>
     </Dialog>
+  );
+}
+
+function AddressItem({
+  label,
+  value,
+  required,
+}: {
+  label: string;
+  value: string;
+  required: boolean;
+}) {
+  return (
+    <div className="flex flex-col gap-[0.8rem]">
+      <div className="flex items-center gap-[0.8rem] py-[0.8rem]">
+        {required && (
+          <span className="mr-[0.8rem] h-[0.6rem] w-[0.6rem] rounded-full bg-[#EF4351]" />
+        )}
+        <p className="body1 text-gray-700">{label}</p>
+      </div>
+      <p className="body3 border-b border-gray-400 pt-[0.8rem] text-gray-400">
+        {value}
+      </p>
+    </div>
   );
 }

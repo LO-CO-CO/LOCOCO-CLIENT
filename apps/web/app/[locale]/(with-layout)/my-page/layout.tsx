@@ -1,6 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 
-import SideBar from 'components/side-bar/side-bar';
+import ClientSideBar from './components/client-sidebar/client-sidebar';
 
 export default async function Layout({
   children,
@@ -19,12 +19,7 @@ export default async function Layout({
 
   return (
     <div className="mx-auto flex w-[112.8rem]">
-      <SideBar
-        name="Chanel"
-        email="Chanel1233@naver.com"
-        menus={menuItems}
-        defaultActiveMenu="my-campaign"
-      />
+      <ClientSideBar menus={menuItems} defaultActiveMenu="my-campaign" />
       {children}
       {modal}
     </div>

@@ -11,7 +11,7 @@ import { ContentSubmissionsFormData } from '../../hooks/use-content-submissions'
 interface ContentTypeSelectProps {
   formData: ContentSubmissionsFormData;
   errors: string | undefined;
-  updateContentType: (contentType: string) => void;
+  updateContentType: (campaignId: number, contentType: string) => void;
 }
 
 export default function ContentTypeSelect({
@@ -21,32 +21,37 @@ export default function ContentTypeSelect({
 }: ContentTypeSelectProps) {
   const t = useTranslations('myPage.contentSubmissions.contentTypeSelect');
   const [selectedContentType, setSelectedContentType] = useState<string>(
-    formData.contentType
+    formData.contentType || ''
   );
   const handleContentTypeChange = (contentType: string) => {
-    updateContentType(contentType);
+    if (formData.campaignId) {
+      updateContentType(formData.campaignId, contentType);
+    }
     setSelectedContentType(contentType);
   };
 
   const CONTENT_TYPES = [
     {
       label: t('instagramPost'),
+      value: 'INSTA_POST',
       icon: <SvgInstagram size={20} />,
     },
     {
       label: t('instagramReels'),
+      value: 'INSTA_REELS',
       icon: <SvgInstagram size={20} />,
     },
     {
       label: t('tiktokVideo'),
+      value: 'TIKTOK_VIDEO',
       icon: <SvgTiktok size={20} />,
     },
   ] as const;
 
-  const getButtonClassName = (label: string) =>
+  const getButtonClassName = (value: string) =>
     cn(
       'body1 flex cursor-pointer items-center gap-[0.5rem] rounded-[2.4rem] border border-gray-400 px-[1.6rem] py-[0.6rem] transition-colors',
-      selectedContentType === label &&
+      selectedContentType === value &&
         'border-pink-500 bg-pink-100 text-pink-500'
     );
 
@@ -54,11 +59,11 @@ export default function ContentTypeSelect({
     <section className="flex w-full flex-col gap-[1.6rem]">
       <p className="title2 text-gray-800">{t('title')}</p>
       <div className="flex gap-[1.2rem]">
-        {CONTENT_TYPES.map(({ label, icon: Icon }) => (
+        {CONTENT_TYPES.map(({ label, value, icon: Icon }) => (
           <button
-            key={label}
-            onClick={() => handleContentTypeChange(label)}
-            className={getButtonClassName(label)}
+            key={value}
+            onClick={() => handleContentTypeChange(value)}
+            className={getButtonClassName(value)}
           >
             {Icon}
             <span>{label}</span>

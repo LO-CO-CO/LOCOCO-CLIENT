@@ -42,7 +42,7 @@ export function PhoneFormField({
   };
 
   return (
-    <div className={cn('flex items-center justify-between', className)}>
+    <div className={cn('flex w-full items-center justify-between', className)}>
       <label className="body1 flex items-center font-bold text-gray-700">
         {required && (
           <span className="mr-[0.8rem] h-[0.6rem] w-[0.6rem] rounded-full bg-[#EF4351]" />

@@ -8,7 +8,10 @@ import { ContentSubmissionsFormData } from '../../hooks/use-content-submissions'
 interface HashtagsInputProps {
   formData: ContentSubmissionsFormData;
   errors: string | undefined;
-  updateCaptionAndHashtags: (captionAndHashtags: string) => void;
+  updateCaptionAndHashtags: (
+    campaignId: number,
+    captionAndHashtags: string
+  ) => void;
 }
 
 export default function HashtagsInput({
@@ -25,7 +28,10 @@ export default function HashtagsInput({
       </div>
       <Input
         value={formData.captionAndHashtags}
-        onChange={(e) => updateCaptionAndHashtags(e.target.value)}
+        onChange={(e) =>
+          formData.campaignId &&
+          updateCaptionAndHashtags(formData.campaignId, e.target.value)
+        }
         className="w-full"
       />
       {errors && <ErrorNotice message={errors} />}

@@ -1,55 +1,173 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useForm } from 'react-hook-form';
+
+import { useTranslations } from 'next-intl';
+
+import { zodResolver } from '@hookform/resolvers/zod';
+import LoadingSvg from 'components/loading/loading-svg';
 
 import { Button } from '@lococo/design-system/button';
 
+import {
+  CommunityName,
+  HomeAddress,
+  PersonalDetails,
+  SkinInfo,
+} from '../../sign-up/creator/components';
+import {
+  type CreatorSignupForm,
+  creatorSignupSchema,
+} from '../../sign-up/creator/utils/signup';
 import { SaveFormModal } from '../@modal/(.)save-form-modal/SaveFormModal';
-import BasicInformation from '../components/edit-profile/basic-information';
-import HomeAddress from '../components/edit-profile/home-address';
-import PersonalInformation from '../components/edit-profile/personal-information';
 import ProfilePhoto from '../components/edit-profile/profile-photo';
-import Skin from '../components/edit-profile/skin';
-import { useProfile } from '../hooks/use-profile';
+import {
+  useCheckIdAvailability,
+  usePresignedUrl,
+  useProfile,
+  useUpdateProfile,
+} from '../hooks/use-profile-api';
 
 export default function EditProfile() {
-  const {
-    formData,
-    errors,
-    reset,
-    updateId,
-    updateBirth,
-    updateGender,
-    updateFirstName,
-    updateLastName,
-    updateEmail,
-    updatePhone,
-    updateContentLanguage,
-    updateCountry,
-    updateState,
-    updateCity,
-    updateAddressLine1,
-    updateAddressLine2,
-    updateZip,
-    updateProfileImage,
-    handleSubmit,
-    isFormValid,
-    isIdChecked,
-    idCheckError,
-    updateSkinType,
-    updateSkinTone,
-    checkIdAvailability,
-    trigger,
-  } = useProfile();
   const [isSaveFormModalOpen, setIsSaveFormModalOpen] = useState(false);
-  const handleSubmitForm = async () => {
-    const isValid = await trigger();
+  const [profileImage, setProfileImage] = useState<File | null>(null);
+  const [profileImageError, setProfileImageError] = useState<string>('');
+  const t = useTranslations('creatorSignup.validation');
+  const form = useForm<CreatorSignupForm>({
+    resolver: zodResolver(creatorSignupSchema(t)),
+    mode: 'onBlur',
+    defaultValues: {
+      id: '',
+      birthMonth: '',
+      birthDay: '',
+      birthYear: '',
+      gender: '',
+      firstName: '',
+      lastName: '',
+      phoneCountryCode: '',
+      phoneNumber: '',
+      contentLanguage: '',
+      country: '',
+      stateRegion: '',
+      city: '',
+      addressLine1: '',
+      addressLine2: '',
+      zipCode: '',
+      skinType: '',
+      skinTone: '',
+    },
+  });
 
-    if (isFormValid && isValid) {
-      handleSubmit();
+  const profileQuery = useProfile();
+  const updateProfileMutation = useUpdateProfile();
+  const checkIdMutation = useCheckIdAvailability();
+  const presignedUrlMutation = usePresignedUrl({
+    file: profileImage || new File([], 'profile-image.jpg'),
+  });
+
+  useEffect(() => {
+    if (profileQuery.data?.data) {
+      const profileData = profileQuery.data.data;
+      const {
+        creatorAddressInfo,
+        creatorBasicInfo,
+        creatorContactInfo,
+        creatorFaceInfo,
+      } = profileData;
+      // firstName에서 first/last name 분리
+      const fullName = creatorBasicInfo.creatorName || '';
+      const nameParts = fullName.trim().split(' ');
+
+      const firstName = creatorBasicInfo.firstName || nameParts[0] || '';
+      const lastName =
+        creatorBasicInfo.lastName || nameParts.slice(1).join(' ') || '';
+      const fullBirthDate = creatorBasicInfo.birthDate || '';
+      const birthMonth = fullBirthDate.split('-')[1] || '';
+      const birthDay = fullBirthDate.split('-')[2] || '';
+      const birthYear = fullBirthDate.split('-')[0] || '';
+      form.reset({
+        id: creatorBasicInfo.creatorName || '',
+        birthMonth: birthMonth,
+        birthDay: birthDay,
+        birthYear: birthYear,
+        gender: creatorBasicInfo.gender || '',
+        firstName: firstName,
+        lastName: lastName,
+        phoneCountryCode: creatorContactInfo.countryCode || '',
+        phoneNumber: creatorContactInfo.phoneNumber || '',
+        contentLanguage: profileData.contentLanguage || '',
+        country: creatorAddressInfo.country || '',
+        stateRegion: creatorAddressInfo.stateOrProvince || '',
+        city: creatorAddressInfo.cityOrTown || '',
+        addressLine1: creatorAddressInfo.addressLine1 || '',
+        addressLine2: creatorAddressInfo.addressLine2 || '',
+        zipCode: creatorAddressInfo.postalCode || '',
+        skinType: creatorFaceInfo.skinType || '',
+        skinTone: creatorFaceInfo.skinTone || '',
+      });
+
+      if (creatorBasicInfo.profileImageUrl) {
+        fetch(creatorBasicInfo.profileImageUrl)
+          .then((response) => response.blob())
+          .then((blob) => {
+            const file = new File([blob], 'profile-image.jpg', {
+              type: blob.type,
+            });
+            setProfileImage(file);
+          })
+          .catch((error) => {
+            console.error('프로필 이미지 로드 실패:', error);
+            setProfileImage(null);
+          });
+      }
+    }
+  }, [profileQuery.data, form]);
+
+  const handleCheckAvailability = async () => {
+    const id = form.getValues('id');
+    if (!id.trim()) {
+      form.setError('id', { message: 'ID is required' });
+      return;
+    }
+
+    try {
+      const isAvailable = await checkIdMutation.mutateAsync(id);
+      if (isAvailable) {
+        // TODO: 성공 메시지 표시
+      } else {
+        form.setError('id', { message: '이미 사용 중인 ID입니다.' });
+      }
+    } catch (error) {
+      console.error('ID 중복 체크 실패:', error);
+      form.setError('id', { message: 'ID 중복 체크에 실패했습니다.' });
+    }
+  };
+
+  const handleSubmitForm = async () => {
+    const isValid = await form.trigger();
+
+    if (isValid) {
+      const formData = form.getValues();
+      const profileImageUrl = profileImage
+        ? await presignedUrlMutation.mutateAsync()
+        : null;
+      await updateProfileMutation.mutateAsync({ formData, profileImageUrl });
       setIsSaveFormModalOpen(true);
     }
   };
+
+  if (profileQuery.isPending) {
+    return (
+      <div className="flex h-[50rem] w-full items-center justify-center">
+        <LoadingSvg />
+      </div>
+    );
+  }
+
+  if (profileQuery.error) {
+    throw profileQuery.error;
+  }
 
   return (
     <>
@@ -61,46 +179,22 @@ export default function EditProfile() {
         <div className="flex w-[84rem] items-center justify-between gap-[4.8rem] border border-gray-400 bg-white p-[4.8rem]">
           <div className="flex w-full flex-col items-start gap-[4.8rem]">
             <ProfilePhoto
-              value={formData.profileImage}
-              onChange={updateProfileImage}
-              error={errors.profileImage}
-            />
-            <BasicInformation
-              errors={errors.id}
-              value={formData.id}
-              onChange={updateId}
-              isIdChecked={isIdChecked}
-              idCheckError={idCheckError}
-              onCheckAvailability={checkIdAvailability}
-            />
-            <PersonalInformation
-              formData={formData}
-              errors={errors}
-              updateBirth={updateBirth}
-              updateGender={updateGender}
-              updateFirstName={updateFirstName}
-              updateLastName={updateLastName}
-              updatePhone={updatePhone}
-              updateContentLanguage={updateContentLanguage}
-              updateEmail={updateEmail}
+              value={profileImage}
+              onChange={setProfileImage}
+              error={profileImageError}
+              setProfileImageError={setProfileImageError}
             />
 
-            <HomeAddress
-              formData={formData}
-              errors={errors}
-              updateCountry={updateCountry}
-              updateState={updateState}
-              updateCity={updateCity}
-              updateAddressLine1={updateAddressLine1}
-              updateAddressLine2={updateAddressLine2}
-              updateZip={updateZip}
+            <CommunityName
+              form={form}
+              handleCheckAvailability={handleCheckAvailability}
             />
-            <Skin
-              formData={formData}
-              errors={errors}
-              updateSkinType={updateSkinType}
-              updateSkinTone={updateSkinTone}
-            />
+
+            <PersonalDetails form={form} />
+
+            <HomeAddress form={form} locale="ko" />
+
+            <SkinInfo form={form} />
           </div>
         </div>
         <div className="flex w-[84rem] items-center justify-between gap-[1.6rem]">
@@ -109,7 +203,7 @@ export default function EditProfile() {
             color="primary"
             size="lg"
             className="w-[41.2rem]"
-            onClick={() => reset()}
+            onClick={() => form.reset()}
           >
             Cancel
           </Button>

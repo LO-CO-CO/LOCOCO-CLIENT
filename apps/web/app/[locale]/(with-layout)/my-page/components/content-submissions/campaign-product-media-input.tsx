@@ -11,7 +11,10 @@ import { ContentSubmissionsFormData } from '../../hooks/use-content-submissions'
 interface CampaignProductMediaInputProps {
   formData: ContentSubmissionsFormData;
   errors: string | undefined;
-  updateCampaignProductMedia: (campaignProductMedia: File[]) => void;
+  updateCampaignProductMedia: (
+    campaignId: number,
+    campaignProductMedia: File[]
+  ) => void;
 }
 
 export default function CampaignProductMediaInput({
@@ -47,16 +50,28 @@ export default function CampaignProductMediaInput({
   }, [formData.campaignProductMedia]);
 
   const handleImageFilesChange = (files: File[]) => {
-    const allFiles = [...files, ...videoFiles];
-    updateCampaignProductMedia(allFiles);
+    const currentVideos = formData.campaignProductMedia.filter((file) =>
+      file.type.startsWith('video/')
+    );
+    const allFiles = [...files, ...currentVideos];
+    if (formData.campaignId) {
+      updateCampaignProductMedia(formData.campaignId, allFiles);
+    }
   };
 
   const handleVideoFilesChange = (files: File[]) => {
-    const allFiles = [...imageFiles, ...files];
-    updateCampaignProductMedia(allFiles);
+    const currentImages = formData.campaignProductMedia.filter((file) =>
+      file.type.startsWith('image/')
+    );
+    const allFiles = [...currentImages, ...files];
+    if (formData.campaignId) {
+      updateCampaignProductMedia(formData.campaignId, allFiles);
+    }
   };
+  const inputFileId = `campaign-product-media-upload-area-${formData.campaignId}`;
+
   const triggerFileInput = () => {
-    document.getElementById('campaign-product-media-upload-area')?.click();
+    document.getElementById(inputFileId)?.click();
   };
 
   return (
@@ -81,7 +96,7 @@ export default function CampaignProductMediaInput({
         handleImageFilesChange={handleImageFilesChange}
         handleVideoFilesChange={handleVideoFilesChange}
         maxFiles={12}
-        inputFileId="campaign-product-media-upload-area"
+        inputFileId={inputFileId}
       />
       {errors && <ErrorNotice message={errors} />}
     </section>

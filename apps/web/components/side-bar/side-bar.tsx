@@ -3,7 +3,6 @@
 import React from 'react';
 
 import Image from 'next/image';
-import { useSearchParams } from 'next/navigation';
 
 import { MenuItem } from 'app/[locale]/(with-layout)/brand/layout';
 import { usePathname, useRouter } from 'i18n/navigation';
@@ -15,7 +14,7 @@ import { SvgAvatar } from '@lococo/icons';
 interface SideBarProps {
   name?: string;
   email?: string;
-  level?: string;
+  userType?: string;
   profileImage?: string;
   instagram?: string;
   menus: MenuItem[];
@@ -27,15 +26,23 @@ export default function SideBar({
   name,
   email,
   instagram,
-  level,
+  userType,
   menus,
   defaultActiveMenu,
 }: SideBarProps) {
   const router = useRouter();
-  const searchParams = useSearchParams();
   const pathname = usePathname();
 
-  const activeMenu = searchParams.get('tab') || defaultActiveMenu;
+  const getActiveMenu = () => {
+    if (pathname.includes('/my-page/')) {
+      const pathAfterMyPage = pathname.split('/my-page/')[1];
+      const menuFromPath = pathAfterMyPage?.split('/')[0];
+      return menuFromPath || defaultActiveMenu;
+    }
+    return defaultActiveMenu;
+  };
+
+  const activeMenu = getActiveMenu();
 
   const handleClickTab = (item: MenuItem) => {
     const pathParts = pathname.split('/');
@@ -46,13 +53,14 @@ export default function SideBar({
   return (
     <div className="mr-[2.4rem] mt-[1.6rem] flex w-[16.8rem] flex-col gap-[1.6rem]">
       {profileImage ? (
-        <Image
-          src={profileImage}
-          alt="profile"
-          className="rounded-full"
-          width={98}
-          height={98}
-        />
+        <div className="relative h-[9.8rem] w-[9.8rem] overflow-hidden rounded-full">
+          <Image
+            src={profileImage}
+            alt="profile photo"
+            fill
+            className="object-cover"
+          />
+        </div>
       ) : (
         <SvgAvatar size={98} className="rounded-full" />
       )}
@@ -62,7 +70,9 @@ export default function SideBar({
         </span>
         <span className="caption2 font-[700] text-gray-800">{email}</span>
         <span className="caption2 font-[700] text-gray-800">{instagram}</span>
-        {level && <InfoChip text={level} color="default" size="md" icon />}
+        {userType && (
+          <InfoChip text={userType} color="default" size="md" icon />
+        )}
       </div>
       <div className="h-[1px] w-full bg-gray-400" />
 

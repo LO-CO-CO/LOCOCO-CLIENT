@@ -9,6 +9,7 @@
  * ## SOURCE: https://github.com/acacode/swagger-typescript-api ##
  * ---------------------------------------------------------------
  */
+
 import {
   ApiResponseNewProductsByCategoryResponse,
   ApiResponsePopularProductsByCategoryResponse,
@@ -21,8 +22,8 @@ import {
   ProductsByCategoryResponse,
   SearchProductsResponse,
   VideoReviewListResponse,
-} from './data-contracts';
-import { HttpClient, RequestParams } from './http-client';
+} from "./data-contracts";
+import { HttpClient, RequestParams } from "./http-client";
 
 export class Product<
   SecurityDataType = unknown,
@@ -39,7 +40,7 @@ export class Product<
   updateSearchFields = (params: RequestParams = {}) =>
     this.request<ApiResponseString, any>({
       path: `/api/products/search-fields/migrate`,
-      method: 'POST',
+      method: "POST",
       secure: true,
       ...params,
     });
@@ -56,8 +57,8 @@ export class Product<
     query: {
       keyword: string;
       /** @default "false" */
-      searchType?: 'PRODUCT' | 'REVIEW';
-      mediaType?: 'IMAGE' | 'VIDEO';
+      searchType?: "PRODUCT" | "REVIEW";
+      mediaType?: "IMAGE" | "VIDEO";
       /**
        * @format int32
        * @default 0
@@ -69,7 +70,7 @@ export class Product<
        */
       size?: number;
     },
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.request<
       | SearchProductsResponse
@@ -78,10 +79,10 @@ export class Product<
       any
     >({
       path: `/api/products/search`,
-      method: 'GET',
+      method: "GET",
       query: query,
       secure: true,
-      format: 'json',
+      format: "json",
       ...params,
     });
   /**
@@ -96,7 +97,7 @@ export class Product<
   getProductDetail = (productId: number, params: RequestParams = {}) =>
     this.request<ApiResponseProductDetailResponse, any>({
       path: `/api/products/details/${productId}`,
-      method: 'GET',
+      method: "GET",
       secure: true,
       ...params,
     });
@@ -112,7 +113,7 @@ export class Product<
   getProductDetailYoutube = (productId: number, params: RequestParams = {}) =>
     this.request<ApiResponseProductYoutubeResponse, any>({
       path: `/api/products/details/${productId}/youtube`,
-      method: 'GET',
+      method: "GET",
       secure: true,
       ...params,
     });
@@ -128,27 +129,27 @@ export class Product<
   searchProductsByCategory = (
     query: {
       middleCategory:
-        | 'FACIAL_CARE'
-        | 'FACE_MAKEUP'
-        | 'EYE_MAKEUP'
-        | 'LIP_MAKEUP';
+        | "FACIAL_CARE"
+        | "FACE_MAKEUP"
+        | "EYE_MAKEUP"
+        | "LIP_MAKEUP";
       subCategory?:
-        | 'TONER'
-        | 'MOISTURIZER'
-        | 'ESSENCE_SERUM'
-        | 'CREAM'
-        | 'FOUNDATION'
-        | 'POWDER_COMPACT'
-        | 'CONCEALER'
-        | 'BLUSHER'
-        | 'EYEBROW'
-        | 'EYESHADOW'
-        | 'EYELINER'
-        | 'LIPSTICK'
-        | 'LIP_TINT';
+        | "TONER"
+        | "MOISTURIZER"
+        | "ESSENCE_SERUM"
+        | "CREAM"
+        | "FOUNDATION"
+        | "POWDER_COMPACT"
+        | "CONCEALER"
+        | "BLUSHER"
+        | "EYEBROW"
+        | "EYESHADOW"
+        | "EYELINER"
+        | "LIPSTICK"
+        | "LIP_TINT";
       /** @default "false" */
-      searchType?: 'PRODUCT' | 'REVIEW';
-      mediaType?: 'IMAGE' | 'VIDEO';
+      searchType?: "PRODUCT" | "REVIEW";
+      mediaType?: "IMAGE" | "VIDEO";
       /**
        * @format int32
        * @default 0
@@ -160,7 +161,7 @@ export class Product<
        */
       size?: number;
     },
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.request<
       | ProductsByCategoryResponse
@@ -169,10 +170,10 @@ export class Product<
       any
     >({
       path: `/api/products/categories/search`,
-      method: 'GET',
+      method: "GET",
       query: query,
       secure: true,
-      format: 'json',
+      format: "json",
       ...params,
     });
   /**
@@ -180,17 +181,17 @@ export class Product<
    *
    * @tags PRODUCT
    * @name SearchPopularProductsByCategory
-   * @summary 인기상품 카테고리별 조회 (메인 페이지)
+   * @summary 인기상품 카테고리별 조회 (메인 페이지 + 더보기)
    * @request GET:/api/products/categories/popular
    * @secure
    */
   searchPopularProductsByCategory = (
     query: {
       middleCategory:
-        | 'FACIAL_CARE'
-        | 'FACE_MAKEUP'
-        | 'EYE_MAKEUP'
-        | 'LIP_MAKEUP';
+        | "FACIAL_CARE"
+        | "FACE_MAKEUP"
+        | "EYE_MAKEUP"
+        | "LIP_MAKEUP";
       /**
        * @format int32
        * @default 0
@@ -198,15 +199,15 @@ export class Product<
       page?: number;
       /**
        * @format int32
-       * @default 20
+       * @default 4
        */
       size?: number;
     },
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.request<ApiResponsePopularProductsByCategoryResponse, any>({
       path: `/api/products/categories/popular`,
-      method: 'GET',
+      method: "GET",
       query: query,
       secure: true,
       ...params,
@@ -216,17 +217,17 @@ export class Product<
    *
    * @tags PRODUCT
    * @name SearchNewProductsByCategory
-   * @summary 신상품 카테고리별 조회 (메인 페이지)
+   * @summary 신상품 카테고리별 조회 (메인 페이지 + 더보기)
    * @request GET:/api/products/categories/new
    * @secure
    */
   searchNewProductsByCategory = (
     query: {
       middleCategory:
-        | 'FACIAL_CARE'
-        | 'FACE_MAKEUP'
-        | 'EYE_MAKEUP'
-        | 'LIP_MAKEUP';
+        | "FACIAL_CARE"
+        | "FACE_MAKEUP"
+        | "EYE_MAKEUP"
+        | "LIP_MAKEUP";
       /**
        * @format int32
        * @default 0
@@ -234,15 +235,15 @@ export class Product<
       page?: number;
       /**
        * @format int32
-       * @default 20
+       * @default 4
        */
       size?: number;
     },
-    params: RequestParams = {}
+    params: RequestParams = {},
   ) =>
     this.request<ApiResponseNewProductsByCategoryResponse, any>({
       path: `/api/products/categories/new`,
-      method: 'GET',
+      method: "GET",
       query: query,
       secure: true,
       ...params,
