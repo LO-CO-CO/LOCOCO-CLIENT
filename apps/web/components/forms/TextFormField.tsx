@@ -43,7 +43,7 @@ export function TextFormField({
       </label>
       <div className="flex flex-col">
         <div className="relative">
-          <Input {...register} placeholder={placeholder} />
+          <Input {...register} placeholder={placeholder} className="h-[4rem]" />
 
           {rightContent && (
             <div

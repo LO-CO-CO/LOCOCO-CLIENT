@@ -20,7 +20,6 @@ interface DragDropAreaProps {
   handleVideoFilesChange: (files: File[]) => void;
   maxFiles?: number;
   className?: string;
-  inputFileId?: string;
 }
 
 export default function DragDropArea({
@@ -30,12 +29,12 @@ export default function DragDropArea({
   handleVideoFilesChange,
   maxFiles = 10,
   className,
-  inputFileId = 'drag-drop-file-input',
 }: DragDropAreaProps) {
   const t = useTranslations('fileUploader');
   const [isDragOver, setIsDragOver] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     const urls = imageFiles.map((file) => URL.createObjectURL(file));
@@ -72,10 +71,12 @@ export default function DragDropArea({
         invalidFiles.push(file.name);
       }
     });
+
     if (validImageFiles.length === 0 && validVideoFiles.length === 0) {
       setErrorMessage(t(FILE_ERROR_MESSAGE_KEYS.EMPTY_FILE));
       return;
     }
+
     // 지원하지 않는 파일이 있으면 에러 메시지 표시
     if (invalidFiles.length > 0) {
       setErrorMessage(t(FILE_ERROR_MESSAGE_KEYS.NOT_ALLOWED_FILE_TYPE));
@@ -103,15 +104,14 @@ export default function DragDropArea({
     setErrorMessage('');
   };
 
-  const removeFile = (indexToRemove: number) => {
-    const updatedFiles = imageFiles.filter(
-      (_, index) => index !== indexToRemove
-    );
-    const updatedVideoFiles = videoFiles.filter(
-      (_, index) => index !== indexToRemove
-    );
+  const removeImageFile = (index: number) => {
+    const updatedFiles = imageFiles.filter((_, i) => i !== index);
     handleImageFilesChange(updatedFiles);
-    handleVideoFilesChange(updatedVideoFiles);
+  };
+
+  const removeVideoFile = (index: number) => {
+    const updatedFiles = videoFiles.filter((_, i) => i !== index);
+    handleVideoFilesChange(updatedFiles);
   };
 
   const replaceFile = (indexToReplace: number, newFile: File) => {
@@ -133,10 +133,16 @@ export default function DragDropArea({
     e.target.value = '';
   };
 
-  const handleRemoveFile = (indexToRemove: number) => (e: React.MouseEvent) => {
+  const handleRemoveImageFile = (index: number) => (e: React.MouseEvent) => {
     e.stopPropagation();
     e.preventDefault();
-    removeFile(indexToRemove);
+    removeImageFile(index);
+  };
+
+  const handleRemoveVideoFile = (index: number) => (e: React.MouseEvent) => {
+    e.stopPropagation();
+    e.preventDefault();
+    removeVideoFile(index);
   };
 
   const handleChangeFile =
@@ -170,7 +176,7 @@ export default function DragDropArea({
   };
 
   const triggerFileInput = () => {
-    document.getElementById('drag-drop-file-input')?.click();
+    fileInputRef.current?.click();
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
@@ -185,6 +191,18 @@ export default function DragDropArea({
 
   return (
     <>
+      {errorMessage && <ErrorNotice message={errorMessage} />}
+      <div className="flex gap-[0.8rem]">
+        <p className="body4 font-[500] text-gray-500">
+          {t('dragDropDescription')}
+        </p>
+        <button
+          className="body4 border-none border-pink-500 border-b-gray-100 font-[500] text-pink-500 underline"
+          onClick={triggerFileInput}
+        >
+          {t('selectFile')}
+        </button>
+      </div>
       <div
         className={cn(
           'flex h-[22rem] w-full items-center rounded-lg border border-solid bg-pink-100 p-[1.2rem] transition-all duration-200',
@@ -215,7 +233,7 @@ export default function DragDropArea({
                 key={`image-${file.name}-${index}`}
                 src={URL.createObjectURL(file)}
                 alt={`Upload ${index + 1}: ${file.name}`}
-                handleRemoveFile={handleRemoveFile(index)}
+                handleRemoveFile={handleRemoveImageFile(index)}
                 handleFileChange={handleChangeFile(index)}
                 className="h-[9.2rem] w-[9.2rem]"
               />
@@ -228,7 +246,7 @@ export default function DragDropArea({
                 src={URL.createObjectURL(file)}
                 className="h-[9.2rem] w-[9.2rem]"
                 alt={`Upload ${index + 1}: ${file.name}`}
-                handleRemoveFile={handleRemoveFile(index)}
+                handleRemoveFile={handleRemoveVideoFile(index)}
                 handleFileChange={handleChangeFile(index)}
               />
             ))}
@@ -236,7 +254,7 @@ export default function DragDropArea({
         )}
 
         <input
-          id={inputFileId}
+          ref={fileInputRef}
           type="file"
           multiple={true}
           accept={ALLOWED_MEDIA_TYPES.join(',')}
@@ -244,7 +262,6 @@ export default function DragDropArea({
           onChange={handleFileInputChange}
         />
       </div>
-      {errorMessage && <ErrorNotice message={errorMessage} />}
     </>
   );
 }

@@ -11,12 +11,14 @@ import { ContentSubmissionsFormData } from '../../hooks/use-content-submissions'
 interface CampaignProductMediaInputProps {
   formData: ContentSubmissionsFormData;
   errors: string | undefined;
+  title?: string;
   updateCampaignProductMedia: (campaignProductMedia: File[]) => void;
 }
 
 export default function CampaignProductMediaInput({
   formData,
   errors,
+  title,
   updateCampaignProductMedia,
 }: CampaignProductMediaInputProps) {
   const t = useTranslations(
@@ -62,7 +64,7 @@ export default function CampaignProductMediaInput({
   return (
     <section className="flex w-full flex-col gap-[1.6rem]">
       <div className="flex flex-col gap-[0.4rem]">
-        <p className="title2 text-gray-800">{t('title')}</p>
+        {title && <p className="title2 text-gray-800">{title}</p>}
         <div className="flex items-center gap-[0.8rem]">
           <p className="body4 text-gray-500">{t('description')}</p>
           <button
@@ -81,7 +83,6 @@ export default function CampaignProductMediaInput({
         handleImageFilesChange={handleImageFilesChange}
         handleVideoFilesChange={handleVideoFilesChange}
         maxFiles={12}
-        inputFileId="campaign-product-media-upload-area"
       />
       {errors && <ErrorNotice message={errors} />}
     </section>

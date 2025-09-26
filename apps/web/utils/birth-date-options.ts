@@ -1,6 +1,6 @@
 import dayjs from 'dayjs';
 
-export const birthDateOptions = () => {
+export const dateOptions = () => {
   const currentYear = dayjs().year();
 
   const months = Array.from({ length: 12 }, (_, i) => {

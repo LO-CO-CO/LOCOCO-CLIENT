@@ -15,10 +15,7 @@ import {
   CONTENT_LANGUAGES,
   GENDERS,
 } from '../../../../../../constants/creator-options';
-import {
-  birthDateOptions,
-  countryPhoneCodeOptions,
-} from '../../../../../../utils';
+import { countryPhoneCodeOptions, dateOptions } from '../../../../../../utils';
 import { type CreatorSignupForm } from '../utils/signup';
 
 interface PersonalDetailsProps {
@@ -27,7 +24,7 @@ interface PersonalDetailsProps {
 
 export function PersonalDetails({ form }: PersonalDetailsProps) {
   const t = useTranslations('creatorSignup.personalDetails');
-  const { months, days, years } = birthDateOptions();
+  const { months, days, years } = dateOptions();
   const countryCodes = countryPhoneCodeOptions();
 
   return (

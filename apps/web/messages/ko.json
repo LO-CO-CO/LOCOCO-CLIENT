@@ -12,6 +12,99 @@
     "makeNewCampaign": "새 캠페인 만들기",
     "myCampaign": "나의 캠페인"
   },
+  "brandMyPageCreateCampaign": {
+    "pageTitle": "캠페인 정보",
+    "basicInfo": {
+      "title": "캠페인 제목",
+      "titlePlaceholder": "캠페인 제목을 입력하세요",
+      "language": "캠페인 진행 언어",
+      "type": "캠페인 종류",
+      "category": "카테고리",
+      "creatorCount": "모집 예정 크리에이터 수",
+      "creatorCountPlaceholder": "숫자를 입력하세요"
+    },
+    "schedule": {
+      "startDate": "캠페인 지원 시작일",
+      "startTime": "캠페인 지원 시작 시각",
+      "endDate": "캠페인 지원 종료일",
+      "endTime": "캠페인 지원 종료 시각",
+      "announceDate": "캠페인 당첨자 발표일",
+      "announceTime": "캠페인 당첨자 발표 시각",
+      "dueDate": "2차 컨텐츠 최종 제출일",
+      "dueTime": "2차 컨텐츠 최종 제출 시각",
+      "placeholders": {
+        "month": "월",
+        "day": "일",
+        "year": "년",
+        "amPm": "AM/PM",
+        "hour": "시",
+        "minute": "분"
+      }
+    },
+    "conditions": {
+      "joinConditionTitle": "참여 크리에이터 조건",
+      "joinConditionDescription": "캠페인에 참여할 수 있는 크리에이터의 조건을 설명해주세요",
+      "submitConditionTitle": "크리에이터 제출 컨텐츠 조건",
+      "submitConditionDescription": "캠페인에 참여할 수 있는 크리에이터의 조건을 설명해주세요",
+      "rewardTitle": "크리에이터 참여 보상",
+      "rewardDescription": "캠페인에 참여할 수 있는 크리에이터의 조건을 설명해주세요",
+      "inputPlaceholder": "text"
+    },
+    "platform": {
+      "title": "컨텐츠 플랫폼 선택",
+      "description": "(최대 2개까지 선택 가능합니다.)",
+      "firstContent": "첫번째 컨텐츠",
+      "secondContent": "두번째 컨텐츠"
+    },
+    "media": {
+      "thumbnailTitle": "컨텐츠 썸네일 사진",
+      "thumbnailDescription": "캠페인 상세페이지 썸네일에 보여질 사진들입니다. 고화질 사진을 첨부해주세요.\n사진은 최대 5장까지 업로드 가능합니다.",
+      "detailTitle": "컨텐츠 상세페이지 사진",
+      "detailDescription": "캠페인 상세페이지에 보여질 사진들입니다. 고화질 사진을 첨부해주세요.\n사진은 최대 15장까지 업로드 가능합니다."
+    },
+    "buttons": {
+      "save": "저장하기",
+      "publish": "캠페인 발행하기"
+    },
+    "options": {
+      "language": {
+        "EN": "영어",
+        "ES": "스페인어"
+      },
+      "type": {
+        "GIVEAWAY": "기브어웨이",
+        "CONTENTS": "컨텐츠",
+        "EXCLUSIVE": "독점"
+      },
+      "category": {
+        "SKINCARE": "스킨케어",
+        "SUNCARE": "선케어",
+        "MAKEUP": "메이크업"
+      }
+    },
+    "errorMessage": {
+      "campaignTitle": "캠페인 제목을 입력해주세요.",
+      "campaignLanguage": "캠페인 진행 언어를 입력해 주세요.",
+      "campaignType": "캠페인 종류를 입력해 주세요.",
+      "campaignCategory": "캠페인 카테고리를 입력해 주세요.",
+      "campaignCreatorCount": "모집 예정 크리에이터 수를 입력해 주세요.",
+      "campaignStartDay": "캠페인 지원 시작일을 입력해 주세요.",
+      "campaignStartTime": "캠페인 지원 시작 시각을 입력해 주세요.",
+      "campaignEndDay": "캠페인 지원 종료일을 입력해 주세요.",
+      "campaignEndTime": "캠페인 지원 종료 시각을 입력해 주세요.",
+      "campaignAnnounceDay": "캠페인 당첨자 발표일을 입력해 주세요.",
+      "campaignAnnounceTime": "캠페인 당첨자 시각을 입력해 주세요.",
+      "campaignDueDay": "캠페인 제목을 입력해주세요.",
+      "campaignDueTime": "캠페인 제목을 입력해주세요.",
+      "campaignPlatformSelect": "컨텐츠 플랫폼을 선택해 주세요.",
+      "campaignMediaThumbnail": "컨텐츠 썸네일 사진을 업로드해 주세요.",
+      "campaignMediaDetail": "컨텐츠 상세페이지 사진을 업로드해 주세요.",
+      "firstContentMaxExceeded": "컨텐츠는 최대 2개까지 선택 가능합니다",
+      "secondContentMaxExceeded": "컨텐츠는 최대 2개까지 선택 가능합니다",
+      "thumbnailMaxFiles": "썸네일은 최대 5장까지 업로드 가능합니다",
+      "detailMaxFiles": "상세 사진은 최대 15장까지 업로드 가능합니다"
+    }
+  },
   "campaignDetail": {
     "applicationPeriod": "지원 기간",
     "campaignSchedule": "캠페인 일정",
@@ -35,17 +128,46 @@
     "message": "신청이 성공적으로 제출되었습니다. \n결과는 24시간 이내에 이메일로 보내드리겠습니다.",
     "title": "성공적으로 제출되었습니다!"
   },
-  "ConfirmSignupModal": {
-    "confirmButton": "",
-    "message": "",
-    "title": ""
+  "creatorOptions": {
+    "contentLanguage": {
+      "ENGLISH": "",
+      "ENGLISH_AND_SPANISH": "",
+      "SPANISH": ""
+    },
+    "gender": {
+      "FEMALE": "",
+      "MALE": "",
+      "NON_BINARY": "",
+      "PREFER_NOT_TO_SAY": ""
+    },
+    "skinTone": {
+      "SHADE_1": "",
+      "SHADE_2": "",
+      "SHADE_3": "",
+      "SHADE_4": ""
+    },
+    "skinType": {
+      "COMBINATION": "",
+      "DRY": "",
+      "NORMAL": "",
+      "OILY": "",
+      "OTHERS": "",
+      "SENSITIVE": ""
+    }
   },
   "creatorSignup": {
+    "button": {
+      "back": "",
+      "next": ""
+    },
     "communityName": {
       "checkAvailabilityButton": "중복 확인 ",
       "description": "(ID는 1자에서 15자 사이여야 하며, 문자, 숫자, 마침표(.), 밑줄(_)만 사용할 수 있습니다.)",
+      "idAvailable": "",
       "idLabel": "ID",
       "idPlaceholder": "ex: ilovelococo",
+      "idRequired": "",
+      "idTaken": "",
       "title": "커뮤니티 이름"
     },
     "homeAddress": {
@@ -127,7 +249,9 @@
     "cannotUploadFile": "파일을 업로드할 수 없습니다.",
     "emptyFile": "파일이 비어 있습니다.",
     "fileTooLarge": "파일 크기가 너무 큽니다.",
-    "notAllowedFileType": "허용되지 않는 파일 형식입니다."
+    "notAllowedFileType": "허용되지 않는 파일 형식입니다.",
+    "dragDropDescription": "드래그 앤 드롭 또는 클릭하여 파일을 업로드하세요.",
+    "selectFile": "파일 선택"
   },
   "footer": {
     "copyright": "Lococo. All rights reserved.",
@@ -206,9 +330,18 @@
         "tiktokVideo": "틱톡 영상",
         "title": "콘텐츠 유형"
       },
+      "empty": {
+        "title": ""
+      },
       "hashtagsInput": {
         "description": "사용한 캡션과 해시태그를 그대로 붙여 넣어 주세요.",
         "title": "캡션 & 해시태그 제출하기"
+      },
+      "saveSubmitModal": {
+        "firstDescription": "",
+        "save": "",
+        "secondDescription": "",
+        "title": ""
       }
     },
     "editProfile": {
@@ -306,6 +439,12 @@
       "contentSubmissions": "컨텐츠 제출 ",
       "editProfile": "프로필 편집",
       "myCampaign": "내 캠페인"
+    },
+    "myCampaign": {
+      "empty": {
+        "title": ""
+      },
+      "title": ""
     },
     "saveFormModal": {
       "description": "변경 사항이 저장되었습니다.",

@@ -3,7 +3,7 @@ import React from 'react';
 interface InputWrapperProps {
   label: string;
   required?: boolean;
-  children: React.ReactNode;
+  children?: React.ReactNode;
   notice?: React.ReactNode;
 }
 
@@ -15,7 +15,7 @@ export default function InputWrapper({
 }: InputWrapperProps) {
   return (
     <div className="flex w-full justify-between py-[0.8rem]">
-      <div className="flex items-center gap-[0.8rem]">
+      <div className="flex items-center">
         {required && (
           <span className="mr-[0.8rem] h-[0.6rem] w-[0.6rem] rounded-full bg-[#EF4351]" />
         )}

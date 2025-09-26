@@ -2,6 +2,8 @@
 
 import React from 'react';
 
+import { useTranslations } from 'next-intl';
+
 import { Button } from '@lococo/design-system/button';
 
 import CampaignProductMediaInput from '../components/content-submissions/campaign-product-media-input';
@@ -102,6 +104,9 @@ function ContentSubmissionsForm({
   updateCampaignProductMedia,
   updateCaptionAndHashtags,
 }: ContentSubmissionsFormProps) {
+  const t = useTranslations(
+    'myPage.contentSubmissions.campaignProductMediaInput'
+  );
   return (
     <div className="flex w-[84rem] items-center justify-between gap-[4.8rem] border border-gray-400 bg-white p-[4.8rem]">
       <div className="flex w-full flex-col items-start gap-[4.8rem]">
@@ -119,6 +124,7 @@ function ContentSubmissionsForm({
           }
         />
         <CampaignProductMediaInput
+          title={t('title')}
           formData={formData}
           errors={errors.campaignProductMedia}
           updateCampaignProductMedia={(campaignProductMedia) =>

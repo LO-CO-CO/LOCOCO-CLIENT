@@ -35,17 +35,46 @@
     "message": "Tu solicitud se ha enviado con éxito.\nTe enviaremos el resultado por correo electrónico en un plazo de 24 horas.",
     "title": "¡Enviado con éxito!"
   },
-  "ConfirmSignupModal": {
-    "confirmButton": "",
-    "message": "",
-    "title": ""
+  "creatorOptions": {
+    "contentLanguage": {
+      "ENGLISH": "",
+      "ENGLISH_AND_SPANISH": "",
+      "SPANISH": ""
+    },
+    "gender": {
+      "FEMALE": "",
+      "MALE": "",
+      "NON_BINARY": "",
+      "PREFER_NOT_TO_SAY": ""
+    },
+    "skinTone": {
+      "SHADE_1": "",
+      "SHADE_2": "",
+      "SHADE_3": "",
+      "SHADE_4": ""
+    },
+    "skinType": {
+      "COMBINATION": "",
+      "DRY": "",
+      "NORMAL": "",
+      "OILY": "",
+      "OTHERS": "",
+      "SENSITIVE": ""
+    }
   },
   "creatorSignup": {
+    "button": {
+      "back": "",
+      "next": ""
+    },
     "communityName": {
       "checkAvailabilityButton": "Comprobar disponibilidad",
       "description": "(La ID debe tener entre 1 y 15 caracteres y solo puede contener letras, números, puntos (.) y guiones bajos (_)).",
+      "idAvailable": "",
       "idLabel": "ID",
       "idPlaceholder": "ej: ilovelococo",
+      "idRequired": "",
+      "idTaken": "",
       "title": "Nombre de la comunidad"
     },
     "homeAddress": {
@@ -206,9 +235,18 @@
         "tiktokVideo": "Video de TikTok",
         "title": "Tipo de contenido"
       },
+      "empty": {
+        "title": ""
+      },
       "hashtagsInput": {
         "description": "Pegue exactamente el pie de foto y los hashtags que utilizó.",
         "title": "Envíe su pie de foto y hashtags"
+      },
+      "saveSubmitModal": {
+        "firstDescription": "",
+        "save": "",
+        "secondDescription": "",
+        "title": ""
       }
     },
     "editProfile": {
@@ -306,6 +344,12 @@
       "contentSubmissions": "Envíos de contenido",
       "editProfile": "Editar perfil",
       "myCampaign": "Mi campaña"
+    },
+    "myCampaign": {
+      "empty": {
+        "title": ""
+      },
+      "title": ""
     },
     "saveFormModal": {
       "description": "Tus cambios han sido guardados.",
