@@ -1,7 +1,5 @@
 import { z } from 'zod';
 
-import { isValidPhoneNumber } from '../../../../../../utils/format-phone-number';
-
 type TranslationFunction = (key: string) => string;
 
 export const communityNameSchema = (t: TranslationFunction) =>
@@ -31,11 +29,7 @@ export const personalDetailsSchema = (t: TranslationFunction) =>
       .min(1, t('lastNameRequired'))
       .max(20, t('lastNameMaxLength')),
     phoneCountryCode: z.string().min(1, t('phoneNumberRequired')),
-    phoneNumber: z
-      .string()
-      .trim()
-      .min(1, t('phoneNumberRequired'))
-      .refine(isValidPhoneNumber, t('phoneNumberInvalid')),
+    phoneNumber: z.string().trim().min(1, t('phoneNumberRequired')),
     contentLanguage: z.string().min(1, t('contentLanguageRequired')),
   });
 

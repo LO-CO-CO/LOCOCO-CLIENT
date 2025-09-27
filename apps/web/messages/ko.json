@@ -4,6 +4,111 @@
   "brandMyPage": {
     "myCampaign": "내 캠페인 "
   },
+  "brandMyPageCreateCampaign": {
+    "basicInfo": {
+      "category": "카테고리",
+      "creatorCount": "모집 예정 크리에이터 수",
+      "creatorCountPlaceholder": "숫자를 입력하세요",
+      "language": "캠페인 진행 언어",
+      "title": "캠페인 제목",
+      "titlePlaceholder": "캠페인 제목을 입력하세요",
+      "type": "캠페인 종류"
+    },
+    "buttons": {
+      "publish": "캠페인 발행하기",
+      "save": "저장하기"
+    },
+    "conditions": {
+      "inputPlaceholder": "text",
+      "joinConditionDescription": "캠페인에 참여할 수 있는 크리에이터의 조건을 설명해주세요",
+      "joinConditionTitle": "참여 크리에이터 조건",
+      "rewardDescription": "캠페인에 참여할 수 있는 크리에이터의 조건을 설명해주세요",
+      "rewardTitle": "크리에이터 참여 보상",
+      "submitConditionDescription": "캠페인에 참여할 수 있는 크리에이터의 조건을 설명해주세요",
+      "submitConditionTitle": "크리에이터 제출 컨텐츠 조건"
+    },
+    "errorMessage": {
+      "campaignAnnounceDay": "캠페인 당첨자 발표일을 입력해 주세요.",
+      "campaignAnnounceTime": "캠페인 당첨자 시각을 입력해 주세요.",
+      "campaignCategory": "캠페인 카테고리를 입력해 주세요.",
+      "campaignCreatorCount": "모집 예정 크리에이터 수를 입력해 주세요.",
+      "campaignDueDay": "캠페인 제목을 입력해주세요.",
+      "campaignDueTime": "캠페인 제목을 입력해주세요.",
+      "campaignEndDay": "캠페인 지원 종료일을 입력해 주세요.",
+      "campaignEndTime": "캠페인 지원 종료 시각을 입력해 주세요.",
+      "campaignLanguage": "캠페인 진행 언어를 입력해 주세요.",
+      "campaignMediaDetail": "컨텐츠 상세페이지 사진을 업로드해 주세요.",
+      "campaignMediaThumbnail": "컨텐츠 썸네일 사진을 업로드해 주세요.",
+      "campaignPlatformSelect": "컨텐츠 플랫폼을 선택해 주세요.",
+      "campaignStartDay": "캠페인 지원 시작일을 입력해 주세요.",
+      "campaignStartTime": "캠페인 지원 시작 시각을 입력해 주세요.",
+      "campaignTitle": "캠페인 제목을 입력해주세요.",
+      "campaignType": "캠페인 종류를 입력해 주세요.",
+      "detailMaxFiles": "상세 사진은 최대 15장까지 업로드 가능합니다",
+      "firstContentMaxExceeded": "컨텐츠는 최대 2개까지 선택 가능합니다",
+      "secondContentMaxExceeded": "컨텐츠는 최대 2개까지 선택 가능합니다",
+      "thumbnailMaxFiles": "썸네일은 최대 5장까지 업로드 가능합니다"
+    },
+    "media": {
+      "detailDescription": "캠페인 상세페이지에 보여질 사진들입니다. 고화질 사진을 첨부해주세요.\n사진은 최대 15장까지 업로드 가능합니다.",
+      "detailTitle": "컨텐츠 상세페이지 사진",
+      "thumbnailDescription": "캠페인 상세페이지 썸네일에 보여질 사진들입니다. 고화질 사진을 첨부해주세요.\n사진은 최대 5장까지 업로드 가능합니다.",
+      "thumbnailTitle": "컨텐츠 썸네일 사진"
+    },
+    "options": {
+      "category": {
+        "MAKEUP": "메이크업",
+        "SKINCARE": "스킨케어",
+        "SUNCARE": "선케어"
+      },
+      "language": {
+        "EN": "영어",
+        "ES": "스페인어"
+      },
+      "type": {
+        "CONTENTS": "컨텐츠",
+        "EXCLUSIVE": "독점",
+        "GIVEAWAY": "기브어웨이"
+      }
+    },
+    "pageTitle": "캠페인 정보",
+    "platform": {
+      "description": "(최대 2개까지 선택 가능합니다.)",
+      "firstContent": "첫번째 컨텐츠",
+      "secondContent": "두번째 컨텐츠",
+      "title": "컨텐츠 플랫폼 선택"
+    },
+    "schedule": {
+      "announceDate": "캠페인 당첨자 발표일",
+      "announceTime": "캠페인 당첨자 발표 시각",
+      "dueDate": "2차 컨텐츠 최종 제출일",
+      "dueTime": "2차 컨텐츠 최종 제출 시각",
+      "endDate": "캠페인 지원 종료일",
+      "endTime": "캠페인 지원 종료 시각",
+      "placeholders": {
+        "amPm": "AM/PM",
+        "day": "일",
+        "hour": "시",
+        "minute": "분",
+        "month": "월",
+        "year": "년"
+      },
+      "startDate": "캠페인 지원 시작일",
+      "startTime": "캠페인 지원 시작 시각"
+    },
+    "validation": {
+      "conditionRequired": "조건을 입력해주세요",
+      "creatorCountRequired": "모집 예정 크리에이터 수는 필수입니다",
+      "detailMaxFiles": "상세 사진은 최대 15장까지 업로드 가능합니다",
+      "firstContentMaxExceeded": "첫 번째 컨텐츠는 최대 2개까지 선택 가능합니다",
+      "firstContentMinRequired": "첫 번째 컨텐츠는 최소 1개 이상 선택해야 합니다",
+      "rewardRequired": "보상을 입력해주세요",
+      "secondContentMaxExceeded": "두 번째 컨텐츠는 최대 2개까지 선택 가능합니다",
+      "secondContentRequiresFirst": "두 번째 컨텐츠를 선택하려면 첫 번째 컨텐츠를 먼저 선택해야 합니다",
+      "thumbnailMaxFiles": "썸네일은 최대 5장까지 업로드 가능합니다",
+      "titleRequired": "캠페인 제목은 필수입니다"
+    }
+  },
   "brandMyPageSideBar": {
     "checkApplicants": "지원자 확인",
     "checkContents": "컨텐츠 확인",
@@ -35,17 +140,46 @@
     "message": "신청이 성공적으로 제출되었습니다. \n결과는 24시간 이내에 이메일로 보내드리겠습니다.",
     "title": "성공적으로 제출되었습니다!"
   },
-  "ConfirmSignupModal": {
-    "confirmButton": "",
-    "message": "",
-    "title": ""
+  "creatorOptions": {
+    "contentLanguage": {
+      "ENGLISH": "영어",
+      "ENGLISH_AND_SPANISH": "영어 & 스페인어",
+      "SPANISH": "스페인어"
+    },
+    "gender": {
+      "FEMALE": "여성",
+      "MALE": "남성",
+      "NON_BINARY": "논바이너리",
+      "PREFER_NOT_TO_SAY": "말하고 싶지 않음"
+    },
+    "skinTone": {
+      "SHADE_1": "색상 1",
+      "SHADE_2": "색상 2",
+      "SHADE_3": "색상 3",
+      "SHADE_4": "색상 4"
+    },
+    "skinType": {
+      "COMBINATION": "복합성",
+      "DRY": "건성",
+      "NORMAL": "정상 / 보통",
+      "OILY": "지성",
+      "OTHERS": "기타",
+      "SENSITIVE": "민감성"
+    }
   },
   "creatorSignup": {
+    "button": {
+      "back": "뒤로",
+      "next": "다음"
+    },
     "communityName": {
       "checkAvailabilityButton": "중복 확인 ",
       "description": "(ID는 1자에서 15자 사이여야 하며, 문자, 숫자, 마침표(.), 밑줄(_)만 사용할 수 있습니다.)",
+      "idAvailable": "좋습니다! 이 ID는 사용 가능합니다.",
       "idLabel": "ID",
       "idPlaceholder": "ex: ilovelococo",
+      "idRequired": "ID 사용 가능 여부를 확인해주세요.",
+      "idTaken": "죄송합니다. 이 ID는 이미 사용 중입니다.",
       "title": "커뮤니티 이름"
     },
     "homeAddress": {
@@ -63,6 +197,11 @@
       "title": "집 주소",
       "zipCodeLabel": "우편 번호 ",
       "zipCodePlaceholder": "ex: 60606"
+    },
+    "layout": {
+      "back": "뒤로 ",
+      "next": "다음",
+      "title": "로코코 크리에이터 커뮤니티에 가입하세요!"
     },
     "personalDetails": {
       "birthLabel": "생년월일",
@@ -104,12 +243,12 @@
       "firstNameMaxLength": "최대 20자까지 입력할 수 있습니다. ",
       "firstNameRequired": "이름은 필수입니다. ",
       "genderRequired": "성별은 필수입니다. ",
+      "idAvailabilityCheck": "ID 사용 가능 여부를 확인해주세요.",
       "idInvalidFormat": "이 ID는 사용할 수 없습니다. ID 형식을 확인해 주세요.",
       "idMaxLength": "최대 15자까지 사용할 수 있습니다.",
       "idRequired": "ID는 필수 입력 항목입니다.",
       "lastNameMaxLength": "최대 20자까지 사용할 수 있습니다.",
       "lastNameRequired": "성(Last name)은 필수 입력 항목입니다.",
-      "phoneNumberInvalid": "유효한 전화번호를 입력해 주세요.",
       "phoneNumberRequired": "전화번호는 필수 입력 항목입니다.",
       "skinToneRequired": "피부 톤은 필수 입력 항목입니다.",
       "skinTypeRequired": "피부 타입은 필수 입력 항목입니다.",
@@ -127,7 +266,9 @@
     "cannotUploadFile": "파일을 업로드할 수 없습니다.",
     "emptyFile": "파일이 비어 있습니다.",
     "fileTooLarge": "파일 크기가 너무 큽니다.",
-    "notAllowedFileType": "허용되지 않는 파일 형식입니다."
+    "notAllowedFileType": "허용되지 않는 파일 형식입니다.",
+    "dragDropDescription": "드래그 앤 드롭 또는 클릭하여 파일을 업로드하세요.",
+    "selectFile": "파일 선택"
   },
   "footer": {
     "copyright": "Lococo. All rights reserved.",
@@ -206,9 +347,18 @@
         "tiktokVideo": "틱톡 영상",
         "title": "콘텐츠 유형"
       },
+      "empty": {
+        "title": "검토할 콘텐츠가 없습니다."
+      },
       "hashtagsInput": {
         "description": "사용한 캡션과 해시태그를 그대로 붙여 넣어 주세요.",
         "title": "캡션 & 해시태그 제출하기"
+      },
+      "saveSubmitModal": {
+        "firstDescription": "첫 번째 제출물이 접수되었습니다. 브랜드가 검토 후 피드백을 보내드릴 예정입니다.",
+        "save": "오케이",
+        "secondDescription": "최종 제출물이 접수되었습니다. 제출해 주셔서 감사합니다.",
+        "title": "성공적으로 제출되었습니다."
       }
     },
     "editProfile": {
@@ -307,6 +457,12 @@
       "editProfile": "프로필 편집",
       "myCampaign": "내 캠페인"
     },
+    "myCampaign": {
+      "empty": {
+        "title": "신청한 캠페인이 없습니다."
+      },
+      "title": "나의 캠페인"
+    },
     "saveFormModal": {
       "description": "변경 사항이 저장되었습니다.",
       "save": "확인",
@@ -314,7 +470,7 @@
     }
   },
   "selectRoleModal": {
-    "description": "로그인할 역할을 선택하세요. 나중에 변경할 수 없습니다.\"",
+    "description": "로그인할 역할을 선택하세요. 나중에 변경할 수 없습니다.",
     "loginAs": "다음으로 로그인:",
     "roles": {
       "brand": "브랜드",
@@ -342,5 +498,46 @@
     "confirmButton": "예",
     "message": "캠페인 신청은 크리에이터 회원만 가능합니다. \n크리에이터로 가입하시겠습니까?",
     "title": "크리에이터 제안"
+  },
+  "brandSignup": {
+    "layout": {
+      "title": "로코코 브랜드 커뮤니티에 가입하세요!",
+      "submit": "가입"
+    },
+    "brandInfo": {
+      "title": "브랜드 정보",
+      "description": "회원가입을 환영합니다! 브랜드 확인을 위해 아래 정보를 입력해주세요.",
+      "brandName": "브랜드 이름",
+      "brandNamePlaceholder": "ex: Lococo",
+      "contactName": "담당자 이름",
+      "contactNamePlaceholder": "ex: 홍길동",
+      "contactPosition": "담당자 직책",
+      "contactPositionPlaceholder": "ex: 대리",
+      "contactPhone": "담당자 연락처",
+      "contactPhonePlaceholder": "ex: XXXXXXXXXXX"
+    },
+    "companyAddress": {
+      "title": "회사 주소 정보",
+      "description": "제품 오배송 시, 반품을 위해서 입력받습니다.",
+      "streetAddress": "도로명주소",
+      "streetAddressPlaceholder": "우편번호 검색",
+      "detailAddress": "상세 주소",
+      "detailAddressPlaceholder": "ex: 201호"
+    },
+    "validation": {
+      "brandNameRequired": "브랜드 이름을 입력해주세요.",
+      "brandNameMaxLength": "브랜드 이름은 최대 30글자입니다.",
+      "brandNameInvalidFormat": "한글, 영어, 숫자만 입력해주세요.",
+      "contactNameRequired": "담당자 이름을 입력해주세요.",
+      "contactNameMaxLength": "담당자 이름은 최대 10글자입니다.",
+      "contactNameInvalidFormat": "한글만 입력해주세요.",
+      "contactPositionRequired": "담당자 직책을 입력해주세요",
+      "contactPositionMaxLength": "담당자 직책은 최대 10글자입니다.",
+      "contactPositionInvalidFormat": "한글만 입력해주세요",
+      "contactPhoneRequired": "담당자 연락처를 입력해주세요.",
+      "streetAddressRequired": "도로명주소를 입력해주세요.",
+      "detailAddressRequired": "상세주소를 입력해주세요.",
+      "detailAddressMaxLength": "상세주소는 최대 30글자입니다."
+    }
   }
 }

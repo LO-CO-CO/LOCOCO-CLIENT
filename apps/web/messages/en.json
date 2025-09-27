@@ -4,8 +4,113 @@
   "brandMyPage": {
     "myCampaign": "My Campaigns"
   },
+  "brandMyPageCreateCampaign": {
+    "basicInfo": {
+      "category": "Category",
+      "creatorCount": "Number of Creators Required",
+      "creatorCountPlaceholder": "Enter a number",
+      "language": "Campaign Language",
+      "title": "Campaign Title",
+      "titlePlaceholder": "Enter campaign title",
+      "type": "Campaign Type"
+    },
+    "buttons": {
+      "publish": "Publish Campaign",
+      "save": "Save"
+    },
+    "conditions": {
+      "inputPlaceholder": "Text",
+      "joinConditionDescription": "Please describe the conditions for creators eligible to participate in this campaign",
+      "joinConditionTitle": "Creator Eligibility Requirements",
+      "rewardDescription": "Please describe the conditions for creators eligible to participate in this campaign",
+      "rewardTitle": "Creator Rewards",
+      "submitConditionDescription": "Please describe the conditions for creators eligible to participate in this campaign",
+      "submitConditionTitle": "Creator Content Submission Requirements"
+    },
+    "errorMessage": {
+      "campaignAnnounceDay": "Please enter the campaign winner announcement date.",
+      "campaignAnnounceTime": "Please enter the campaign winner announcement time.",
+      "campaignCategory": "Please enter the campaign category.",
+      "campaignCreatorCount": "Please enter the number of creators to recruit.",
+      "campaignDueDay": "Please enter the campaign title.",
+      "campaignDueTime": "Please enter the campaign title.",
+      "campaignEndDay": "Please enter the campaign application deadline date.",
+      "campaignEndTime": "Please enter the campaign application deadline time.",
+      "campaignLanguage": "Please enter the campaign language.",
+      "campaignMediaDetail": "Please upload content detail page images.",
+      "campaignMediaThumbnail": "Please upload content thumbnail images.",
+      "campaignPlatformSelect": "Please select the content platform.",
+      "campaignStartDay": "Please enter the campaign application start date.",
+      "campaignStartTime": "Please enter the campaign application start time.",
+      "campaignTitle": "Please enter the campaign title.",
+      "campaignType": "Please enter the campaign type.",
+      "detailMaxFiles": "You can upload up to 15 detail images.",
+      "firstContentMaxExceeded": "You can select up to 2 contents.",
+      "secondContentMaxExceeded": "You can select up to 2 contents.",
+      "thumbnailMaxFiles": "You can upload up to 5 thumbnails."
+    },
+    "media": {
+      "detailDescription": "These are the images shown on the campaign detail page. Please upload high-resolution images. Up to 15 images can be uploaded.",
+      "detailTitle": "Content Detail Page Images",
+      "thumbnailDescription": "These are the images shown as campaign thumbnails. Please upload high-resolution images. Up to 5 images can be uploaded.",
+      "thumbnailTitle": "Content Thumbnail Images"
+    },
+    "options": {
+      "category": {
+        "MAKEUP": "Makeup",
+        "SKINCARE": "Skincare",
+        "SUNCARE": "Sun Care"
+      },
+      "language": {
+        "EN": "English",
+        "ES": "Spanish"
+      },
+      "type": {
+        "CONTENTS": "Content",
+        "EXCLUSIVE": "Exclusive",
+        "GIVEAWAY": "Giveaway"
+      }
+    },
+    "pageTitle": "Campaign Information",
+    "platform": {
+      "description": "(You may select up to 2.)",
+      "firstContent": "First Content",
+      "secondContent": "Second Content",
+      "title": "Select Content Platform"
+    },
+    "schedule": {
+      "announceDate": "Campaign Winner Announcement Date",
+      "announceTime": "Campaign Winner Announcement Time",
+      "dueDate": "Final Submission Date for Second Content",
+      "dueTime": "Final Submission Time for Second Content",
+      "endDate": "Campaign Application Deadline Date",
+      "endTime": "Campaign Application Deadline Time",
+      "placeholders": {
+        "amPm": "AM/PM",
+        "day": "Day",
+        "hour": "Hour",
+        "minute": "Minute",
+        "month": "Month",
+        "year": "Year"
+      },
+      "startDate": "Campaign Application Start Date",
+      "startTime": "Campaign Application Start Time"
+    },
+    "validation": {
+      "conditionRequired": "Please enter conditions",
+      "creatorCountRequired": "Number of creators to recruit is required",
+      "detailMaxFiles": "You may upload up to 15 detail images",
+      "firstContentMaxExceeded": "You may select up to 2 first contents",
+      "firstContentMinRequired": "You must select at least 1 first content",
+      "rewardRequired": "Please enter rewards",
+      "secondContentMaxExceeded": "You can select up to 2 second contents",
+      "secondContentRequiresFirst": "You must select the first content before selecting the second content",
+      "thumbnailMaxFiles": "You can upload up to 5 thumbnails",
+      "titleRequired": "Campaign title is required"
+    }
+  },
   "brandMyPageSideBar": {
-    "checkApplicants": "View Applicants ",
+    "checkApplicants": "Applicant Confirmation",
     "checkContents": "View Contents",
     "dashboard": "Dashboard ",
     "editProfile": "Edit Profile ",
@@ -35,12 +140,46 @@
     "message": "Your application was successfully submitted.\nWe'll email you the result within 24 hours.",
     "title": "Successfully Submitted!"
   },
+  "creatorOptions": {
+    "contentLanguage": {
+      "ENGLISH": "English",
+      "ENGLISH_AND_SPANISH": "English & Spanish",
+      "SPANISH": "Spanish"
+    },
+    "gender": {
+      "FEMALE": "Female",
+      "MALE": "Male",
+      "NON_BINARY": "Non-binary",
+      "PREFER_NOT_TO_SAY": "Prefer not to say"
+    },
+    "skinTone": {
+      "SHADE_1": "Shade 1",
+      "SHADE_2": "Shade 2",
+      "SHADE_3": "Shade 3",
+      "SHADE_4": "Shade 4"
+    },
+    "skinType": {
+      "COMBINATION": "Combination",
+      "DRY": "Dry",
+      "NORMAL": "Normal",
+      "OILY": "Oily",
+      "OTHERS": "Others",
+      "SENSITIVE": "Sensitive"
+    }
+  },
   "creatorSignup": {
+    "button": {
+      "back": "Back",
+      "next": "Next"
+    },
     "communityName": {
       "checkAvailabilityButton": "Check availability",
       "description": "(ID must be between 1 and 15 characters long and can only contain letters, numbers, periods (.), and underscores (_)).",
+      "idAvailable": "Great! This ID is available.",
       "idLabel": "ID",
       "idPlaceholder": "ex: ilovelococo",
+      "idRequired": "Please check the ID availability.",
+      "idTaken": "Sorry, this ID is already taken.",
       "title": "Community Name"
     },
     "homeAddress": {
@@ -58,6 +197,11 @@
       "title": "Home Address",
       "zipCodeLabel": "Zip/Post Code",
       "zipCodePlaceholder": "ex: 60606"
+    },
+    "layout": {
+      "back": "Back",
+      "next": "Next",
+      "title": "Join Lococo Creator Community!"
     },
     "personalDetails": {
       "birthLabel": "Birth",
@@ -99,6 +243,7 @@
       "firstNameMaxLength": "Use up to 20 characters.",
       "firstNameRequired": "First name is required.",
       "genderRequired": "Gender is required.",
+      "idAvailabilityCheck": "Please check the ID availability.",
       "idInvalidFormat": "This ID is unavailable. Please check the ID form.",
       "idMaxLength": "Use up to 15 characters.",
       "idRequired": "ID is required.",
@@ -122,7 +267,9 @@
     "cannotUploadFile": "Cannot upload file",
     "emptyFile": "Empty file",
     "fileTooLarge": "File too large",
-    "notAllowedFileType": "Not allowed file type"
+    "notAllowedFileType": "Not allowed file type",
+    "dragDropDescription": "Drag and drop or click to upload a file.",
+    "selectFile": "Choose File"
   },
   "footer": {
     "copyright": "Lococo. All rights reserved.",
@@ -201,9 +348,18 @@
         "tiktokVideo": "Tiktok Video",
         "title": "Content Type"
       },
+      "empty": {
+        "title": "There is no content to review."
+      },
       "hashtagsInput": {
         "description": "Please paste the exact caption and hashtags you used on",
         "title": "Submit Your Caption & Hashtags"
+      },
+      "saveSubmitModal": {
+        "firstDescription": "Your first submission has been received. The brand will review it and send a brand’s note.",
+        "save": "Okay",
+        "secondDescription": "Your final submission has been received. Thank you for your submission.",
+        "title": "Submitted successfully"
       }
     },
     "editProfile": {
@@ -301,6 +457,12 @@
       "contentSubmissions": "Content Submissions",
       "editProfile": "Edit Profile",
       "myCampaign": "My Campaign"
+    },
+    "myCampaign": {
+      "empty": {
+        "title": "There is no campaign has been applied."
+      },
+      "title": "My Campaign"
     },
     "saveFormModal": {
       "description": "Your changes have been saved.",

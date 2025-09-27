@@ -1,10 +1,6 @@
 'use client';
 
-import { useForm } from 'react-hook-form';
-
-import { useRouter } from 'next/navigation';
-
-import { zodResolver } from '@hookform/resolvers/zod';
+import { useTranslations } from 'next-intl';
 
 import { AddressSearchModal } from '../../../../../components/address/AddressSearchModal';
 import {
@@ -14,27 +10,20 @@ import {
   TextFormField,
 } from '../../../../../components/forms';
 import { useAddressSearch } from '../../../../../hooks/useAddressSearch';
-import { type BrandSignupForm, brandSignupSchema } from './utils/signup';
+import { useBrandForm } from './hooks/useBrandForm';
 
 export default function BrandSignupPage() {
-  const router = useRouter();
-
-  const form = useForm<BrandSignupForm>({
-    resolver: zodResolver(brandSignupSchema),
-    mode: 'onBlur',
-  });
+  const t = useTranslations('brandSignup');
+  const { form, handleSubmit, handleBack } = useBrandForm();
 
   const { isOpen, openAddressSearch, closeAddressSearch, handleComplete } =
     useAddressSearch({
       onComplete: (data) => {
         const address = `${data.roadAddress} (${data.zonecode})`;
         form.setValue('street', address);
+        form.trigger('street');
       },
     });
-
-  const handleSubmit = () => {
-    router.push('/');
-  };
 
   return (
     <>
@@ -44,45 +33,45 @@ export default function BrandSignupPage() {
         onClose={closeAddressSearch}
       />
       <SignupFormLayout
-        title="Join Lococo Creator Community!"
-        onBack={() => router.back()}
+        title={t('layout.title')}
+        onBack={handleBack}
         onSubmit={form.handleSubmit(handleSubmit)}
         isValid={form.formState.isValid}
-        submitLabel="Join"
+        submitLabel={t('layout.submit')}
         isBackDisabled={true}
       >
         <FormSection
-          title="브랜드 정보"
-          description="회원가입을 환영합니다! 브랜드 확인을 위해 아래 정보를 입력해주세요."
+          title={t('brandInfo.title')}
+          description={t('brandInfo.description')}
         >
           <TextFormField
-            label="브랜드 이름"
+            label={t('brandInfo.brandName')}
             required
-            placeholder="ex: Lococo"
+            placeholder={t('brandInfo.brandNamePlaceholder')}
             register={form.register('brandName')}
             error={form.formState.errors.brandName?.message}
           />
 
           <TextFormField
-            label="담당자 이름"
+            label={t('brandInfo.contactName')}
             required
-            placeholder="ex: 홍길동"
+            placeholder={t('brandInfo.contactNamePlaceholder')}
             register={form.register('contactName')}
             error={form.formState.errors.contactName?.message}
           />
 
           <TextFormField
-            label="담당자 직책"
+            label={t('brandInfo.contactPosition')}
             required
-            placeholder="ex: 대리"
+            placeholder={t('brandInfo.contactPositionPlaceholder')}
             register={form.register('contactPosition')}
             error={form.formState.errors.contactPosition?.message}
           />
 
           <PhoneFormField
-            label="담당자 연락처"
+            label={t('brandInfo.contactPhone')}
             required
-            placeholder="ex: 010-xxxx-xxxx"
+            placeholder={t('brandInfo.contactPhonePlaceholder')}
             register={form.register('contactPhone')}
             error={form.formState.errors.contactPhone?.message}
           />
@@ -90,13 +79,13 @@ export default function BrandSignupPage() {
 
         <div className="mt-[4.8rem]">
           <FormSection
-            title="회사 주소 정보"
-            description="제품 오배송 시, 반품을 위해서 입력받습니다."
+            title={t('companyAddress.title')}
+            description={t('companyAddress.description')}
           >
             <TextFormField
-              label="도로명주소"
+              label={t('companyAddress.streetAddress')}
               required
-              placeholder="우편번호 검색"
+              placeholder={t('companyAddress.streetAddressPlaceholder')}
               register={form.register('street')}
               error={form.formState.errors.street?.message}
               showSearchIcon
@@ -104,9 +93,9 @@ export default function BrandSignupPage() {
             />
 
             <TextFormField
-              label="상세 주소"
+              label={t('companyAddress.detailAddress')}
               required
-              placeholder="ex: 201호"
+              placeholder={t('companyAddress.detailAddressPlaceholder')}
               register={form.register('detail')}
               error={form.formState.errors.detail?.message}
             />
