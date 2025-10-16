@@ -10,37 +10,37 @@ export type CampaignStatus =
 export const CAMPAIGN_STATUS_CONFIG = {
   DRAFT: {
     chipContent: 'Draft',
-    buttonLabel: '초안 편집하기',
+    buttonLabelKey: 'editDraft',
     routePath: (id: number) => `/brand/create-campaign/${id}`,
   },
   COMPLETED: {
     chipContent: 'Closed',
-    buttonLabel: '컨텐츠 보기',
+    buttonLabelKey: 'viewContent',
     routePath: (id: number) => `/campaign-detail/${id}`,
   },
   IN_REVIEW: {
     chipContent: 'Active',
-    buttonLabel: '컨텐츠 보기',
+    buttonLabelKey: 'viewContent',
     routePath: (id: number) => `/campaign-detail/${id}`,
   },
   OPEN_RESERVED: {
     chipContent: 'Upcoming',
-    buttonLabel: '캠페인 보러가기',
+    buttonLabelKey: 'goToCampaign',
     routePath: (id: number) => `/campaign-detail/${id}`,
   },
   RECRUITING: {
     chipContent: 'Active',
-    buttonLabel: '지원자 보기',
+    buttonLabelKey: 'viewApplicants',
     routePath: (id: number) => `/brand/applicants/${id}`,
   },
   RECRUITMENT_CLOSED: {
     chipContent: 'Active',
-    buttonLabel: '지원자 보기',
+    buttonLabelKey: 'viewApplicants',
     routePath: (id: number) => `/brand/applicants/${id}`,
   },
   WAITING_APPROVAL: {
     chipContent: 'Pending',
-    buttonLabel: '승인 대기 중',
+    buttonLabelKey: 'waitingApproval',
     routePath: (id: number) =>
       `/brand/campaign-detail-readonly?campaignId=${id}`,
   },

@@ -2,6 +2,8 @@
 
 import React from 'react';
 
+import { useTranslations } from 'next-intl';
+
 import CardMyPage from 'components/card/card-my-page';
 import { CAMPAIGN_STATUS_CONFIG } from 'components/card/utils/getBrandCampaignConfig';
 import CampaignListEmpty from 'components/empty/campgin-list-empty';
@@ -10,6 +12,7 @@ import { useBrandCampaigns } from '../hooks/useBrandCampaign';
 
 export default function CardGridSection() {
   const { campaigns, isLoading, isError } = useBrandCampaigns();
+  const t = useTranslations('card');
 
   if (isLoading) {
     return (
@@ -51,7 +54,7 @@ export default function CardGridSection() {
             campaignImageUrl={campaign.campaignImageUrl}
             chipContent={config?.chipContent}
             chipVariant={campaign.campaignStatus}
-            buttonLabel={config?.buttonLabel || ''}
+            buttonLabel={config?.buttonLabelKey ? t(config.buttonLabelKey) : ''}
             buttonHref={config?.routePath(campaign.id) || '#'}
             recruitmentNumber={campaign.recruitmentNumber}
             applicantNumber={campaign.applicantNumber}
