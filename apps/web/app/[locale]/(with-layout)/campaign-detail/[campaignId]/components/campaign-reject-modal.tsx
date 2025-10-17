@@ -33,11 +33,6 @@ export function RejectModal({
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
-        style={{
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-        }}
         className="fixed left-1/2 top-1/2 w-full max-w-[55rem] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-[3.2rem] p-0"
         showCloseButton={false}
       >

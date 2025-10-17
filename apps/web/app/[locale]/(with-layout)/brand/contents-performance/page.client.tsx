@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-import { useFormatter, useTranslations } from 'next-intl';
+import { useFormatter, useLocale, useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { notFound, useSearchParams } from 'next/navigation';
 
@@ -14,6 +14,7 @@ import {
   useReactTable,
 } from '@tanstack/react-table';
 import LoadingSvg from 'components/loading/loading-svg';
+import dayjs from 'dayjs';
 import { usePathname, useRouter } from 'i18n/navigation';
 
 import { Avatar } from '@lococo/design-system/avatar';
@@ -188,6 +189,7 @@ interface CreatorReviewTableProps {
 
 function CreatorReviewTable({ creator }: CreatorReviewTableProps) {
   const t = useTranslations('brandContentsPerformance');
+
   const columns = createColumns(t);
   const table = useReactTable({
     data: creator.reviews,
@@ -274,6 +276,8 @@ interface ClientPageProps {
 }
 export default function ClientPage({ campaignInfos }: ClientPageProps) {
   const t = useTranslations('brandContentsPerformance');
+  const locale = useLocale();
+
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -330,104 +334,6 @@ export default function ClientPage({ campaignInfos }: ClientPageProps) {
   if (isError) {
     notFound();
   }
-  // const data: ContentsPerformanceApiResponse = {
-  //   success: true,
-  //   status: 200,
-  //   message: '캠페인 크리에이터 성과 리스트 조회에 성공했습니다.',
-  //   data: {
-  //     campaignId: 63,
-  //     campaignTitle: 'ASFDS',
-  //     firstContentPlatform: 'INSTA_REELS',
-  //     secondContentPlatform: 'TIKTOK_VIDEO',
-  //     creators: [
-  //       {
-  //         creator: {
-  //           creatorId: 18,
-  //           creatorFullName: '이재훈',
-  //           creatorNickname: 'ADF',
-  //           profileImageUrl:
-  //             'https://lococo-bucket.s3.ap-northeast-2.amazonaws.com/image/myProfile.jpg',
-  //         },
-  //         reviews: [
-  //           {
-  //             campaignReviewId: 22,
-  //             reviewRound: 'SECOND',
-  //             contents: {
-  //               contentType: 'INSTA_REELS',
-  //               viewCount: 234,
-  //               likeCount: 2342,
-  //               commentCount: 23423,
-  //               shareCount: 2342,
-  //             },
-  //             reviewStatus: 'FINAL_UPLOADED',
-  //             postUrl: 'www.google.com',
-
-  //             uploadedDate: '2025-01-01T00:00:00.000Z',
-  //           },
-  //           {
-  //             campaignReviewId: 21,
-  //             reviewRound: 'FIRST',
-  //             contents: {
-  //               contentType: 'TIKTOK_VIDEO',
-  //             },
-  //             reviewStatus: 'IN_PROGRESS',
-  //             // postUrl: '',
-
-  //             // uploadedDate: '2025-10-02T00:00:00.000Z',
-  //           },
-  //         ],
-  //       },
-  //       {
-  //         creator: {
-  //           creatorId: 22,
-  //           creatorFullName: '박성제성제',
-  //           creatorNickname: 'ADF',
-  //           profileImageUrl:
-  //             'https://lococo-bucket.s3.ap-northeast-2.amazonaws.com/image/myProfile.jpg',
-  //         },
-  //         reviews: [
-  //           {
-  //             campaignReviewId: 22,
-  //             reviewRound: 'SECOND',
-
-  //             reviewStatus: 'FINAL_UPLOADED',
-  //             postUrl: 'ADFASFF',
-  //             contents: {
-  //               contentType: 'INSTA_REELS',
-  //               viewCount: 234,
-  //               likeCount: 2342,
-  //               commentCount: 23423,
-  //               shareCount: 2342,
-  //             },
-
-  //             uploadedDate: '2025-01-01T00:00:00.000Z',
-  //           },
-  //           {
-  //             campaignReviewId: 23,
-  //             reviewRound: 'FIRST',
-  //             contents: {
-  //               contentType: 'TIKTOK_VIDEO',
-  //               viewCount: 234,
-  //               likeCount: 2342,
-  //               commentCount: 23423,
-  //               shareCount: 2342,
-  //             },
-  //             reviewStatus: 'PENDING_REVISION',
-  //             postUrl: '',
-  //             uploadedDate: '2025-10-02T00:00:00.000Z',
-  //           },
-  //         ],
-  //       },
-  //     ],
-  //     pageableResponse: {
-  //       pageNumber: 0,
-  //       pageSize: 5,
-  //       numberOfElements: 1,
-  //       isLast: true,
-  //       totalPages: 3,
-  //     },
-  //   },
-  // };
 
   return (
     <div className="flex w-full flex-col gap-[1.6rem] px-[1.6rem]">
@@ -460,11 +366,30 @@ export default function ClientPage({ campaignInfos }: ClientPageProps) {
             <SvgCalender className="size-[2rem] text-gray-600" />
             <p className="text-inter-body3 text-gray-600">
               {selectedCampaign?.startDate && selectedCampaign?.endDate
-                ? koDateRangeFormatter(
-                    selectedCampaign.startDate,
-                    selectedCampaign.endDate,
-                    format
-                  )
+                ? locale === 'ko'
+                  ? koDateRangeFormatter(
+                      selectedCampaign.startDate,
+                      selectedCampaign.endDate,
+                      format
+                    )
+                  : `${format.dateTime(
+                      dayjs(selectedCampaign.startDate).toDate(),
+                      {
+                        month: 'short',
+                        day: 'numeric',
+                        hour: 'numeric',
+                        minute: '2-digit',
+                      }
+                    )} ~
+                    ${format.dateTime(
+                      dayjs(selectedCampaign.endDate).toDate(),
+                      {
+                        month: 'short',
+                        day: 'numeric',
+                        hour: 'numeric',
+                        minute: '2-digit',
+                      }
+                    )}`
                 : ''}
             </p>
           </div>
