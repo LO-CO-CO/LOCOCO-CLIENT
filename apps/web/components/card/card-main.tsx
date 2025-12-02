@@ -58,6 +58,8 @@ export default function CardMain({
           className="object-cover"
           src={campaignImageUrl || fallbackImage}
           alt={`${campaignName}${card('campaignThumbnailImage')}`}
+          fetchPriority="high"
+          loading="eager"
         />
         <BracketChip
           isUpcoming={Boolean(startTime)}
