@@ -21,6 +21,7 @@ interface CardMainProps {
   applicantNumber?: number;
   campaignId: number;
   className?: string;
+  priority?: boolean;
 }
 
 export default function CardMain({
@@ -35,6 +36,7 @@ export default function CardMain({
   applicantNumber,
   recruitmentNumber,
   campaignId,
+  priority = false,
 }: CardMainProps) {
   const card = useTranslations('card');
   const fallbackImage = '/logo.svg';
@@ -55,11 +57,10 @@ export default function CardMain({
       <div className="relative flex-1">
         <Image
           fill
+          priority={priority}
           className="object-cover"
           src={campaignImageUrl || fallbackImage}
           alt={`${campaignName}${card('campaignThumbnailImage')}`}
-          fetchPriority="high"
-          loading="eager"
         />
         <BracketChip
           isUpcoming={Boolean(startTime)}
