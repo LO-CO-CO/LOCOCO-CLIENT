@@ -22,7 +22,7 @@ export function FormSection({
       <div>
         <div className="flex items-center gap-[0.8rem]">
           {required && (
-            <span className="mr-[0.8rem] h-[0.6rem] w-[0.6rem] rounded-full bg-[#EF4351]" />
+            <span className="bg-red mr-[0.8rem] h-[0.6rem] w-[0.6rem] rounded-full" />
           )}
           <h2 className="title2 font-bold text-gray-800">{title}</h2>
         </div>
