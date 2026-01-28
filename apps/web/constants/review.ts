@@ -1,6 +1,13 @@
+// Translation keys for review placeholders (use with useTranslations('legacy.review'))
+export const REVIEW_TEXT_PLACEHOLDER_KEYS = {
+  POSITIVE: 'positivePlaceholder',
+  NEGATIVE: 'negativePlaceholder',
+} as const;
+
+// Legacy exports for backward compatibility - these are now keys for translation
 export const REVIEW_TEXT_PLACEHOLDER = {
-  POSITIVE: '使用してよかった点を教えてください。',
-  NEGATIVE: '使用して気になった点を教えてください。',
+  POSITIVE: 'POSITIVE',
+  NEGATIVE: 'NEGATIVE',
 } as const;
 
 export const REVIEW_TEXT = {
@@ -8,9 +15,16 @@ export const REVIEW_TEXT = {
   MIN_LENGTH: 15,
 } as const;
 
+// Translation keys for review error messages
+export const REVIEW_TEXT_ERROR_MESSAGE_KEYS = {
+  MIN: 'minLengthError',
+  MAX: 'maxLengthError',
+} as const;
+
+// Legacy export for backward compatibility - now uses translation-aware functions
 export const REVIEW_TEXT_ERROR_MESSAGE = {
-  MIN: (min: number) => `${min}文字以上で入力してください。`,
-  MAX: (max: number) => `${max}文字以内で入力してください。`,
+  MIN: (min: number) => `${min}`,
+  MAX: (max: number) => `${max}`,
 } as const;
 
 export const REVIEW_MEDIA_MAX_COUNT = {

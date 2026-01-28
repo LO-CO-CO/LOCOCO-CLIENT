@@ -95,6 +95,8 @@
   },
   "brandMyPageCreateCampaign": {
     "basicInfo": {
+      "brandName": "Nombre de la marca",
+      "brandNamePlaceholder": "Ingrese el nombre de la marca",
       "category": "Categoría",
       "creatorCount": "Número de creadores a reclutar",
       "creatorCountPlaceholder": "Ingrese un número",
@@ -117,6 +119,8 @@
       "submitConditionTitle": "Requisitos de contenido de los creadores"
     },
     "errorMessage": {
+      "brandNameMinLength": "El nombre de la marca debe tener al menos 1 carácter.",
+      "brandNameRequired": "Por favor, ingrese el nombre de la marca.",
       "campaignAnnounceDay": "Ingrese la fecha de anuncio de los ganadores de la campaña.",
       "campaignAnnounceTime": "Ingrese la hora de anuncio de los ganadores de la campaña.",
       "campaignCategory": "Ingrese la categoría de la campaña.",
@@ -1176,5 +1180,133 @@
     "confirmButton": "Sí",
     "message": "Las solicitudes de campaña solo están disponibles para miembros creadores. ¿Desea registrarse como creador?",
     "title": "Sugerencia de creador"
+  },
+  "legacy": {
+    "header": {
+      "accessHome": "Ir a la página principal de Lococo",
+      "searchPlaceholder": "Laneige",
+      "login": "Iniciar sesión",
+      "logout": "Cerrar sesión",
+      "myPage": "Mi página",
+      "favorites": "Favoritos",
+      "recentProducts": "Vistos recientemente"
+    },
+    "footer": {
+      "description": "Proporcionamos información confiable sobre reseñas de cosméticos coreanos. Conectamos el conocimiento de belleza coreana con usuarios de todo el mundo.",
+      "categories": "Categorías",
+      "support": "Soporte",
+      "faq": "Preguntas frecuentes",
+      "contact": "Contáctenos",
+      "notice": "Avisos",
+      "information": "Información",
+      "privacyPolicy": "Política de privacidad",
+      "termsOfService": "Términos de servicio",
+      "accessInstagram": "Visitar Instagram de Lococo",
+      "accessX": "Visitar X de Lococo",
+      "sendEmail": "Enviar correo a Lococo"
+    },
+    "search": {
+      "product": "Producto",
+      "review": "Reseña",
+      "searchResultsFor": "Resultados de búsqueda para \"{keyword}\"",
+      "noResults": "No hay resultados de búsqueda.",
+      "tryOtherKeywords": "Por favor, intente con otras palabras clave.",
+      "videoReviews": "Reseñas en video",
+      "photoReviews": "Reseñas con fotos"
+    },
+    "categories": {
+      "skincare": {
+        "name": "Cuidado de la piel",
+        "all": "Todo",
+        "toner": "Tónico",
+        "moisturizer": "Hidratante",
+        "essenceSerum": "Esencia / Sérum",
+        "cream": "Crema"
+      },
+      "face": {
+        "name": "Rostro",
+        "all": "Todo",
+        "foundation": "Base",
+        "powderCompact": "Polvo / Polvo compacto",
+        "concealer": "Corrector",
+        "blusher": "Rubor"
+      },
+      "eye": {
+        "name": "Ojos",
+        "all": "Todo",
+        "eyebrow": "Cejas",
+        "eyeshadow": "Sombra de ojos",
+        "eyeliner": "Delineador"
+      },
+      "lip": {
+        "name": "Labios",
+        "all": "Todo",
+        "lipstick": "Labial",
+        "lipTint": "Tinte de labios"
+      }
+    },
+    "review": {
+      "positiveLabel": "Me gustó",
+      "negativeLabel": "Puntos de mejora",
+      "positivePlaceholder": "Cuéntenos qué le gustó del producto.",
+      "negativePlaceholder": "Cuéntenos qué aspectos le preocuparon.",
+      "minLengthError": "Por favor, ingrese al menos {min} caracteres.",
+      "maxLengthError": "Por favor, ingrese dentro de {max} caracteres.",
+      "writeReview": "Escribir reseña",
+      "deleteReview": "Eliminar reseña",
+      "deleteConfirm": "¿Eliminar esta reseña?",
+      "deleteWarning": "Una vez eliminada, esta reseña no se puede recuperar.",
+      "submit": "Enviar",
+      "helpful": "Útil",
+      "receipt": "Recibo",
+      "option": "Opción",
+      "reviewCount": "Reseñas"
+    },
+    "productDetail": {
+      "productNotFound": "No se encontró información del producto.",
+      "koreanYoutuberReview": "Reseñas de YouTubers coreanos",
+      "japaneseReview": "Reseñas coreanas",
+      "noVideoReviews": "No hay reseñas en video registradas.",
+      "noKoreanYoutuberReviews": "No hay reseñas de YouTubers coreanos registradas.",
+      "previousImage": "Imagen anterior",
+      "nextImage": "Siguiente imagen",
+      "previousVideo": "Video anterior",
+      "nextVideo": "Siguiente video",
+      "likeButton": "Botón de me gusta",
+      "unlikeButton": "Botón de quitar me gusta",
+      "selectOption": "Opción",
+      "productFeatures": "Características del producto",
+      "ingredients": "Ingredientes",
+      "videoReviews": "Reseñas en video"
+    },
+    "writeReviewModal": {
+      "title": "Escribir reseña",
+      "selectOption": "Por favor, seleccione una opción",
+      "ratingQuestion": "¿Qué le pareció el producto?",
+      "uploadMedia": "Por favor, suba fotos o videos",
+      "uploadMediaDescription": "Solo puede subir fotos (hasta 5) o video (1).",
+      "uploadReceipt": "Por favor, suba comprobante de compra",
+      "uploadReceiptDescription": "Recibo, captura de compra en línea, etc."
+    },
+    "login": {
+      "memberLogin": "Inicio de sesión de miembro",
+      "lineLoginMessage": "Inicie sesión instantáneamente con su cuenta LINE",
+      "loginWithLine": "Iniciar sesión con LINE"
+    },
+    "home": {
+      "updateDate": "Actualizado",
+      "year": "",
+      "month": "",
+      "day": ""
+    },
+    "onboarding": {
+      "swipeMessage": "Deslice en el panel táctil o desplácese con el ratón para ver más reseñas en video"
+    },
+    "common": {
+      "seeMore": "Ver más",
+      "close": "Cerrar",
+      "all": "Todo",
+      "cancel": "Cancelar"
+    }
   }
 }

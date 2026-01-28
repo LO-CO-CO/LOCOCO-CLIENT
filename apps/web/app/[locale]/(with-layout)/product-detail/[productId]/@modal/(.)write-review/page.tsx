@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 
 import { useParams, useRouter } from 'next/navigation';
 
+import { useTranslations } from 'next-intl';
+
 import Modal from 'components/modal/modal';
 
 import { Button } from '@lococo/design-system/button';
@@ -26,6 +28,7 @@ import { useReviewInput } from './hooks';
 export default function WriteReviewModal() {
   const router = useRouter();
   const { productId } = useParams();
+  const t = useTranslations('legacy');
 
   const {
     formData,
@@ -71,7 +74,7 @@ export default function WriteReviewModal() {
   return (
     <Modal className="size-[70rem] rounded-[0.8rem]" onClose={handleClose}>
       <Modal.Header className="sticky top-0 flex justify-between">
-        <h2 className="body1 font-bold text-gray-800">レビューを書く</h2>
+        <h2 className="body1 font-bold text-gray-800">{t('writeReviewModal.title')}</h2>
         <IconButton
           icon={<SvgClose />}
           size="sm"
@@ -133,7 +136,7 @@ export default function WriteReviewModal() {
           onClick={onSubmit}
           disabled={!isFormValid}
         >
-          送信する
+          {t('review.submit')}
         </Button>
       </Modal.Footer>
     </Modal>

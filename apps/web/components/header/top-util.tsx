@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 
 import { useRouter } from 'next/navigation';
 
+import { useTranslations } from 'next-intl';
+
 import { apiRequest } from 'app/api/apiRequest';
 import { useAuth } from 'hooks/use-auth';
 
@@ -42,17 +44,18 @@ function TopUtilItem({
 
 export default function TopUtil() {
   const router = useRouter();
-  const [loginLabel, setLoginLabel] = useState('ログイン');
+  const t = useTranslations('legacy.header');
+  const [loginLabel, setLoginLabel] = useState('');
 
   const { isLoggedIn } = useAuth();
 
   useEffect(() => {
     if (isLoggedIn) {
-      setLoginLabel('ログアウト');
+      setLoginLabel(t('logout'));
     } else {
-      setLoginLabel('ログイン');
+      setLoginLabel(t('login'));
     }
-  }, [isLoggedIn]);
+  }, [isLoggedIn, t]);
 
   const handleAuthClick = async () => {
     if (isLoggedIn) {
@@ -72,17 +75,17 @@ export default function TopUtil() {
       <div className="mx-auto flex w-[1366px] items-center justify-end bg-white px-[11.9rem] py-[2rem]">
         <TopUtilItem
           icon={<SvgMy className="text-gray-600" size={16} />}
-          label="マイページ"
+          label={t('myPage')}
           disabled={true}
         />
         <TopUtilItem
           icon={<SvgLikeFill className="text-gray-600" size={16} />}
-          label="お気に入り"
+          label={t('favorites')}
           disabled={true}
         />
         <TopUtilItem
           icon={<SvgHistory className="text-gray-600" size={16} />}
-          label="最近見た商品"
+          label={t('recentProducts')}
           disabled={true}
         />
         <TopUtilItem

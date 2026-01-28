@@ -84,6 +84,10 @@ export default async function RootLayout({
   );
 }
 
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('metadata');
   const messages = await getMessages();

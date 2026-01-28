@@ -3,6 +3,8 @@
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
+import { useTranslations } from 'next-intl';
+
 import { Input } from '@lococo/design-system/input';
 import { SvgSearch } from '@lococo/icons';
 
@@ -20,6 +22,7 @@ export function SearchBar({
   handleSearchIconClick,
 }: SearchBarProps) {
   const router = useRouter();
+  const t = useTranslations('legacy.header');
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter' && searchValue.trim()) {
@@ -37,7 +40,7 @@ export function SearchBar({
             value={searchValue}
             onChange={(e) => handleChangeSearchValue(e.target.value)}
             onKeyDown={handleKeyDown}
-            placeholder="ラネージュ"
+            placeholder={t('searchPlaceholder')}
             className="title2 h-[5.2rem] w-full text-right font-bold leading-[3rem] text-gray-800"
           />
           <div className="flex h-[6.4rem] w-[5.2rem] shrink-0 cursor-pointer items-center justify-center p-[1.4rem]">

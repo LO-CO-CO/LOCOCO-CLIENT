@@ -2,6 +2,8 @@
 
 import { useRouter, useSearchParams } from 'next/navigation';
 
+import { useTranslations } from 'next-intl';
+
 import { SearchOption } from 'constants/option';
 import { CategoryNameEng, CategoryOptionEng } from 'types/category';
 
@@ -22,6 +24,7 @@ export default function SearchPageClient({
 }) {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const t = useTranslations('legacy.search');
   const PAGE_SIZE = 8;
   const PAGE_NUMBER = 0;
 
@@ -45,11 +48,7 @@ export default function SearchPageClient({
       {validatedParams.keyword && (
         <div className="mx-auto w-[1366px] px-[11.9rem] py-[6rem]">
           <p className="head2 text-gray-800">
-            「
-            <span className="inline-block max-w-[80rem] truncate align-bottom">
-              {validatedParams.keyword}
-            </span>
-            」 に関する検索結果
+            {t('searchResultsFor', { keyword: validatedParams.keyword })}
           </p>
         </div>
       )}

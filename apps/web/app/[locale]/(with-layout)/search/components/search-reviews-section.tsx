@@ -2,6 +2,8 @@
 
 import { useRouter } from 'next/navigation';
 
+import { useTranslations } from 'next-intl';
+
 import {
   ImageReviewResponse,
   VideoReviewResponse,
@@ -37,6 +39,7 @@ function VideoReviewSection({
     size,
   });
   const router = useRouter();
+  const t = useTranslations('legacy.search');
   const handleCardClick = (reviewId: number) => {
     if (keyword) {
       router.push(`/review-modal/${reviewId}/search/video?keyword=${keyword}`);
@@ -51,7 +54,7 @@ function VideoReviewSection({
 
   return (
     <div className="flex max-w-[1366px] flex-col gap-[3.2rem] pt-[3.2rem]">
-      <p className="head3 font-bold text-gray-700">動画レビュー</p>
+      <p className="head3 font-bold text-gray-700">{t('videoReviews')}</p>
       {isPending ? (
         <CardSkeletonWrapper type="REVIEW_VIDEO" />
       ) : !reviews || reviews.length === 0 ? (
@@ -100,6 +103,7 @@ function ImageReviewSection({
     size,
   });
   const router = useRouter();
+  const t = useTranslations('legacy.search');
   const handleCardClick = (reviewId: number) => {
     if (keyword) {
       router.push(`/review-modal/${reviewId}/search/image?keyword=${keyword}`);
@@ -114,7 +118,7 @@ function ImageReviewSection({
 
   return (
     <div className="flex max-w-[1366px] flex-col gap-[3.2rem] pt-[3.2rem]">
-      <p className="head3 font-bold text-gray-700">写真付きレビュー</p>
+      <p className="head3 font-bold text-gray-700">{t('photoReviews')}</p>
       {isPending ? (
         <CardSkeletonWrapper type="REVIEW_IMAGE" />
       ) : !reviews || reviews.length === 0 ? (

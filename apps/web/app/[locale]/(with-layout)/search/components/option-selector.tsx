@@ -1,6 +1,8 @@
 'use client';
 
-import { SEARCH_OPTION, SearchOption } from 'constants/option';
+import { useTranslations } from 'next-intl';
+
+import { SEARCH_OPTION, SEARCH_OPTION_TRANSLATION_KEYS, SearchOption } from 'constants/option';
 
 import { Button } from '@lococo/design-system/button';
 import { cn } from '@lococo/utils';
@@ -14,11 +16,14 @@ export default function OptionSelector({
   selectedTab,
   handleClickTab,
 }: TabsProps) {
+  const t = useTranslations('legacy.search');
+
   return (
     <div className="mx-auto flex w-[1366px] items-center px-[11.9rem]">
       {Object.keys(SEARCH_OPTION).map((key) => {
         const value = key as keyof typeof SEARCH_OPTION;
         const isSelected = selectedTab === value;
+        const translationKey = SEARCH_OPTION_TRANSLATION_KEYS[value];
         return (
           <Button
             key={value}
@@ -31,7 +36,7 @@ export default function OptionSelector({
               `${isSelected ? 'title2 border-gray-800' : 'title2 border-gray-300'}`
             )}
           >
-            {SEARCH_OPTION[value]}
+            {t(translationKey)}
           </Button>
         );
       })}
