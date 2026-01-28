@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 
+import { useTranslations } from 'next-intl';
+
 import { Tab, TabContainer } from '@lococo/design-system/tab';
 
 interface ProductInfoTabProps {
@@ -16,18 +18,19 @@ export default function ProductInfoTab({
   const [activeTab, setActiveTab] = useState<'productDetail' | 'ingredients'>(
     'productDetail'
   );
+  const t = useTranslations('legacy.productDetail');
 
   return (
     <div className="flex w-full flex-col">
       <TabContainer className="w-full">
         <Tab
-          label="製品の特徴"
+          label={t('productFeatures')}
           value="productDetail"
           selected={activeTab === 'productDetail'}
           onClick={() => setActiveTab('productDetail')}
         ></Tab>
         <Tab
-          label="原材料・成分"
+          label={t('ingredients')}
           value="ingredients"
           selected={activeTab === 'ingredients'}
           onClick={() => setActiveTab('ingredients')}

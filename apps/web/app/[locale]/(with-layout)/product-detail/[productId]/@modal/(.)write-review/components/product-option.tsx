@@ -1,3 +1,7 @@
+'use client';
+
+import { useTranslations } from 'next-intl';
+
 import ContentWithLabel from 'components/input/content-with-label';
 import type { ReviewFormData } from 'types/review';
 
@@ -25,13 +29,16 @@ export default function ProductOption({
   error,
   options,
 }: Props) {
+  const t = useTranslations('legacy.writeReviewModal');
+  const tReview = useTranslations('legacy.review');
+
   const handleValueChange = (id: string) => {
     onChange(Number(id));
   };
 
   return (
     <ContentWithLabel
-      label="オプションを選んでください"
+      label={t('selectOption')}
       className="flex w-full flex-col"
       required
     >
@@ -40,7 +47,7 @@ export default function ProductOption({
         onValueChange={handleValueChange}
       >
         <SelectTrigger className="body2">
-          <SelectValue placeholder="オプション" />
+          <SelectValue placeholder={tReview('option')} />
         </SelectTrigger>
         <SelectContent className="scrollbar-hide body2">
           {options.map(({ id, optionName }) => (

@@ -95,6 +95,8 @@
   },
   "brandMyPageCreateCampaign": {
     "basicInfo": {
+      "brandName": "Brand Name",
+      "brandNamePlaceholder": "Enter brand name",
       "category": "Category",
       "creatorCount": "Number of Creators Required",
       "creatorCountPlaceholder": "Enter a number",
@@ -117,6 +119,8 @@
       "submitConditionTitle": "Creator Content Submission Requirements"
     },
     "errorMessage": {
+      "brandNameMinLength": "Brand name must be at least 1 character.",
+      "brandNameRequired": "Please enter the brand name.",
       "campaignAnnounceDay": "Please enter the campaign winner announcement date.",
       "campaignAnnounceTime": "Please enter the campaign winner announcement time.",
       "campaignCategory": "Please enter the campaign category.",
@@ -1176,5 +1180,133 @@
     "confirmButton": "Yes",
     "message": "Campaign applications are only available to creator members.\nWould you like to sign up as a creator?",
     "title": "Creator Suggestion"
+  },
+  "legacy": {
+    "header": {
+      "accessHome": "Go to Lococo Home",
+      "searchPlaceholder": "Laneige",
+      "login": "Login",
+      "logout": "Logout",
+      "myPage": "My Page",
+      "favorites": "Favorites",
+      "recentProducts": "Recently Viewed"
+    },
+    "footer": {
+      "description": "Delivering trusted Korean cosmetics review information. Connecting Korean beauty knowledge to users worldwide.",
+      "categories": "Categories",
+      "support": "Support",
+      "faq": "FAQ",
+      "contact": "Contact Us",
+      "notice": "Notice",
+      "information": "Information",
+      "privacyPolicy": "Privacy Policy",
+      "termsOfService": "Terms of Service",
+      "accessInstagram": "Visit Lococo Instagram",
+      "accessX": "Visit Lococo X",
+      "sendEmail": "Send Email to Lococo"
+    },
+    "search": {
+      "product": "Product",
+      "review": "Review",
+      "searchResultsFor": "Search results for \"{keyword}\"",
+      "noResults": "No search results.",
+      "tryOtherKeywords": "Please try other keywords.",
+      "videoReviews": "Video Reviews",
+      "photoReviews": "Photo Reviews"
+    },
+    "categories": {
+      "skincare": {
+        "name": "Skincare",
+        "all": "All",
+        "toner": "Toner",
+        "moisturizer": "Moisturizer",
+        "essenceSerum": "Essence / Serum",
+        "cream": "Cream"
+      },
+      "face": {
+        "name": "Face",
+        "all": "All",
+        "foundation": "Foundation",
+        "powderCompact": "Powder / Pressed Powder",
+        "concealer": "Concealer",
+        "blusher": "Blush"
+      },
+      "eye": {
+        "name": "Eye",
+        "all": "All",
+        "eyebrow": "Eyebrow",
+        "eyeshadow": "Eyeshadow",
+        "eyeliner": "Eyeliner"
+      },
+      "lip": {
+        "name": "Lip",
+        "all": "All",
+        "lipstick": "Lipstick",
+        "lipTint": "Lip Tint"
+      }
+    },
+    "review": {
+      "positiveLabel": "Liked it",
+      "negativeLabel": "Concerns",
+      "positivePlaceholder": "Tell us what you liked about using it.",
+      "negativePlaceholder": "Tell us what concerned you about using it.",
+      "minLengthError": "Please enter at least {min} characters.",
+      "maxLengthError": "Please enter within {max} characters.",
+      "writeReview": "Write Review",
+      "deleteReview": "Delete Review",
+      "deleteConfirm": "Delete this review?",
+      "deleteWarning": "Once deleted, this review cannot be recovered.",
+      "submit": "Submit",
+      "helpful": "Helpful",
+      "receipt": "Receipt",
+      "option": "Option",
+      "reviewCount": "Reviews"
+    },
+    "productDetail": {
+      "productNotFound": "Product information not found.",
+      "koreanYoutuberReview": "Korean YouTuber Reviews",
+      "japaneseReview": "Korean Reviews",
+      "noVideoReviews": "No video reviews registered.",
+      "noKoreanYoutuberReviews": "No Korean YouTuber reviews registered.",
+      "previousImage": "Previous image",
+      "nextImage": "Next image",
+      "previousVideo": "Previous video",
+      "nextVideo": "Next video",
+      "likeButton": "Like product button",
+      "unlikeButton": "Unlike button",
+      "selectOption": "Option",
+      "productFeatures": "Product Features",
+      "ingredients": "Ingredients",
+      "videoReviews": "Video Reviews"
+    },
+    "writeReviewModal": {
+      "title": "Write Review",
+      "selectOption": "Please select an option",
+      "ratingQuestion": "How was the product?",
+      "uploadMedia": "Please upload photos or videos",
+      "uploadMediaDescription": "You can upload photos (up to 5) or video (1) only.",
+      "uploadReceipt": "Please upload proof of purchase",
+      "uploadReceiptDescription": "Receipt, online purchase screenshot, etc."
+    },
+    "login": {
+      "memberLogin": "Member Login",
+      "lineLoginMessage": "Login instantly with LINE account",
+      "loginWithLine": "Login with LINE"
+    },
+    "home": {
+      "updateDate": "Updated",
+      "year": "",
+      "month": "",
+      "day": ""
+    },
+    "onboarding": {
+      "swipeMessage": "Swipe on the touchpad or scroll with your mouse to see more video reviews"
+    },
+    "common": {
+      "seeMore": "See More",
+      "close": "Close",
+      "all": "All",
+      "cancel": "Cancel"
+    }
   }
 }

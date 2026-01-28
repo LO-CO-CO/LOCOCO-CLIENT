@@ -4,6 +4,8 @@ import { useId } from 'react';
 
 import Link from 'next/link';
 
+import { useTranslations } from 'next-intl';
+
 import { SvgLine } from '@lococo/icons';
 
 import { generateLineLoginUrl } from '../utils/generateLinLoginUrl';
@@ -11,6 +13,7 @@ import { generateLineLoginUrl } from '../utils/generateLinLoginUrl';
 export default function LoginButton() {
   const uuid = useId();
   const lineLoginUrl = generateLineLoginUrl(uuid);
+  const t = useTranslations('legacy.login');
 
   return (
     <Link
@@ -20,7 +23,7 @@ export default function LoginButton() {
       <span className="absolute left-[2.1rem] flex items-center">
         <SvgLine size={20} />
       </span>
-      <span className="flex w-[18.4rem] justify-center">LINEでログイン</span>
+      <span className="flex w-[18.4rem] justify-center">{t('loginWithLine')}</span>
     </Link>
   );
 }

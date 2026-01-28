@@ -1,7 +1,9 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
+
 import ContentWithLabel from 'components/input/content-with-label';
-import { REVIEW_TEXT, REVIEW_TEXT_PLACEHOLDER } from 'constants/review';
+import { REVIEW_TEXT } from 'constants/review';
 import type { ReviewFormData } from 'types/review';
 
 import { ErrorNotice } from '@lococo/design-system/error-notice';
@@ -14,17 +16,19 @@ interface Props {
 }
 
 export default function PositiveReview({ value, onChange, error }: Props) {
+  const t = useTranslations('legacy.review');
+
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     onChange(e.target.value);
   };
 
   return (
-    <ContentWithLabel label="良かったです" className="h-full flex-col" required>
+    <ContentWithLabel label={t('positiveLabel')} className="h-full flex-col" required>
       <Textarea.Container>
         <Textarea
           value={value}
           onChange={handleChange}
-          placeholder={REVIEW_TEXT_PLACEHOLDER.POSITIVE}
+          placeholder={t('positivePlaceholder')}
           maxLength={REVIEW_TEXT.MAX_LENGTH}
           className="h-[6.6rem]"
         />

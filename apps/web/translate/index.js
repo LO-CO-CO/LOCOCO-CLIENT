@@ -6,7 +6,7 @@ const key = process.env.GOOGLE_PRIVATE_KEY;
 const googleSheetId = process.env.TRANSLATE_GOOGLE_SHEET_ID;
 
 const ns = 'ko';
-const lngs = ['ko', 'en', 'es'];
+const lngs = ['ko', 'en', 'es', 'ja'];
 const localesPath = 'messages';
 const sheetId = 0; // your sheet id
 const NOT_AVAILABLE_CELL = '_N/A';
@@ -15,6 +15,7 @@ const columnKeyToHeader = {
   ko: '한글',
   en: '영어',
   es: '스페인어',
+  ja: '일본어',
 };
 
 // Initialize auth - see https://theoephraim.github.io/node-google-spreadsheet/#/guides/authentication
