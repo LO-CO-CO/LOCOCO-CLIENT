@@ -1,7 +1,11 @@
+'use client';
+
 import { useState } from 'react';
 
 import Image from 'next/image';
 import { useParams, useRouter } from 'next/navigation';
+
+import { useTranslations } from 'next-intl';
 
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import dayjs from 'dayjs';
@@ -42,6 +46,7 @@ export default function Review({
   const router = useRouter();
   const { productId } = useParams();
   const { isLoggedIn } = useAuth();
+  const t = useTranslations('legacy');
   const [isLiked, setIsLiked] = useState(initialIsLiked);
   const [likeCount, setLikeCount] = useState(initialLikeCount);
 
@@ -115,7 +120,7 @@ export default function Review({
         </div>
         <div className="flex items-center justify-end">
           <div className="flex items-center gap-[1.2rem]">
-            <p className="title3 font-bold text-gray-800">参考になった</p>
+            <p className="title3 font-bold text-gray-800">{t('review.helpful')}</p>
 
             <ReactionToggle
               variant="horizontal"
@@ -154,11 +159,11 @@ export default function Review({
           <Star rating={Number(rating)} />
           <div className="caption1 flex gap-[0.6rem] text-gray-600">
             <span className="inline-flex w-[6.7rem] flex-shrink-0">
-              オプション:
+              {t('review.option')}:
             </span>
             <span className="break-words"> {option}</span>
           </div>
-          {receiptUploaded && <Tag text={'レシート'} className="inline-flex" />}
+          {receiptUploaded && <Tag text={t('review.receipt')} className="inline-flex" />}
         </div>
 
         <p className="caption1 self-end text-gray-600">

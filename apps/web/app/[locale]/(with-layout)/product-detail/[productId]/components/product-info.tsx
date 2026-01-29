@@ -3,6 +3,8 @@
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 
+import { useTranslations } from 'next-intl';
+
 import { useProductLike } from 'components/card/hooks/use-product-like';
 import { useAuth } from 'hooks/use-auth';
 import { useRouter } from 'i18n/navigation';
@@ -60,6 +62,8 @@ export default function ProductInfo({
 }: ProductInfoProps) {
   const params = useParams();
   const router = useRouter();
+  const t = useTranslations('legacy.productDetail');
+  const tReview = useTranslations('legacy.review');
   const { isLiked, handleLikeClick } = useProductLike({
     initialIsLiked,
   });
@@ -88,7 +92,7 @@ export default function ProductInfo({
             onClick={() => handleLikeClick(productId)}
             size="lg"
             ariaLabel={
-              isLiked ? 'いいねを解除するボタン' : '商品をいいねするボタン'
+              isLiked ? t('unlikeButton') : t('likeButton')
             }
             icon={
               isLiked ? (
@@ -119,7 +123,7 @@ export default function ProductInfo({
               className="body2 text-gray-800"
               disabled={productOptions.length === 0}
             >
-              <SelectValue placeholder="オプション" />
+              <SelectValue placeholder={t('selectOption')} />
             </SelectTrigger>
             <SelectContent className="body2 text-gray-800">
               {productOptions.map((option) => (
@@ -179,7 +183,7 @@ export default function ProductInfo({
           className="title2 font-bold"
           onClick={() => handleClickReviewBtn()}
         >
-          <SvgWrite /> レビューを書く
+          <SvgWrite /> {tReview('writeReview')}
         </Button>
       </div>
     </div>

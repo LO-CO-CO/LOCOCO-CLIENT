@@ -1,4 +1,8 @@
+'use client';
+
 import { useParams } from 'next/navigation';
+
+import { useTranslations } from 'next-intl';
 
 import { useQuery } from '@tanstack/react-query';
 import LoadingSvg from 'components/loading/loading-svg';
@@ -11,6 +15,7 @@ import Review from './review';
 
 export default function ReviewList() {
   const { productId } = useParams();
+  const t = useTranslations('legacy');
 
   const { data: reviewList, isPending } = useQuery({
     queryKey: PRODUCT_DETAIL_QUERY_KEYS.REVIEW_LIST(Number(productId)),
@@ -27,7 +32,7 @@ export default function ReviewList() {
   const reviewListData = reviewList?.imageReviews;
   return (
     <div className="flex flex-col gap-[3.2rem]">
-      <h2 className="head3 font-bold">写真付きレビュー</h2>
+      <h2 className="head3 font-bold">{t('search.photoReviews')}</h2>
       {reviewListData && reviewListData.length > 0 ? (
         reviewListData.map((review) => (
           <Review
@@ -56,7 +61,7 @@ export default function ReviewList() {
           <div className="flex h-[31.1rem] flex-col items-center justify-center gap-[2.4rem]">
             <SvgImgPhoto size={100} className="fill-pink-300" />
             <p className="body1 font-[700]">
-              登録された動画レビューはありません。
+              {t('productDetail.noVideoReviews')}
             </p>
           </div>
         </>
