@@ -6,44 +6,79 @@
  * - 아이: 아이브로우, 아이섀도우, 아이라이너 등 아이 메이크업 제품
  * - 립: 립스틱, 립 틴트 등 립 메이크업 제품
  */
+
+// Translation key mappings for categories
+export const CATEGORY_TRANSLATION_KEYS = {
+  FACIAL_CARE: {
+    name: 'skincare.name',
+    ALL: 'skincare.all',
+    TONER: 'skincare.toner',
+    MOISTURIZER: 'skincare.moisturizer',
+    ESSENCE_SERUM: 'skincare.essenceSerum',
+    CREAM: 'skincare.cream',
+  },
+  FACE_MAKEUP: {
+    name: 'face.name',
+    ALL: 'face.all',
+    FOUNDATION: 'face.foundation',
+    POWDER_COMPACT: 'face.powderCompact',
+    CONCEALER: 'face.concealer',
+    BLUSHER: 'face.blusher',
+  },
+  EYE_MAKEUP: {
+    name: 'eye.name',
+    ALL: 'eye.all',
+    EYEBROW: 'eye.eyebrow',
+    EYESHADOW: 'eye.eyeshadow',
+    EYELINER: 'eye.eyeliner',
+  },
+  LIP_MAKEUP: {
+    name: 'lip.name',
+    ALL: 'lip.all',
+    LIPSTICK: 'lip.lipstick',
+    LIP_TINT: 'lip.lipTint',
+  },
+} as const;
+
+// Legacy exports for backward compatibility (these will use translation keys in components)
 export const FACIAL_CARE = {
-  name: 'スキンケア',
+  name: 'FACIAL_CARE',
   options: {
-    ALL: 'すべて',
-    TONER: 'トナー',
-    MOISTURIZER: 'モイスチャライザー',
-    ESSENCE_SERUM: 'エッセンス / セラム',
-    CREAM: 'クリーム',
+    ALL: 'ALL',
+    TONER: 'TONER',
+    MOISTURIZER: 'MOISTURIZER',
+    ESSENCE_SERUM: 'ESSENCE_SERUM',
+    CREAM: 'CREAM',
   },
 } as const;
 
 export const FACE_MAKEUP = {
-  name: 'フェイス',
+  name: 'FACE_MAKEUP',
   options: {
-    ALL: 'すべて',
-    FOUNDATION: 'ファンデーション',
-    POWDER_COMPACT: 'パウダー / プレストパウダー',
-    CONCEALER: 'コンシーラー',
-    BLUSHER: 'チーク',
+    ALL: 'ALL',
+    FOUNDATION: 'FOUNDATION',
+    POWDER_COMPACT: 'POWDER_COMPACT',
+    CONCEALER: 'CONCEALER',
+    BLUSHER: 'BLUSHER',
   },
 } as const;
 
 export const EYE_MAKEUP = {
-  name: 'アイ',
+  name: 'EYE_MAKEUP',
   options: {
-    ALL: 'すべて',
-    EYEBROW: 'アイブロウ',
-    EYESHADOW: 'アイシャドウ',
-    EYELINER: 'アイライナー',
+    ALL: 'ALL',
+    EYEBROW: 'EYEBROW',
+    EYESHADOW: 'EYESHADOW',
+    EYELINER: 'EYELINER',
   },
 } as const;
 
 export const LIP_MAKEUP = {
-  name: 'リップ',
+  name: 'LIP_MAKEUP',
   options: {
-    ALL: 'すべて',
-    LIPSTICK: 'リップスティック',
-    LIP_TINT: 'リップティント',
+    ALL: 'ALL',
+    LIPSTICK: 'LIPSTICK',
+    LIP_TINT: 'LIP_TINT',
   },
 } as const;
 

@@ -11,7 +11,7 @@ export default function middleware(req: NextRequest) {
   const { origin, pathname } = nextUrl;
 
   // 지원하지 않는 locale 접근시 default locale로 리다이렉트
-  const unsupportedLocale = ['fr', 'ru', 'ja', 'zh'];
+  const unsupportedLocale = ['fr', 'ru', 'zh'];
   const firstSegment = pathname.split('/')[1]; // 현재 locale
   const pathWithoutLocale = pathname.replace(`/${firstSegment}`, '') || '/';
 

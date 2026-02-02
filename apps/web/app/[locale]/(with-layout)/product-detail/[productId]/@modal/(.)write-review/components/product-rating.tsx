@@ -1,5 +1,7 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
+
 import ContentWithLabel from 'components/input/content-with-label';
 import type { ReviewFormData } from 'types/review';
 
@@ -14,9 +16,11 @@ interface Props {
 }
 
 export default function ProductRating({ value, onChange, error }: Props) {
+  const t = useTranslations('legacy.writeReviewModal');
+
   return (
     <ContentWithLabel
-      label="商品はいかがでしたか？"
+      label={t('ratingQuestion')}
       className="justify-between border-b border-gray-400 pb-[2.8rem]"
       required
     >

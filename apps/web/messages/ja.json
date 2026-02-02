@@ -1,0 +1,1312 @@
+{
+  "brandApplicants": {
+    "AddTest": "キャプションとハッシュタグは必須です",
+    "allSelect": "投稿URLは必須です",
+    "allSelectApplicants": "すべて選択",
+    "applicantsTable": {
+      "headers": {
+        "appliedDate": "応募日（韓国時間）",
+        "approveStatus": "承認状況",
+        "creator": "クリエイター",
+        "followerCount": "フォロワー数",
+        "participationCount": "参加回数"
+      },
+      "noApplicants": "応募者がいません。",
+      "SNS": {
+        "noInstagramLink": "接続されたInstagramリンクがありません。",
+        "noTiktokLink": "接続されたTikTokリンクがありません。"
+      }
+    },
+    "approve": "承認する",
+    "approveStatus": "承認状況",
+    "approveStatusSelect": {
+      "all": "すべて",
+      "approved": "承認済み",
+      "approveStatus": "承認状況",
+      "pending": "保留中",
+      "rejected": "却下"
+    },
+    "campaignSelect": {
+      "noCampaign": "作成されたキャンペーンがありません。",
+      "selectCampaign": "キャンペーンを選択してください。"
+    },
+    "comingSoon": "近日公開",
+    "excelExport": "エクスポート",
+    "noApplicants": "応募者がいません。",
+    "noCampaign": "まだキャンペーンがありません。"
+  },
+  "brandContentsPerformance": {
+    "comingSoon": "機能準備中",
+    "contentType": {
+      "post": "投稿",
+      "reels": "リール",
+      "video": "動画"
+    },
+    "export": "エクスポート",
+    "headers": {
+      "commentCount": "コメント数",
+      "contentType": "コンテンツ種類",
+      "likeCount": "いいね数",
+      "reviewStatus": "ステータス",
+      "shareCount": "シェア数",
+      "uploadedDate": "アップロード日",
+      "viewCount": "再生回数"
+    },
+    "noApplicants": "応募者なし",
+    "noReviews": "レビューなし",
+    "reviewStatus": {
+      "finalUploaded": "最終アップロード",
+      "inProgress": "進行中",
+      "notSubmitted": "未提出",
+      "pendingRevision": "レビュー依頼中",
+      "revising": "修正中"
+    }
+  },
+  "brandFeedback": {
+    "brandNote": {
+      "description": "変更やリクエストがある場合は、こちらにご記入ください。",
+      "error": "ブランドノートを入力してください。",
+      "notice": "レビュー締め切り",
+      "title": "ブランドノート"
+    },
+    "campaignName": "キャンペーン種類",
+    "captionAndHashtags": "キャンペーンキャプション＆ハッシュタグ",
+    "contentType": "コンテンツプラットフォーム",
+    "contentUrl": "キャンペーンコンテンツURL",
+    "deliveryFormModal": {
+      "description": "ブランドノートが正常に送信されました。",
+      "save": "確認",
+      "title": "送信完了"
+    },
+    "formButton": {
+      "deliver": "送信",
+      "save": "保存"
+    },
+    "mediaUrls": "キャンペーン画像",
+    "reviewRequest": "レビュー依頼",
+    "saveFormModal": {
+      "description": "変更が保存されました。",
+      "save": "確認",
+      "title": "保存完了"
+    }
+  },
+  "brandMyPage": {
+    "myCampaign": "マイキャンペーン"
+  },
+  "brandMyPageCreateCampaign": {
+    "basicInfo": {
+      "brandName": "ブランド名",
+      "brandNamePlaceholder": "ブランド名を入力してください",
+      "category": "カテゴリー",
+      "creatorCount": "募集クリエイター数",
+      "creatorCountPlaceholder": "数字を入力",
+      "language": "キャンペーン言語",
+      "title": "キャンペーンタイトル",
+      "titlePlaceholder": "キャンペーンタイトルを入力",
+      "type": "キャンペーンタイプ"
+    },
+    "buttons": {
+      "publish": "キャンペーンを公開",
+      "save": "保存"
+    },
+    "conditions": {
+      "inputPlaceholder": "テキスト",
+      "joinConditionDescription": "このキャンペーンに参加可能なクリエイターの条件を記述してください",
+      "joinConditionTitle": "クリエイター参加条件",
+      "rewardDescription": "このキャンペーンに参加可能なクリエイターの条件を記述してください",
+      "rewardTitle": "クリエイター報酬",
+      "submitConditionDescription": "このキャンペーンに参加可能なクリエイターの条件を記述してください",
+      "submitConditionTitle": "クリエイターコンテンツ提出要件"
+    },
+    "errorMessage": {
+      "brandNameMinLength": "ブランド名は1文字以上で入力してください。",
+      "brandNameRequired": "ブランド名を入力してください。",
+      "campaignAnnounceDay": "キャンペーン当選者発表日を入力してください。",
+      "campaignAnnounceTime": "キャンペーン当選者発表時刻を入力してください。",
+      "campaignCategory": "キャンペーンカテゴリーを入力してください。",
+      "campaignCreatorCount": "募集クリエイター数を入力してください。",
+      "campaignDueDay": "キャンペーンタイトルを入力してください。",
+      "campaignDueTime": "キャンペーンタイトルを入力してください。",
+      "campaignEndDay": "キャンペーン応募締切日を入力してください。",
+      "campaignEndTime": "キャンペーン応募締切時刻を入力してください。",
+      "campaignLanguage": "キャンペーン言語を入力してください。",
+      "campaignMediaDetail": "コンテンツ詳細ページの画像をアップロードしてください。",
+      "campaignMediaThumbnail": "コンテンツサムネイル画像をアップロードしてください。",
+      "campaignPlatformSelect": "コンテンツプラットフォームを選択してください。",
+      "campaignStartDay": "キャンペーン応募開始日を入力してください。",
+      "campaignStartTime": "キャンペーン応募開始時刻を入力してください。",
+      "campaignTitle": "キャンペーンタイトルを入力してください。",
+      "campaignType": "キャンペーンタイプを入力してください。",
+      "detailMaxFiles": "詳細画像は最大15枚までアップロードできます。",
+      "firstContentMaxExceeded": "コンテンツは最大2つまで選択できます。",
+      "secondContentMaxExceeded": "コンテンツは最大2つまで選択できます。",
+      "thumbnailMaxFiles": "サムネイルは最大5枚までアップロードできます。"
+    },
+    "media": {
+      "detailDescription": "キャンペーン詳細ページに表示される画像です。高解像度の画像をアップロードしてください。最大15枚までアップロード可能です。",
+      "detailTitle": "コンテンツ詳細ページ画像",
+      "thumbnailDescription": "キャンペーンサムネイルとして表示される画像です。高解像度の画像をアップロードしてください。最大5枚までアップロード可能です。",
+      "thumbnailTitle": "コンテンツサムネイル画像"
+    },
+    "options": {
+      "category": {
+        "MAKEUP": "メイクアップ",
+        "SKINCARE": "スキンケア",
+        "SUNCARE": "サンケア"
+      },
+      "language": {
+        "EN": "英語",
+        "ES": "スペイン語"
+      },
+      "type": {
+        "CONTENTS": "コンテンツ",
+        "EXCLUSIVE": "限定",
+        "GIVEAWAY": "プレゼント"
+      }
+    },
+    "pageTitle": "キャンペーン情報",
+    "platform": {
+      "description": "（最大2つまで選択可能）",
+      "firstContent": "1つ目のコンテンツ",
+      "secondContent": "2つ目のコンテンツ",
+      "title": "コンテンツプラットフォームを選択"
+    },
+    "schedule": {
+      "announceDate": "キャンペーン当選者発表日",
+      "announceTime": "キャンペーン当選者発表時刻",
+      "dueDate": "2つ目のコンテンツ最終提出日",
+      "dueTime": "2つ目のコンテンツ最終提出時刻",
+      "endDate": "キャンペーン応募締切日",
+      "endTime": "キャンペーン応募締切時刻",
+      "placeholders": {
+        "amPm": "午前/午後",
+        "day": "日",
+        "hour": "時",
+        "minute": "分",
+        "month": "月",
+        "year": "年"
+      },
+      "startDate": "キャンペーン応募開始日",
+      "startTime": "キャンペーン応募開始時刻"
+    },
+    "validation": {
+      "conditionRequired": "条件を入力してください",
+      "creatorCountRequired": "募集クリエイター数は必須です",
+      "detailMaxFiles": "詳細画像は最大15枚までアップロードできます",
+      "firstContentMaxExceeded": "1つ目のコンテンツは最大2つまで選択できます",
+      "firstContentMinRequired": "1つ目のコンテンツを少なくとも1つ選択してください",
+      "rewardRequired": "報酬を入力してください",
+      "secondContentMaxExceeded": "2つ目のコンテンツは最大2つまで選択できます",
+      "secondContentRequiresFirst": "2つ目のコンテンツを選択する前に1つ目のコンテンツを選択してください",
+      "thumbnailMaxFiles": "サムネイルは最大5枚までアップロードできます",
+      "titleRequired": "キャンペーンタイトルは必須です"
+    }
+  },
+  "brandMyPageEditProfile": {
+    "addressInfo": {
+      "addressInfoDescription": "商品の誤配送時の返品に使用されます。",
+      "addressInfoTitle": "会社住所情報",
+      "companyAddressLabel": "住所",
+      "companyAddressPlaceholder": "郵便番号検索",
+      "detailAddressLabel": "詳細住所",
+      "detailAddressPlaceholder": "例：201号室"
+    },
+    "basicInfo": {
+      "basicInfoTitle": "基本情報",
+      "brandNameFieldLabel": "ブランド名",
+      "emailNotice": "メールアドレスを変更するには、Lococoにお問い合わせください",
+      "managerNameFieldLabel": "担当者名",
+      "phoneNumberFieldLabel": "担当者電話番号"
+    },
+    "formButton": {
+      "cancel": "キャンセル",
+      "save": "保存"
+    },
+    "profileImage": {
+      "profileImage": "プロフィール画像",
+      "profileImageEditBtn": "写真を変更",
+      "profileImageFormTitle": "プロフィール写真"
+    }
+  },
+  "brandMyPageSideBar": {
+    "brand": "ブランド",
+    "checkApplicants": "応募者確認",
+    "checkContents": "コンテンツを見る",
+    "dashboard": "ダッシュボード",
+    "editProfile": "プロフィール編集",
+    "makeNewCampaign": "新規キャンペーン作成",
+    "myCampaign": "マイキャンペーン"
+  },
+  "brandSignup": {
+    "brandInfo": {
+      "brandName": "ブランド名",
+      "brandNamePlaceholder": "例：Lococo",
+      "contactName": "担当者名",
+      "contactNamePlaceholder": "例：山田太郎",
+      "contactPhone": "担当者電話番号",
+      "contactPhonePlaceholder": "例：XXXXXXXXXXX",
+      "contactPosition": "担当者役職",
+      "contactPositionPlaceholder": "例：マネージャー",
+      "description": "ようこそ！ブランド認証のため、以下の情報を入力してください。",
+      "title": "ブランド情報"
+    },
+    "companyAddress": {
+      "description": "商品の誤配送時の返品に使用されます。",
+      "detailAddress": "詳細住所",
+      "detailAddressPlaceholder": "例：201号室",
+      "streetAddress": "住所",
+      "streetAddressPlaceholder": "郵便番号検索",
+      "title": "会社住所情報"
+    },
+    "layout": {
+      "back": "戻る",
+      "submit": "参加",
+      "title": "Lococoクリエイターコミュニティに参加しよう！"
+    },
+    "validation": {
+      "brandNameInvalidFormat": "ひらがな、カタカナ、漢字、英語、数字のみ入力してください。",
+      "brandNameMaxLength": "ブランド名は最大30文字です。",
+      "brandNameRequired": "ブランド名を入力してください。",
+      "contactNameInvalidFormat": "ひらがな、カタカナ、漢字のみ入力してください。",
+      "contactNameMaxLength": "担当者名は最大10文字です。",
+      "contactNameRequired": "担当者名を入力してください。",
+      "contactPhoneInvalid": "有効な電話番号を入力してください。",
+      "contactPhoneRequired": "担当者電話番号を入力してください。",
+      "contactPositionInvalidFormat": "ひらがな、カタカナ、漢字のみ入力してください。",
+      "contactPositionMaxLength": "担当者役職は最大10文字です。",
+      "contactPositionRequired": "担当者役職を入力してください。",
+      "detailAddressMaxLength": "詳細住所は最大30文字です。",
+      "detailAddressRequired": "詳細住所を入力してください。",
+      "streetAddressRequired": "住所を入力してください。"
+    }
+  },
+  "campaignDetail": {
+    "applicationPeriod": "応募期間",
+    "applyButtonText": {
+      "active": {
+        "brand": "応募者を見る",
+        "user": "キャンペーン進行中"
+      },
+      "applied": "応募完了",
+      "approved_review_not_confirmed": "期限切れ",
+      "approved_second_review_done": "キャンペーン完了",
+      "closed": "キャンペーン終了",
+      "not_applied_ended": "キャンペーン終了",
+      "open_reserved": "近日公開",
+      "recruiting": {
+        "brand": "応募者を見る",
+        "creator": "今すぐ応募！"
+      },
+      "rejected": "キャンペーン未選出",
+      "unknown": "不明なステータス",
+      "userRoleBrand": "クリエイター専用"
+    },
+    "campaignSchedule": "キャンペーンスケジュール",
+    "confirmCampaignSignUpModal": {
+      "cancelButton": "キャンセル",
+      "confirmButton": "確認",
+      "description": "キャンペーン結果は<bold>{announcementDate}</bold>に発表されます\n配送先住所は24時間以内に確認する必要があります。\n応募前に<link>キャンペーンガイドライン</link>をご確認ください。",
+      "finalDescription": "続行しますか？",
+      "title": "キャンペーン応募確認"
+    },
+    "contentSubmissionPeriod": "コンテンツ提出締切",
+    "deliverableRequirements": "成果物要件",
+    "eligibilityRequirements": "参加条件",
+    "localTimeNotice": "すべての時間はお住まいの地域の時間で表示されています。",
+    "rejectModal": {
+      "alreadyAppliedDescription": "すでにこのキャンペーンに応募済みです。マイページでキャンペーンステータスをご確認ください。",
+      "confirmButton": "確認",
+      "notCreatorDescription": "キャンペーンはLococoクリエイター専用です。\nLococoパートナーへのアップグレードをご希望の場合は、lococo.official@gmail.comまでメールでお問い合わせください。",
+      "notProCreatorDescription": "このキャンペーンはProクリエイター専用です。\nProクリエイターステータスへのアップグレードをご希望の場合は、lococo.official@gmail.comまでメールでお問い合わせください。",
+      "title": "応募却下",
+      "unExpectedErrorDescription": "予期しないエラーが発生しました。後でもう一度お試しください。"
+    },
+    "resultAnnouncement": "結果発表",
+    "rewardsAndCompensation": "報酬＆特典"
+  },
+  "campaignFilter": {
+    "seeMore": "もっと見る"
+  },
+  "card": {
+    "campaignThumbnailImage": "キャンペーンサムネイル画像",
+    "card": "カード",
+    "editDraft": "下書きを編集",
+    "goToApply": "今すぐ応募",
+    "goToCampaign": "キャンペーンを見る",
+    "viewApplicants": "応募者を見る",
+    "viewContent": "コンテンツを見る",
+    "waitingApproval": "承認待ち"
+  },
+  "confirmSignupModal": {
+    "confirmButton": "確認",
+    "message": "アカウントが正常に作成されました！",
+    "title": "送信完了！"
+  },
+  "creatorOptions": {
+    "contentLanguage": {
+      "ENGLISH": "英語",
+      "ENGLISH_AND_SPANISH": "英語＆スペイン語",
+      "SPANISH": "スペイン語"
+    },
+    "gender": {
+      "FEMALE": "女性",
+      "MALE": "男性",
+      "NON_BINARY": "ノンバイナリー",
+      "PREFER_NOT_TO_SAY": "回答しない"
+    },
+    "skinTone": {
+      "SHADE_1": "シェード1",
+      "SHADE_10": "シェード10",
+      "SHADE_11": "シェード11",
+      "SHADE_12": "シェード12",
+      "SHADE_13": "シェード13",
+      "SHADE_14": "シェード14",
+      "SHADE_15": "シェード15",
+      "SHADE_16": "シェード16",
+      "SHADE_17": "シェード17",
+      "SHADE_18": "シェード18",
+      "SHADE_19": "シェード19",
+      "SHADE_2": "シェード2",
+      "SHADE_20": "シェード20",
+      "SHADE_3": "シェード3",
+      "SHADE_4": "シェード4",
+      "SHADE_5": "シェード5",
+      "SHADE_6": "シェード6",
+      "SHADE_7": "シェード7",
+      "SHADE_8": "シェード8",
+      "SHADE_9": "シェード9"
+    },
+    "skinType": {
+      "COMBINATION": "混合肌",
+      "DRY": "乾燥肌",
+      "NORMAL": "普通肌",
+      "OILY": "脂性肌",
+      "OTHERS": "その他",
+      "SENSITIVE": "敏感肌"
+    }
+  },
+  "creatorSignup": {
+    "button": {
+      "back": "戻る",
+      "next": "次へ",
+      "save": "保存"
+    },
+    "communityName": {
+      "checkAvailabilityButton": "利用可能か確認",
+      "description": "（IDは1〜15文字で、英字、数字、ピリオド（.）、アンダースコア（_）のみ使用可能です）。",
+      "idAvailable": "このIDは使用可能です。",
+      "idLabel": "ID",
+      "idPlaceholder": "例：ilovelococo",
+      "idRequired": "IDの利用可能性を確認してください。",
+      "idTaken": "このIDはすでに使用されています。",
+      "title": "コミュニティ名"
+    },
+    "homeAddress": {
+      "addressLine1Label": "住所1",
+      "addressLine1Placeholder": "例：東京都渋谷区1-2-3",
+      "addressLine2Label": "住所2",
+      "addressLine2Placeholder": "例：マンション名 201号室",
+      "cityLabel": "市区町村",
+      "cityPlaceholder": "例：渋谷区",
+      "countryLabel": "国",
+      "countryPlaceholder": "国",
+      "description": "商品配送のため、ご自宅の住所を入力してください。",
+      "stateLabel": "都道府県",
+      "statePlaceholder": "例：東京都",
+      "title": "自宅住所",
+      "zipCodeLabel": "郵便番号",
+      "zipCodePlaceholder": "例：150-0001"
+    },
+    "layout": {
+      "back": "戻る",
+      "next": "次へ",
+      "title": "Lococoクリエイターコミュニティに参加しよう！"
+    },
+    "personalDetails": {
+      "birthLabel": "生年月日",
+      "contentLanguageLabel": "コンテンツ言語",
+      "contentLanguagePlaceholder": "コンテンツ言語",
+      "dayPlaceholder": "日",
+      "description": "追加情報なしで生年月日を入力してください。",
+      "firstNameLabel": "名",
+      "firstNamePlaceholder": "例：太郎",
+      "genderLabel": "性別",
+      "genderPlaceholder": "性別",
+      "lastNameLabel": "姓",
+      "lastNamePlaceholder": "例：山田",
+      "monthPlaceholder": "月",
+      "phoneCountryPlaceholder": "+XX",
+      "phoneNumberLabel": "電話番号",
+      "phoneNumberPlaceholder": "例：XXXXXXXXXX",
+      "title": "個人情報",
+      "yearPlaceholder": "年"
+    },
+    "skinInfo": {
+      "description": "もっと教えてください！",
+      "skinToneLabel": "肌色",
+      "skinTonePlaceholder": "肌色",
+      "skinTypeLabel": "肌タイプ",
+      "skinTypePlaceholder": "肌タイプ",
+      "title": "追加情報"
+    },
+    "title": "Lococoクリエイターコミュニティに参加しよう！",
+    "validation": {
+      "addressLine1MaxLength": "100文字以内で入力してください。",
+      "addressLine1Required": "住所1は必須です。",
+      "addressLine2MaxLength": "100文字以内で入力してください。",
+      "birthRequired": "生年月日は必須です。",
+      "cityMaxLength": "20文字以内で入力してください。",
+      "cityRequired": "市区町村は必須です。",
+      "contentLanguageRequired": "コンテンツ言語は必須です。",
+      "countryRequired": "国は必須です。",
+      "error": "プロフィールデータの読み込みに失敗しました",
+      "firstNameMaxLength": "20文字以内で入力してください。",
+      "firstNameRequired": "名は必須です。",
+      "genderRequired": "性別は必須です。",
+      "idAvailabilityCheck": "IDの利用可能性を確認してください。",
+      "idInvalidFormat": "ユーザー名は15文字以内で、小文字の英字、数字、ピリオド（.）、アンダースコア（_）のみ使用可能です。",
+      "idMaxLength": "15文字以内で入力してください。",
+      "idRequired": "IDは必須です。",
+      "lastNameMaxLength": "20文字以内で入力してください。",
+      "lastNameRequired": "姓は必須です。",
+      "phoneNumberInvalid": "有効な電話番号を入力してください。",
+      "phoneNumberRequired": "電話番号は必須です。",
+      "skinToneRequired": "肌色は必須です。",
+      "skinTypeRequired": "肌タイプは必須です。",
+      "stateMaxLength": "100文字以内で入力してください。",
+      "stateRequired": "都道府県は必須です。",
+      "zipCodeMaxLength": "100文字以内で入力してください。"
+    }
+  },
+  "creatorSnsLinksPage": {
+    "error": "SNS接続の読み込みに失敗しました",
+    "snsDescription": "お客様のSNSアカウントを確認し、認証結果をお知らせします。",
+    "submitLabel": "参加",
+    "title": "Lococoクリエイターコミュニティに参加しよう！"
+  },
+  "errorPage": {
+    "backToHome": "ホームに戻る",
+    "errorPageMessage": "エラーが発生しました。後でもう一度お試しください。"
+  },
+  "fileUploader": {
+    "cannotUploadFile": "ファイルをアップロードできません",
+    "dragDropDescription": "ドラッグ＆ドロップまたはクリックしてファイルをアップロード",
+    "emptyFile": "空のファイル",
+    "fileTooLarge": "ファイルサイズが大きすぎます",
+    "notAllowedFileType": "許可されていないファイル形式です",
+    "selectFile": "ファイルを選択"
+  },
+  "footer": {
+    "copyright": "Lococo. All rights reserved.",
+    "links": {
+      "campaignGuideline": "キャンペーンガイドライン",
+      "campaigns": "キャンペーン",
+      "FAQ": "よくある質問",
+      "howItWorks": "使い方",
+      "privacyPolicy": "プライバシーポリシー",
+      "termsOfService": "利用規約"
+    },
+    "slogan": "クリエイターと本物のK-Beautyが出会う場所"
+  },
+  "gnb": {
+    "campaigns": "キャンペーン",
+    "howItWorks": "使い方",
+    "login": "ログイン",
+    "logIn": "ログイン",
+    "logOut": "ログアウト",
+    "myPage": "マイページ",
+    "signUp": "新規登録"
+  },
+  "home": {
+    "description": "商品説明",
+    "homeSection": {
+      "title": "タイトル"
+    },
+    "ingredients": "成分",
+    "productDetail22": "商品詳細22"
+  },
+  "howItWork": {
+    "brands": {
+      "campaignApproval": {
+        "description": "キャンペーン承認結果はアップロード後48時間以内に提供されます。ブランドダッシュボードからキャンペーンの応募者を選択してください。応募締切後、24時間以内に選出されたクリエイターを発表してください。",
+        "title": "キャンペーン承認"
+      },
+      "checkPerformance": {
+        "description": "ブランドページでコンテンツとキャンペーンのパフォーマンスを確認できます。",
+        "title": "パフォーマンス確認"
+      },
+      "provideFeedback": {
+        "description": "クリエイターが最初のレビューをアップロードしてから48時間以内に修正リクエストを送信してください。（この期間を過ぎるとリクエストできません。）",
+        "title": "フィードバック提供"
+      },
+      "shipProduct": {
+        "description": "クリエイターが配送先住所を確認したら、2日以内に商品を発送してください。",
+        "title": "商品発送"
+      },
+      "title": "ブランド"
+    },
+    "creators": {
+      "applyForCampaign": {
+        "description": "気に入ったキャンペーンを見つけて応募しよう！",
+        "title": "キャンペーンに応募"
+      },
+      "confimAddress": {
+        "description": "選出された場合、24時間以内にマイページで配送先住所を確認してください。",
+        "title": "結果発表を待つ"
+      },
+      "confirmAddress": {
+        "description": "配送には約7日かかります。届いたら商品を試してみてください！",
+        "title": "商品を受け取って試す"
+      },
+      "keepYourReviewLive": {
+        "description": "コンテンツはSNSに少なくとも6ヶ月間掲載し続けてください。",
+        "title": "レビューを公開し続ける"
+      },
+      "maintenanceGuidelines": {
+        "description": "レビューは少なくとも6ヶ月間公開し続けてください。",
+        "title": "維持ガイドライン"
+      },
+      "receiveAndTryTheProducts": {
+        "description": "商品を受け取って試してみてください！",
+        "title": "商品を受け取って試す"
+      },
+      "reviewBrand'sFeedbackAndUpload2ndReview": {
+        "description": "ブランドのノートを確認し、2回目のレビューを提出してください。最終的なInstagram/TikTokのURLを忘れずに添付してください！",
+        "title": "ブランドのフィードバックを確認＆2回目のレビューをアップロード"
+      },
+      "reviewUploadSchedule": {
+        "description": "商品受け取り後7日以内に最初のレビューをアップロードしてください。ブランドのフィードバックを確認後、7日以内に2回目のレビューをアップロードしてください。2回目のレビュー投稿時に最終SNS URLを添付してください。",
+        "title": "レビューアップロードスケジュール"
+      },
+      "title": "クリエイター",
+      "upload1stReview": {
+        "description": "商品受け取り後7日以内に最初のレビューを投稿してください。ブランドが確認してフィードバックを送ります。",
+        "title": "1回目のレビューをアップロード"
+      },
+      "uploadReview": {
+        "description": "商品受け取り後7日以内に最初のレビューをアップロードしてください。",
+        "title": "レビューをアップロード"
+      },
+      "waitForResultAnnouncement": {
+        "description": "選出された場合、24時間以内にマイページで配送先住所を確認してください。",
+        "title": "結果発表を待つ"
+      }
+    },
+    "FAQs": {
+      "creatorLevels": {
+        "firstA": "申請が却下された場合は、参加条件を確認し、改善点を対処してから再申請をご検討ください。",
+        "firstQ": "クリエイター申請が却下されました。",
+        "fistA": "申請が却下された場合は、参加条件を確認し、改善点を対処してから再申請をご検討ください。",
+        "fistQ": "クリエイター申請が却下されました。",
+        "secondA": "プロフィール設定から申請を送信することで、アカウントをクリエイターにアップグレードできます。",
+        "secondQ": "ユーザーとして参加しましたが、クリエイターとして参加したいです。",
+        "thirdA": "アカウントの「配送情報」セクションで配送先の詳細を確認・更新できます。",
+        "thirdQ": "Lococo Proクリエイターになるには？",
+        "title": "クリエイターレベル"
+      },
+      "penaltyPolicy": {
+        "firstA": "レビュアーに選出された後、必要な配送情報を提供しないクリエイターは、3回発生後、すべてのLococo活動から6ヶ月間停止されます。",
+        "firstQ": "レビュアーに選出された際の配送情報未提供。",
+        "fistA": "レビュアーに選出された後、必要な配送情報を提供しないクリエイターは、3回発生後、すべてのLococo活動から6ヶ月間停止されます。",
+        "fistQ": "レビュアーに選出された際の配送情報未提供。",
+        "secondA": "指定された締め切りを過ぎてコンテンツを提出したクリエイターは、3回発生後、すべてのLococo活動から6ヶ月間停止されます。",
+        "secondQ": "コンテンツの遅延提出。",
+        "thirdA": "コンテンツを提出しない、または指定された品質基準を満たさないコンテンツを提出したクリエイターは、すべてのLococo活動から永久にバンされます。",
+        "thirdQ": "コンテンツ未提出または低品質コンテンツの提出。",
+        "title": "ペナルティポリシー"
+      },
+      "shipping": {
+        "firstA": "登録されたメールアドレスで配送先の詳細を確認できます。",
+        "firstQ": "提供した配送情報を確認するには？",
+        "fistA": "登録されたメールアドレスで配送先の詳細を確認できます。",
+        "fistQ": "提供した配送情報を確認するには？",
+        "secondA": "配送先住所が送信された後は変更できません。Lococoにお問い合わせください。",
+        "secondQ": "間違った配送先住所を入力しました。どうすればいいですか？",
+        "title": "配送"
+      },
+      "title": "よくある質問"
+    },
+    "title": "使い方"
+  },
+  "languageSelectTrigger": {
+    "language": "言語"
+  },
+  "loginGoogle": {
+    "continueWithGoogle": "Googleで続ける",
+    "loginMessage": "今すぐGoogleアカウントでログイン",
+    "signupMessage": "Googleで登録後、クリエイター、ユーザー、またはブランドとして参加できます。",
+    "signupNote": "キャンペーンに応募できるのはクリエイターのみです。",
+    "title": "Lococoへようこそ！"
+  },
+  "main": {
+    "kBeautyCampaigns": "K-Beautyキャンペーン",
+    "openingSoon": "近日オープン"
+  },
+  "metadata": {
+    "description": "トップK-Beautyブランドとマッチング。Lococoクリエイターコミュニティに参加して、トップK-beautyブランドとのコラボレーションの限定機会を発見しよう。",
+    "keywords": {
+      "anua": "anua",
+      "beautyCreator": "ビューティークリエイター",
+      "beautyOfJoseon": "beauty of joseon",
+      "biodance": "biodance",
+      "centella": "centella",
+      "giveaway": "プレゼント",
+      "glassskin": "ガラス肌",
+      "Kbeauty": "K-beauty",
+      "koreanSkincare": "韓国スキンケア",
+      "laneige": "Laneige",
+      "medicube": "medicube",
+      "skin1004": "skin1004",
+      "stylekorean": "stylekorean",
+      "yesstyle": "yesstyle"
+    },
+    "title": "Lococo | K-Beautyキャンペーン＆K-Beautyストア"
+  },
+  "myPage": {
+    "addressModal": {
+      "addressLine1": "住所1",
+      "addressLine1Required": "住所1は必須です",
+      "addressLine2": "住所2",
+      "city": "市区町村",
+      "cityRequired": "市区町村は必須です",
+      "country": "国",
+      "countryRequired": "国は必須です",
+      "description": "商品配送のため、ご自宅の住所を確認してください。",
+      "edit": "編集",
+      "getDelivery": "配送を受け取る",
+      "state": "都道府県",
+      "stateRequired": "都道府県は必須です",
+      "title": "住所",
+      "zip": "郵便番号"
+    },
+    "contentSubmissions": {
+      "brandNote": {
+        "description": "これはブランドからのリクエストされた修正です。内容を更新し、変更後に再アップロードしてください。",
+        "firstReview": "1回目レビューへのブランドノート",
+        "secondReview": "2回目レビューへのブランドノート"
+      },
+      "campaignProductMediaInput": {
+        "description": "ドラッグ＆ドロップまたはクリックしてファイルをアップロード",
+        "selectFile": "ファイルを選択",
+        "title": "キャンペーン商品メディア"
+      },
+      "campaignSelect": {
+        "description": "キャンペーンを選択してください",
+        "selectCampaign": "キャンペーンを選択",
+        "title": "キャンペーンを選択"
+      },
+      "content": {
+        "1stContent": "1つ目のコンテンツ",
+        "2ndContent": "2つ目のコンテンツ"
+      },
+      "contentTypeSelect": {
+        "instagramPost": "Instagram投稿",
+        "instagramReels": "Instagramリール",
+        "selectContentType": "コンテンツタイプを選択",
+        "tiktokVideo": "TikTok動画",
+        "title": "コンテンツタイプ"
+      },
+      "empty": {
+        "title": "レビューするコンテンツがありません。"
+      },
+      "error": "コンテンツ提出の読み込みに失敗しました",
+      "hashtagsInput": {
+        "description": "使用したキャプションとハッシュタグをそのまま貼り付けてください",
+        "title": "キャプション＆ハッシュタグを送信"
+      },
+      "saveSubmitModal": {
+        "firstDescription": "1回目の提出が受理されました。ブランドがレビューしてブランドノートを送信します。",
+        "save": "確認",
+        "secondDescription": "最終提出が受理されました。ご提出ありがとうございました。",
+        "title": "提出完了"
+      },
+      "submitContentUrl": {
+        "description": "確認とトラッキングのため、アップロードしたレビューコンテンツのURLを送信してください。",
+        "title": "コンテンツURLを送信"
+      }
+    },
+    "editProfile": {
+      "addressLine1Required": "住所1は必須です",
+      "basicInformation": {
+        "id": "ID",
+        "idCheck": "利用可能か確認",
+        "idCheckSuccess": "ID確認成功",
+        "title": "基本情報"
+      },
+      "cityRequired": "市区町村は必須です",
+      "contentLanguageRequired": "コンテンツ言語は必須です",
+      "countryCodeRequired": "国コードは必須です",
+      "countryRequired": "国は必須です",
+      "dateRequired": "日付は必須です",
+      "emailRequired": "メールアドレスは必須です",
+      "firstNameRequired": "名は必須です",
+      "formButton": {
+        "cancel": "キャンセル",
+        "save": "保存"
+      },
+      "genderRequired": "性別は必須です",
+      "homeAddress": {
+        "addressLine1": "住所1",
+        "addressLine2": "住所2",
+        "city": "市区町村",
+        "country": "国",
+        "description": "商品配送のため、ご自宅の住所を入力してください。",
+        "state": "都道府県",
+        "title": "自宅住所",
+        "zip": "郵便番号"
+      },
+      "idRequired": "IDは必須です",
+      "lastNameRequired": "姓は必須です",
+      "monthRequired": "月は必須です",
+      "personalInformation": {
+        "birth": "生年月日",
+        "contentLanguage": "コンテンツ言語",
+        "countryCode": "国コード",
+        "date": "日付",
+        "email": "メールアドレス",
+        "firstName": "名",
+        "gender": "性別",
+        "lastName": "姓",
+        "month": "月",
+        "phoneNumber": "電話番号",
+        "title": "個人情報",
+        "year": "年"
+      },
+      "phoneNumberRequired": "電話番号は必須です",
+      "profileImageRequired": "プロフィール画像は必須です",
+      "profilePhoto": {
+        "changePhoto": "写真を変更",
+        "title": "プロフィール写真"
+      },
+      "skin": {
+        "description": "もっと教えてください！",
+        "skinTone": "肌色",
+        "skinToneOptions": {
+          "shade1": "シェード1",
+          "shade10": "シェード10",
+          "shade11": "シェード11",
+          "shade12": "シェード12",
+          "shade13": "シェード13",
+          "shade14": "シェード14",
+          "shade15": "シェード15",
+          "shade16": "シェード16",
+          "shade17": "シェード17",
+          "shade18": "シェード18",
+          "shade19": "シェード19",
+          "shade2": "シェード2",
+          "shade20": "シェード20",
+          "shade3": "シェード3",
+          "shade4": "シェード4",
+          "shade5": "シェード5",
+          "shade6": "シェード6",
+          "shade7": "シェード7",
+          "shade8": "シェード8",
+          "shade9": "シェード9"
+        },
+        "skinType": "肌タイプ",
+        "skinTypeOptions": {
+          "combination": "混合肌",
+          "dry": "乾燥肌",
+          "normal": "普通肌",
+          "oily": "脂性肌",
+          "others": "その他",
+          "sensitive": "敏感肌"
+        },
+        "title": "肌"
+      },
+      "skinToneRequired": "肌色は必須です",
+      "skinTypeRequired": "肌タイプは必須です",
+      "stateRequired": "都道府県は必須です",
+      "yearRequired": "年は必須です"
+    },
+    "finalReview": {
+      "1stContent": "1つ目のコンテンツ",
+      "2ndContent": "2つ目のコンテンツ",
+      "brandNote": {
+        "1stContent": "1回目レビューへのブランドノート",
+        "2ndContent": "2回目レビューへのブランドノート"
+      },
+      "contentType": {
+        "instagramPost": "Instagram投稿",
+        "instagramReels": "Instagramリール",
+        "tiktokVideo": "TikTok動画",
+        "title": "コンテンツタイプ"
+      },
+      "empty": "レビュー結果がありません。",
+      "error": "レビュー結果の読み込みに失敗しました",
+      "socialMediaContent": "ソーシャルメディアコンテンツ",
+      "socialMediaContents": "ソーシャルメディアコンテンツ",
+      "submitCaptionAndHashtags": "キャプション＆ハッシュタグを送信",
+      "submitContentUrl": "コンテンツURLを送信"
+    },
+    "menus": {
+      "connectSNS": "SNS連携",
+      "contentSubmissions": "コンテンツ提出",
+      "editProfile": "プロフィール編集",
+      "myCampaign": "マイキャンペーン"
+    },
+    "myCampaign": {
+      "buttonText": {
+        "confirm_address": "住所を確認",
+        "confirmAddress": "住所を確認",
+        "revision_requested": "修正依頼あり",
+        "revisionRequested": "修正依頼あり",
+        "upload_first_review": "1回目のレビューをアップロード",
+        "upload_second_review": "2回目のレビューをアップロード",
+        "uploadFirstReview": "1回目のレビューをアップロード",
+        "uploadSecondReview": "2回目のレビューをアップロード",
+        "view_details": "詳細を見る",
+        "view_note": "ノートを見る",
+        "view_notes": "ノートを見る",
+        "view_results": "結果を見る",
+        "viewDetails": "詳細を見る",
+        "viewNote": "ノートを見る",
+        "viewNotes": "ノートを見る",
+        "viewResults": "結果を見る"
+      },
+      "empty": "応募したキャンペーンがありません。",
+      "error": "マイキャンペーンの読み込みに失敗しました",
+      "participationStatus": {
+        "active": "アクティブ",
+        "approved": "承認済み",
+        "completed": "完了",
+        "expired": "期限切れ",
+        "pending": "保留中",
+        "rejected": "却下"
+      },
+      "title": "マイキャンペーン"
+    },
+    "saveFormModal": {
+      "description": "変更が保存されました。",
+      "save": "確認",
+      "title": "保存完了"
+    }
+  },
+  "privacyPolicy": {
+    "changesToThisPrivacyPolicy": {
+      "description": "本プライバシーポリシーは定期的に更新される場合があります。",
+      "description2": "重要な変更がある場合は、メールまたはウェブサイト上の通知でお知らせし、上記の「最終更新日」を更新します。",
+      "title": "本プライバシーポリシーの変更"
+    },
+    "childrensPrivacy": {
+      "description": "当サービスは13歳未満の方を対象としていません。",
+      "description2": "13歳未満の方から故意に個人を特定できる情報を収集することはありません。",
+      "title": "お子様のプライバシー"
+    },
+    "contactUs": {
+      "description": "本プライバシーポリシーについてご質問がある場合：",
+      "email": {
+        "description": "lococo.official@gmail.com",
+        "title": "メール"
+      },
+      "title": "お問い合わせ"
+    },
+    "dataDeletion": {
+      "description": "ソーシャルメディアアカウント（Instagram、TikTok、Facebookなど）をLococoに連携している場合、いつでもデータ削除をリクエストできます。リクエストするには、件名を「Data Deletion Request」として support@lococo.beauty にご連絡ください。30日以内にアカウントとすべての関連データをシステムから完全に削除します。また、Lococoアカウントダッシュボードから直接連携されたソーシャルメディアアカウントを解除することもできます。解除後、それらのアカウントからデータは収集されません。LococoはMetaのプラットフォーム規約およびデータ削除要件に準拠し、メールおよびアプリ内アカウント設定を通じてデータ削除をリクエストする明確でアクセスしやすい方法を提供しています。",
+      "title": "データ削除"
+    },
+    "dataRetention": {
+      "description": "個人データは、本ポリシーに記載された目的に必要な期間、法的義務を果たすため、または紛争を解決するために必要な期間のみ保持します。",
+      "description2": "利用データは、セキュリティまたは改善目的で必要でない限り、通常より短い期間保存されます。",
+      "title": "データ保持"
+    },
+    "dataTransfers": {
+      "description": "お客様のデータは、プライバシー法が異なる国外で処理される場合があります。",
+      "description2": "すべての転送が本ポリシーに基づく適切な保護基準を満たすことを保証します。",
+      "title": "データ転送"
+    },
+    "dataWeCollect": {
+      "dataFromSocialMedia": {
+        "descriptions": {
+          "title": "第三者ソーシャルメディアサービス（Google、Instagramなど）を通じて登録またはログインする場合、お名前、メールアドレス、連絡先などのアカウントに関連する情報を収集する場合があります。追加情報の共有はお客様の判断で行うことができます。"
+        },
+        "title": "ソーシャルメディアからのデータ"
+      },
+      "personalData": {
+        "descriptions": {
+          "descriptions": {
+            "address": "住所",
+            "email": "メールアドレス",
+            "name": "氏名",
+            "phone": "電話番号"
+          },
+          "title": "当サービスをご利用の際、以下の個人情報をお聞きする場合があります："
+        },
+        "title": "個人データ"
+      },
+      "title": "収集するデータ",
+      "usageData": {
+        "descriptions": {
+          "description": {
+            "dateTime": "訪問日時、滞在時間、診断データ",
+            "deviceDetails": "モバイルからアクセスした場合のデバイス詳細とモバイル識別子",
+            "ipAddress": "IPアドレス、ブラウザの種類/バージョン、訪問したページ"
+          },
+          "title": "自動的に収集される情報には以下が含まれる場合があります："
+        },
+        "title": "利用データ"
+      }
+    },
+    "disclosureOfData": {
+      "descriptions": {
+        "businessTransactions": "事業取引：合併や買収の際にデータが転送される場合があります。",
+        "legalRequirements": "法的要件：法律を遵守するため、権利を保護するため、または不正行為を防止するためにデータを開示する場合があります。"
+      },
+      "title": "データの開示"
+    },
+    "externalLinks": {
+      "description": "当サービスには第三者サイトへのリンクが含まれる場合があります。それらのコンテンツやプライバシー慣行については責任を負いかねますので、各サイトのプライバシーポリシーをご確認ください。",
+      "title": "外部リンク"
+    },
+    "howWeUseYourData": {
+      "description": "お客様の個人データは以下の目的で使用する場合があります：",
+      "descriptions": {
+        "conductAnalyticsAndImproveService": "分析の実施とサービスの改善",
+        "contactYou": "更新やセキュリティ通知に関するご連絡",
+        "manageAccount": "アカウントの管理",
+        "manageInquiriesAndRequests": "お問い合わせとリクエストの管理",
+        "performContractualObligations": "契約上の義務の履行",
+        "providePromotionalOffers": "プロモーションオファーの送信（オプトアウトしない限り）",
+        "provideService": "サービスの提供と維持",
+        "supportBusinessTransfers": "事業譲渡のサポート（合併、買収など）"
+      },
+      "informationSharing": {
+        "description": "お客様のデータを以下の場合に共有することがあります：",
+        "descriptions": {
+          "inBusinessTransfers": "事業譲渡において – 企業取引の一環として。",
+          "publicly": "公開的に – 公開エリアで情報を共有した場合、または連携されたソーシャルメディアを通じて。",
+          "withAffiliatesOrBusinessPartners": "関連会社またはビジネスパートナーと – 同じプライバシー基準のもとで。",
+          "withConsent": "同意を得て – お客様が承認したその他の目的のために。",
+          "withServiceProviders": "サービスプロバイダーと – 分析、カスタマーサポート、またはコミュニケーションのために。"
+        },
+        "title": "情報共有"
+      },
+      "title": "データの使用方法"
+    },
+    "interpretationAndDefinitions": {
+      "definitions": {
+        "description": {
+          "Account": {
+            "description": "当サービスにアクセスするために作成された固有のアカウント。",
+            "title": "アカウント"
+          },
+          "Affiliate": {
+            "description": "当社を支配する、当社によって支配される、または当社と共通の支配下にある事業体（議決権の50%以上の所有）。",
+            "title": "関連会社"
+          },
+          "Company": {
+            "description": "Lococoを指します。",
+            "title": "会社"
+          },
+          "Cookies": {
+            "description": "閲覧情報を保存するためにデバイスに配置される小さなファイル。",
+            "title": "Cookie"
+          },
+          "Country": {
+            "description": "韓国。",
+            "title": "国"
+          },
+          "Device": {
+            "description": "コンピューター、携帯電話、タブレットなど、サービスにアクセスできる任意のデバイス。",
+            "title": "デバイス"
+          },
+          "PersonalData": {
+            "description": "個人を特定する、または特定できる任意の情報。",
+            "title": "個人データ"
+          },
+          "Service": {
+            "description": "当社のウェブサイトを指します。",
+            "title": "サービス"
+          },
+          "ServiceProvider": {
+            "description": "当社に代わってデータを処理する個人または会社。",
+            "title": "サービスプロバイダー"
+          },
+          "ThirdPartySocialMediaService": {
+            "description": "登録またはログインに使用できるGoogle、Facebook、Instagram、Twitter、LinkedInなどのプラットフォーム。",
+            "title": "第三者ソーシャルメディアサービス"
+          },
+          "UsageData": {
+            "description": "サービスの使用方法に関連して自動的に収集されるデータ（IPアドレス、ブラウザの種類、滞在時間など）。",
+            "title": "利用データ"
+          },
+          "You": {
+            "description": "サービスにアクセスまたは使用する個人または事業体。",
+            "title": "お客様"
+          }
+        },
+        "title": "定義"
+      },
+      "interpretation": {
+        "description": "頭文字が大文字の単語は、以下で定義された意味を持ちます。これらの定義は、単数形でも複数形でも適用されます。",
+        "title": "解釈と定義"
+      },
+      "title": "解釈と定義"
+    },
+    "lastUpdated": {
+      "description": "Lococo（「当社」または「私たち」）は、ウェブサイト https://www.lococo.beauty/（「サービス」）を運営しています。本プライバシーポリシーは、当社が情報を収集、使用、開示する方法、お客様のプライバシー権、および法律がお客様を保護する方法について説明します。\n当サービスをご利用になることで、お客様は本ポリシーに従った情報の収集と使用に同意するものとします。",
+      "title": "最終更新日：2025年8月31日"
+    },
+    "securityOfData": {
+      "description": "お客様の個人データを保護するために商業的に合理的な措置を講じています。",
+      "description2": "ただし、オンライン送信または保存システムは完全に安全ではありません。",
+      "title": "データのセキュリティ"
+    },
+    "title": "プライバシーポリシー",
+    "trackingTechnologiesAndCookies": {
+      "title": "追跡技術とCookie",
+      "typesOfCookies": {
+        "description": "当社は、サービスを改善および分析するためにCookieと同様の技術（ビーコン、タグ、スクリプト）を使用しています。",
+        "description2": "ブラウザ設定でCookieを拒否できますが、一部の機能が正しく動作しない場合があります。",
+        "descriptions": {
+          "consentCookies": {
+            "description": "Cookieを承認したかどうかを記録します。",
+            "title": "同意Cookie（永続的）"
+          },
+          "essentialCookies": {
+            "description": "基本機能を有効にし、詐欺を防止します。",
+            "title": "必須Cookie（セッション）"
+          },
+          "functionalityCookies": {
+            "description": "言語やログインなどの設定を記憶します。",
+            "title": "機能Cookie（永続的）"
+          }
+        },
+        "title": "Cookieの種類"
+      }
+    },
+    "yourRights": {
+      "description": "お客様は以下のことができます：",
+      "description2": "法律で要求される場合、特定のデータを保持する場合があることにご注意ください。",
+      "descriptions": {
+        "access": "アカウント設定で個人データにアクセス、更新、または削除する",
+        "requestAssistance": "lococo.official@gmail.comに連絡してサポートをリクエストする"
+      },
+      "title": "お客様の権利"
+    }
+  },
+  "selectRoleModal": {
+    "description": "サインインするロールを選択してください。\n後から変更することはできません。",
+    "loginAs": "ログイン：",
+    "roles": {
+      "brand": "ブランド",
+      "creator": "クリエイター",
+      "user": "ユーザー"
+    },
+    "title": "ロールを選択",
+    "welcomeTitle": "Lococoへようこそ！"
+  },
+  "snsConnection": {
+    "connectButtons": {
+      "instagram": "Instagramで連携",
+      "tiktok": "TikTokで連携"
+    },
+    "connectedStatus": "連携済み！",
+    "errorMessage": "少なくとも1つのアカウントリンクを追加してください。",
+    "invalidSnsUrl": "https://www.で始まるアカウントURLを入力してください。",
+    "platforms": {
+      "instagram": "Instagram",
+      "tiktok": "TikTok"
+    },
+    "title": "SNSリンク"
+  },
+  "termsOfService": {
+    "acceptanceOfTerms": {
+      "description": "Lococo（「サービス」）にアクセスまたは使用することで、お客様はこれらの利用規約（「規約」）に拘束されることに同意するものとします。本規約のいずれかの部分に同意しない場合は、サービスにアクセスまたは使用することはできません。",
+      "title": "規約への同意"
+    },
+    "accountTerminationAndDataRetention": {
+      "descriptions": {
+        "accountDeletion": "ユーザーはいつでもアカウントを削除できます。",
+        "dataRetention": "アカウント削除後、Lococoは未処理の事項を処理するためにユーザーデータを90日間保持します。この期間後、関連するすべてのデータは完全に削除されます。"
+      },
+      "title": "アカウント終了とデータ保持"
+    },
+    "contactUs": {
+      "description": "本規約についてご質問がある場合は、以下にお問い合わせください：",
+      "email": "lococo.official@gmail.com",
+      "location": "韓国、ソウル",
+      "team": "Lococoチーム",
+      "title": "お問い合わせ"
+    },
+    "effectiveDate": "発効日：2025年9月1日",
+    "eligibility": {
+      "descriptions": {
+        "accountCreation": "各個人は1つのアカウントのみを作成および維持できます。",
+        "serviceAvailability": "サービスは13歳以上の方のみご利用いただけます。",
+        "warranty": "サービスを使用することで、お客様はこれらの要件を満たしていることを表明し保証するものとします。"
+      },
+      "title": "資格"
+    },
+    "governingLaw": {
+      "description": "本規約は大韓民国の法律に準拠し、それに従って解釈されます。本規約に起因または関連するすべての紛争は、韓国の裁判所の専属管轄権に服するものとします。",
+      "title": "準拠法"
+    },
+    "intellectualProperty": {
+      "descriptions": {
+        "content": "Lococoで利用可能なすべてのコンテンツ、商標、ロゴ、および資料はLococoまたはそのライセンサーが所有しています。",
+        "ownership": "ユーザーは作成および共有したコンテンツの所有権を保持しますが、Lococoにサービス内でコンテンツを表示および運営するための非独占的、世界的、ロイヤルティフリーのライセンスを付与します。"
+      },
+      "title": "知的財産権"
+    },
+    "limitationOfLiability": {
+      "description": "Lococoは、いかなる種類の保証もなく「現状のまま」提供されます。法律で許容される最大限の範囲で、当社はサービスの使用に起因または関連するいかなる損害についても責任を負いません。",
+      "title": "責任の制限"
+    },
+    "personalInformation": {
+      "descriptions": {
+        "advertisements": "サービス内に広告を表示することはありません。",
+        "collection": "当社は、氏名とユーザー名、電話番号、メールアドレス、郵送先住所、年齢を含むユーザーからの個人情報を収集します。",
+        "email": "プロモーションメールやニュースレターを送信することはありません。",
+        "privacyPolicy": "個人情報の取り扱いの詳細については、プライバシーポリシーをご参照ください。"
+      },
+      "title": "個人情報"
+    },
+    "prohibitedActivities": {
+      "description": "ユーザーは以下の活動に従事しないことに同意するものとします：",
+      "description2": "これらの規則に違反した場合、事前の通知なしにアカウントが停止または終了される場合があります。",
+      "descriptions": {
+        "disruption": "サービスの適切な機能を妨害、損傷、または干渉する可能性のある行為。",
+        "fraudulentActivities": "詐欺行為または他のユーザーやプラットフォームを欺こうとする試み。",
+        "illegalContent": "違法、有害、または不適切なコンテンツのアップロードまたは共有。",
+        "multipleAccounts": "複数のアカウントの作成または維持。"
+      },
+      "title": "禁止行為"
+    },
+    "title": "利用規約"
+  },
+  "userInductionModal": {
+    "cancelButton": "いいえ",
+    "confirmButton": "はい",
+    "message": "キャンペーンへの応募はクリエイター会員のみ可能です。\nクリエイターとして登録しますか？",
+    "title": "クリエイターのご提案"
+  },
+  "legacy": {
+    "header": {
+      "accessHome": "ロココホームにアクセス",
+      "searchPlaceholder": "ラネージュ",
+      "login": "ログイン",
+      "logout": "ログアウト",
+      "myPage": "マイページ",
+      "favorites": "お気に入り",
+      "recentProducts": "最近見た商品"
+    },
+    "footer": {
+      "description": "韓国コスメの信頼できるレビュー情報をお届け。韓国のビューティー知識を日本のユーザーに繋ぎます。",
+      "categories": "カテゴリー",
+      "support": "サポート",
+      "faq": "よくある質問",
+      "contact": "お問い合わせ",
+      "notice": "お知らせ",
+      "information": "インフォメーション",
+      "privacyPolicy": "プライバシーポリシー",
+      "termsOfService": "利用規約",
+      "accessInstagram": "ロココインスタグラムにアクセス",
+      "accessX": "ロココXにアクセス",
+      "sendEmail": "ロココメールを送る"
+    },
+    "search": {
+      "product": "商品",
+      "review": "レビュー",
+      "searchResultsFor": "「{keyword}」に関する検索結果",
+      "noResults": "検索結果がありません。",
+      "tryOtherKeywords": "ほかのキーワードを入力してください。",
+      "videoReviews": "動画レビュー",
+      "photoReviews": "写真付きレビュー"
+    },
+    "categories": {
+      "skincare": {
+        "name": "スキンケア",
+        "all": "すべて",
+        "toner": "トナー",
+        "moisturizer": "モイスチャライザー",
+        "essenceSerum": "エッセンス / セラム",
+        "cream": "クリーム"
+      },
+      "face": {
+        "name": "フェイス",
+        "all": "すべて",
+        "foundation": "ファンデーション",
+        "powderCompact": "パウダー / プレストパウダー",
+        "concealer": "コンシーラー",
+        "blusher": "チーク"
+      },
+      "eye": {
+        "name": "アイ",
+        "all": "すべて",
+        "eyebrow": "アイブロウ",
+        "eyeshadow": "アイシャドウ",
+        "eyeliner": "アイライナー"
+      },
+      "lip": {
+        "name": "リップ",
+        "all": "すべて",
+        "lipstick": "リップスティック",
+        "lipTint": "リップティント"
+      }
+    },
+    "review": {
+      "positiveLabel": "良かったです",
+      "negativeLabel": "気になる点",
+      "positivePlaceholder": "使用してよかった点を教えてください。",
+      "negativePlaceholder": "使用して気になった点を教えてください。",
+      "minLengthError": "{min}文字以上で入力してください。",
+      "maxLengthError": "{max}文字以内で入力してください。",
+      "writeReview": "レビューを書く",
+      "deleteReview": "レビューを削除",
+      "deleteConfirm": "レビューを削除しますか？",
+      "deleteWarning": "削除すると、このレビューは元に戻せません。",
+      "submit": "送信する",
+      "helpful": "参考になった",
+      "receipt": "レシート",
+      "option": "オプション",
+      "reviewCount": "レビュー"
+    },
+    "productDetail": {
+      "productNotFound": "商品情報が見つかりません。",
+      "koreanYoutuberReview": "韓国ユーチューバーレビュー",
+      "japaneseReview": "日本人レビュー",
+      "noVideoReviews": "登録された動画レビューはありません。",
+      "noKoreanYoutuberReviews": "登録された韓国ユーチューバーレビューはありません。",
+      "previousImage": "前の画像",
+      "nextImage": "次の画像",
+      "previousVideo": "前のビデオ",
+      "nextVideo": "次のビデオ",
+      "likeButton": "商品をいいねするボタン",
+      "unlikeButton": "いいねを解除するボタン",
+      "selectOption": "オプション",
+      "productFeatures": "製品の特徴",
+      "ingredients": "原材料・成分",
+      "videoReviews": "動画レビュー"
+    },
+    "writeReviewModal": {
+      "title": "レビューを書く",
+      "selectOption": "オプションを選んでください",
+      "ratingQuestion": "商品はいかがでしたか？",
+      "uploadMedia": "写真または動画をアップロードしてください",
+      "uploadMediaDescription": "写真（最大5枚）または動画（1件）のみアップできます。",
+      "uploadReceipt": "購入証明写真をアップロードしてください",
+      "uploadReceiptDescription": "レシート・オンライン購入のキャプチャなど。"
+    },
+    "login": {
+      "memberLogin": "会員ログイン",
+      "lineLoginMessage": "LINEアカウントですぐにログイン",
+      "loginWithLine": "LINEでログイン"
+    },
+    "home": {
+      "updateDate": "更新日時",
+      "year": "年",
+      "month": "月",
+      "day": "日"
+    },
+    "onboarding": {
+      "swipeMessage": "タッチパッドをスワイプするか、マウスをスクロールしてより多くのビデオレビューをご覧ください"
+    },
+    "common": {
+      "seeMore": "もっと見る",
+      "close": "閉じる",
+      "all": "すべて",
+      "cancel": "キャンセル"
+    }
+  }
+}

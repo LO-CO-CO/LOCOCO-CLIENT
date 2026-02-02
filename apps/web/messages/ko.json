@@ -28,7 +28,7 @@
     },
     "campaignSelect": {
       "noCampaign": "생성한 캠페인이 없습니다.",
-      "selectCampaign": "brandApplicants.campaignSelect.selectCampaign"
+      "selectCampaign": "캠페인을 선택하세요."
     },
     "comingSoon": "준비중인 기능입니다.",
     "excelExport": "Export",
@@ -1180,5 +1180,133 @@
     "confirmButton": "예",
     "message": "캠페인 신청은 크리에이터 회원만 가능합니다. \n크리에이터로 가입하시겠습니까?",
     "title": "크리에이터 제안"
+  },
+  "legacy": {
+    "header": {
+      "accessHome": "로코코 홈으로 이동",
+      "searchPlaceholder": "라네즈",
+      "login": "로그인",
+      "logout": "로그아웃",
+      "myPage": "마이페이지",
+      "favorites": "즐겨찾기",
+      "recentProducts": "최근 본 상품"
+    },
+    "footer": {
+      "description": "신뢰할 수 있는 한국 화장품 리뷰 정보를 제공합니다. 한국의 뷰티 지식을 전 세계 사용자에게 전달합니다.",
+      "categories": "카테고리",
+      "support": "고객지원",
+      "faq": "자주 묻는 질문",
+      "contact": "문의하기",
+      "notice": "공지사항",
+      "information": "정보",
+      "privacyPolicy": "개인정보 처리방침",
+      "termsOfService": "이용약관",
+      "accessInstagram": "로코코 인스타그램으로 이동",
+      "accessX": "로코코 X로 이동",
+      "sendEmail": "로코코에 이메일 보내기"
+    },
+    "search": {
+      "product": "상품",
+      "review": "리뷰",
+      "searchResultsFor": "「{keyword}」에 관한 검색 결과",
+      "noResults": "검색 결과가 없습니다.",
+      "tryOtherKeywords": "다른 키워드로 검색해 주세요.",
+      "videoReviews": "동영상 리뷰",
+      "photoReviews": "사진 리뷰"
+    },
+    "categories": {
+      "skincare": {
+        "name": "스킨케어",
+        "all": "전체",
+        "toner": "토너",
+        "moisturizer": "모이스처라이저",
+        "essenceSerum": "에센스 / 세럼",
+        "cream": "크림"
+      },
+      "face": {
+        "name": "페이스",
+        "all": "전체",
+        "foundation": "파운데이션",
+        "powderCompact": "파우더 / 프레스트 파우더",
+        "concealer": "컨실러",
+        "blusher": "치크"
+      },
+      "eye": {
+        "name": "아이",
+        "all": "전체",
+        "eyebrow": "아이브로우",
+        "eyeshadow": "아이섀도우",
+        "eyeliner": "아이라이너"
+      },
+      "lip": {
+        "name": "립",
+        "all": "전체",
+        "lipstick": "립스틱",
+        "lipTint": "립틴트"
+      }
+    },
+    "review": {
+      "positiveLabel": "좋았어요",
+      "negativeLabel": "아쉬운 점",
+      "positivePlaceholder": "사용 후 좋았던 점을 알려주세요.",
+      "negativePlaceholder": "사용 후 아쉬웠던 점을 알려주세요.",
+      "minLengthError": "{min}자 이상 입력해 주세요.",
+      "maxLengthError": "{max}자 이내로 입력해 주세요.",
+      "writeReview": "리뷰 작성",
+      "deleteReview": "리뷰 삭제",
+      "deleteConfirm": "리뷰를 삭제하시겠습니까?",
+      "deleteWarning": "삭제하면 이 리뷰는 복구할 수 없습니다.",
+      "submit": "제출하기",
+      "helpful": "도움이 됐어요",
+      "receipt": "영수증",
+      "option": "옵션",
+      "reviewCount": "리뷰"
+    },
+    "productDetail": {
+      "productNotFound": "상품 정보를 찾을 수 없습니다.",
+      "koreanYoutuberReview": "한국 유튜버 리뷰",
+      "japaneseReview": "한국인 리뷰",
+      "noVideoReviews": "등록된 동영상 리뷰가 없습니다.",
+      "noKoreanYoutuberReviews": "등록된 한국 유튜버 리뷰가 없습니다.",
+      "previousImage": "이전 이미지",
+      "nextImage": "다음 이미지",
+      "previousVideo": "이전 동영상",
+      "nextVideo": "다음 동영상",
+      "likeButton": "상품 좋아요 버튼",
+      "unlikeButton": "좋아요 취소 버튼",
+      "selectOption": "옵션",
+      "productFeatures": "제품 특징",
+      "ingredients": "원재료・성분",
+      "videoReviews": "동영상 리뷰"
+    },
+    "writeReviewModal": {
+      "title": "리뷰 작성",
+      "selectOption": "옵션을 선택해 주세요",
+      "ratingQuestion": "상품은 어떠셨나요?",
+      "uploadMedia": "사진 또는 동영상을 업로드해 주세요",
+      "uploadMediaDescription": "사진(최대 5장) 또는 동영상(1개)만 업로드할 수 있습니다.",
+      "uploadReceipt": "구매 증명 사진을 업로드해 주세요",
+      "uploadReceiptDescription": "영수증・온라인 구매 캡처 등."
+    },
+    "login": {
+      "memberLogin": "회원 로그인",
+      "lineLoginMessage": "LINE 계정으로 바로 로그인",
+      "loginWithLine": "LINE으로 로그인"
+    },
+    "home": {
+      "updateDate": "업데이트 날짜",
+      "year": "년",
+      "month": "월",
+      "day": "일"
+    },
+    "onboarding": {
+      "swipeMessage": "터치패드를 스와이프하거나 마우스를 스크롤하여 더 많은 동영상 리뷰를 확인하세요"
+    },
+    "common": {
+      "seeMore": "더보기",
+      "close": "닫기",
+      "all": "전체",
+      "cancel": "취소"
+    }
   }
 }

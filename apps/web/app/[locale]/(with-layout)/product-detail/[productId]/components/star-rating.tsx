@@ -1,5 +1,9 @@
+'use client';
+
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
+
+import { useTranslations } from 'next-intl';
 
 import { useAuth } from 'hooks/use-auth';
 
@@ -23,10 +27,12 @@ export default function StarRating({
 }: StarRatingProps) {
   const params = useParams();
   const { isLoggedIn } = useAuth();
+  const t = useTranslations('legacy');
+
   return (
     <div className="flex flex-col gap-[3.2rem]">
       <h2 className="head2 inline-flex items-center gap-[1.2rem] font-bold">
-        <SvgJapaneseReview size={24} className="fill-red" /> 日本人レビュー
+        <SvgJapaneseReview size={24} className="fill-red" /> {t('productDetail.japaneseReview')}
       </h2>
 
       <div className="flex h-[25.6rem] w-full items-center justify-between rounded-[1.2rem] bg-gray-100 px-[8rem] py-[4rem]">
@@ -38,7 +44,7 @@ export default function StarRating({
               <span className="title3 font-bold text-gray-600">
                 {reviewCount}
               </span>
-              <span className="title3 font-bold text-gray-600">レビュー</span>
+              <span className="title3 font-bold text-gray-600">{t('review.reviewCount')}</span>
             </div>
           </div>
         </div>
@@ -64,7 +70,7 @@ export default function StarRating({
         >
           <span className="title2 inline-flex items-center gap-[0.8rem]">
             <SvgWrite />
-            レビューを書く
+            {t('review.writeReview')}
           </span>
         </Link>
       </Button>

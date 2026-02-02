@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 
+import { useTranslations } from 'next-intl';
+
 import { useQuery } from '@tanstack/react-query';
 import type { Swiper as SwiperType } from 'swiper';
 import 'swiper/css';
@@ -25,6 +27,7 @@ interface YoutubeCarouselProps {
 export default function YoutubeCarousel({
   youtubeListData,
 }: YoutubeCarouselProps) {
+  const t = useTranslations('legacy.productDetail');
   const [swiperRef, setSwiperRef] = useState<SwiperType | null>(null);
   const [isNextButton, setIsNextButton] = useState(true);
   const [isPrevButton, setIsPrevButton] = useState(false);
@@ -55,7 +58,7 @@ export default function YoutubeCarousel({
   return (
     <div className="flex flex-col gap-[3.2rem]">
       <h2 className="head2 inline-flex items-center gap-[1.2rem] font-bold text-gray-800">
-        <SvgKoreanReview size={24} /> 韓国ユーチューバーレビュー
+        <SvgKoreanReview size={24} /> {t('koreanYoutuberReview')}
       </h2>
       <div className="relative h-[31.1rem]">
         {validatedYoutubeListData && validatedYoutubeListData.length > 0 ? (
@@ -97,7 +100,7 @@ export default function YoutubeCarousel({
                 icon={<SvgArrowRight className="rotate-180" />}
                 color="tertiary"
                 rounded
-                ariaLabel="前のビデオ"
+                ariaLabel={t('previousVideo')}
               />
             )}
 
@@ -109,7 +112,7 @@ export default function YoutubeCarousel({
                 icon={<SvgArrowRight />}
                 rounded
                 color="tertiary"
-                ariaLabel="次のビデオ"
+                ariaLabel={t('nextVideo')}
               />
             )}
           </>
@@ -117,7 +120,7 @@ export default function YoutubeCarousel({
           <div className="flex h-[31.1rem] w-full flex-col items-center justify-center gap-[2.4rem]">
             <SvgImgVideo size={100} className="fill-pink-300" />
             <p className="body1 font-[700]">
-              登録された韓国ユーチューバーレビューはありません。
+              {t('noKoreanYoutuberReviews')}
             </p>
           </div>
         )}
