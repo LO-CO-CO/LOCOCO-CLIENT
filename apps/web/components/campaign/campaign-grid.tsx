@@ -23,8 +23,9 @@ export default function CampaignGrid({
 
   return (
     <div className="grid min-h-[33.1rem] grid-cols-3 gap-x-[2.4rem] gap-y-[3.2rem]">
-      {campaigns.map((campaign) => (
+      {campaigns.map((campaign, index) => (
         <CardMain
+          priority={index < 3}
           key={campaign.campaignId}
           campaignId={campaign.campaignId}
           campaignImageUrl={campaign.campaignImageUrl}
