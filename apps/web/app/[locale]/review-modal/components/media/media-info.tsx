@@ -36,7 +36,7 @@ export default function MediaInfo({
   const { isLoggedIn } = useAuth();
 
   return (
-    <div className="absolute bottom-0 left-0 z-10 flex h-[16rem] w-full items-center justify-between rounded-bl-xl bg-gradient-to-t from-black/60 to-transparent p-[1.6rem]">
+    <div className="absolute bottom-0 left-0 z-10 flex w-full items-end justify-between rounded-bl-xl bg-gradient-to-t from-black/60 to-transparent p-[1.6rem]">
       <div className="mt-auto flex flex-col">
         <div className="mb-[1.2rem] flex flex-row items-center gap-[1.2rem]">
           <Avatar src={user.avatarUrl ?? undefined} />
