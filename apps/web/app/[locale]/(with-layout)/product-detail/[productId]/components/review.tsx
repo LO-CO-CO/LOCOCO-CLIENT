@@ -1,10 +1,13 @@
 import { useState } from 'react';
 
+import { useTimeZone } from 'next-intl';
 import Image from 'next/image';
 import { useParams, useRouter } from 'next/navigation';
 
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import dayjs from 'dayjs';
+import timezone from 'dayjs/plugin/timezone';
+import utc from 'dayjs/plugin/utc';
 import { useAuth } from 'hooks/use-auth';
 
 import { Avatar } from '@lococo/design-system/avatar';
@@ -29,18 +32,20 @@ export default function Review({
   profileImageUrl,
   authorName,
   rating,
-  receiptUploaded,
   isMine,
-  option,
   isLiked: initialIsLiked,
   isAdmin,
   //brandName,
   //productName,
   //authorId,
 }: ImageReviewDetailData) {
+  dayjs.extend(utc);
+  dayjs.extend(timezone);
+
   const queryClient = useQueryClient();
   const router = useRouter();
   const { productId } = useParams();
+  const timeZone = useTimeZone() || 'UTC';
   const { isLoggedIn } = useAuth();
   const [isLiked, setIsLiked] = useState(initialIsLiked);
   const [likeCount, setLikeCount] = useState(initialLikeCount);
@@ -115,7 +120,7 @@ export default function Review({
         </div>
         <div className="flex items-center justify-end">
           <div className="flex items-center gap-[1.2rem]">
-            <p className="title3 font-bold text-gray-800">参考になった</p>
+            <p className="title3 font-bold text-gray-800">It was helpful.</p>
 
             <ReactionToggle
               variant="horizontal"
@@ -152,17 +157,11 @@ export default function Review({
 
         <div className="flex h-full flex-col gap-[1.2rem]">
           <Star rating={Number(rating)} />
-          <div className="caption1 flex gap-[0.6rem] text-gray-600">
-            <span className="inline-flex w-[6.7rem] flex-shrink-0">
-              オプション:
-            </span>
-            <span className="break-words"> {option}</span>
-          </div>
-          {receiptUploaded && <Tag text={'レシート'} className="inline-flex" />}
+          <Tag text="Spain" />
         </div>
 
         <p className="caption1 self-end text-gray-600">
-          {dayjs(writtenTime).format('YYYY年MM月DD日')}
+          {dayjs(writtenTime).tz(timeZone).format('YYYY/M/D')}
         </p>
       </div>
     </div>
