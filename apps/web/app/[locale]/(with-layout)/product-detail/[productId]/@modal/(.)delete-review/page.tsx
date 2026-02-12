@@ -46,12 +46,15 @@ export default function DeleteReviewModal() {
   return (
     <Modal className="w-[40rem]">
       <Modal.Header className="h-[4.8rem] font-[700]">
-        <h1 className="body1">レビューを削除</h1>
+        <h1 className="body1">Delete Review</h1>
       </Modal.Header>
-      <Modal.Body className="h-[9.4rem] gap-[0.8rem] p-[1.6rem]">
-        <p className="title2 font-bold">レビューを削除しますか？</p>
+      <Modal.Body className="flex flex-col gap-[0.8rem] px-[1.6rem] pb-[2.4rem] pt-[1.6rem]">
+        <p className="title2 font-bold">
+          Are you sure you want to delete this review?
+        </p>
         <p className="caption3 text-gray-00 font-[400]">
-          削除すると、このレビューは元に戻せません。
+          Once deleted, this review cannot be restored. Once deleted, this
+          review cannot be restored.
         </p>
       </Modal.Body>
       <Modal.Footer className="mb-[1.6rem] justify-center gap-[1.2rem]">
@@ -64,7 +67,7 @@ export default function DeleteReviewModal() {
             className="title2 w-[17.8rem] text-pink-500"
             onClick={handleCancel}
           >
-            キャンセル
+            Cancel
           </Button>
           <Button
             color="primary"
@@ -74,7 +77,7 @@ export default function DeleteReviewModal() {
             className="title2 w-[17.8rem] text-white"
             onClick={handleDelete}
           >
-            削除
+            Delete
           </Button>
         </div>
       </Modal.Footer>

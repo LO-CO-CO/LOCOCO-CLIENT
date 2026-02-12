@@ -36,7 +36,7 @@ export default function CommentBox({ text, type }: CommentBoxProps) {
           <SvgBad />
         )}
         <span className="body1 font-bold text-gray-600">
-          {type === 'positive' ? '良かったです' : '気になる点'}
+          {type === 'positive' ? 'Good' : 'Bad'}
         </span>
       </div>
 

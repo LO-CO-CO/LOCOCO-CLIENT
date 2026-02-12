@@ -21,17 +21,17 @@ export default function ProductInfoTab({
     <div className="flex w-full flex-col">
       <TabContainer className="w-full">
         <Tab
-          label="製品の特徴"
+          label="Details"
           value="productDetail"
           selected={activeTab === 'productDetail'}
           onClick={() => setActiveTab('productDetail')}
-        ></Tab>
+        />
         <Tab
-          label="原材料・成分"
+          label="Ingredients"
           value="ingredients"
           selected={activeTab === 'ingredients'}
           onClick={() => setActiveTab('ingredients')}
-        ></Tab>
+        />
       </TabContainer>
 
       <div className="body1 border-b-[0.1rem] border-gray-300 py-[4rem] text-gray-700">
