@@ -51,10 +51,7 @@ export default function ReviewInfo({
 
       <div className="noMousewheel flex-1 overflow-y-scroll p-[1.6rem] pb-[11rem] [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-gray-400 [&::-webkit-scrollbar-track]:bg-gray-200 [&::-webkit-scrollbar]:w-2.5">
         <Star rating={rating} size="sm" color="yellow" />
-        <div className="caption1 mt-[1.2rem] flex gap-[0.6rem] font-medium text-gray-600">
-          <span className="flex-shrink-0">オプション :</span>
-        </div>
-        <div className="mt-[1.6rem]">
+        <div className="mt-[3.2rem]">
           <Comment type="positive">{positiveComment}</Comment>
         </div>
         <hr className="-mx-[1.6rem] my-[1.6rem] h-[0.1rem] w-[calc(100%+3.2rem)] border-t border-dashed border-pink-500" />

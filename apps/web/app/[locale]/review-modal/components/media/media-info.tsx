@@ -6,7 +6,7 @@ import { useAuth } from 'hooks/use-auth';
 
 import { Avatar } from '@lococo/design-system/avatar';
 import { ReactionToggle } from '@lococo/design-system/reaction-toggle';
-import { SvgGoodFill, SvgGoodOutline, SvgSend } from '@lococo/icons';
+import { SvgGoodFill, SvgGoodOutline } from '@lococo/icons';
 
 import { useReviewLikeToggle } from '../../hooks/review-api';
 
@@ -44,8 +44,7 @@ export default function MediaInfo({
         </div>
         <p className="caption1 text-white">{date}</p>
       </div>
-      <div className="flex flex-col items-center gap-4">
-        <SvgSend className="h-[6.4rem] cursor-pointer fill-white transition-colors hover:fill-gray-400" />
+      <div className="flex flex-col items-center">
         <ReactionToggle
           variant="vertical"
           pressed={isLiked}
