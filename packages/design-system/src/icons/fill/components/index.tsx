@@ -47,6 +47,7 @@ export { SvgMail } from './Mail';
 export { SvgMailFill } from './MailFill';
 export { SvgMinusButtons } from './MinusButtons';
 export { SvgMy } from './My';
+export { SvgNewLogo } from './NewLogo';
 export { SvgOpen } from './Open';
 export { SvgParticipant } from './Participant';
 export { SvgPause } from './Pause';
