@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { getProductDetail, getReviewList, getYoutubeList } from './apis';
+
+import { getProductDetail, getReviewList } from './apis';
 import ClientPage from './page.client';
 
 export default async function Page({
@@ -11,13 +12,9 @@ export default async function Page({
   const { productId } = await params;
 
   let productDetailData;
-  let youtubeListData;
-
   try {
     const productDetailResponse = await getProductDetail(Number(productId));
-    const youtubeListResponse = await getYoutubeList(Number(productId));
     productDetailData = productDetailResponse;
-    youtubeListData = youtubeListResponse;
   } catch {
     // TODO: 에러 핸들링 로직 추가
     notFound();
@@ -60,10 +57,7 @@ export default async function Page({
 
   return (
     <>
-      <ClientPage
-        productData={productDetailData}
-        youtubeListData={youtubeListData}
-      />
+      <ClientPage productData={productDetailData} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

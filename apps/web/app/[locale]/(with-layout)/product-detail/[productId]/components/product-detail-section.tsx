@@ -13,10 +13,7 @@ interface ProductDetailSectionProps {
   reviewCount: number;
   rating: number;
   isLiked: boolean;
-  productOptions: { id: number; optionName: string }[];
   normalPrice: number;
-  oliveYoungUrl: string;
-  q10Url: string;
 }
 
 export default function ProductDetailSection({
@@ -30,10 +27,7 @@ export default function ProductDetailSection({
   reviewCount,
   rating,
   isLiked,
-  productOptions,
   normalPrice,
-  oliveYoungUrl,
-  q10Url,
 }: ProductDetailSectionProps) {
   return (
     <div className="flex w-full flex-col">
@@ -50,10 +44,7 @@ export default function ProductDetailSection({
           reviewCount={reviewCount}
           rating={rating}
           isLiked={isLiked}
-          productOptions={productOptions}
           normalPrice={normalPrice}
-          oliveYoungUrl={oliveYoungUrl}
-          q10Url={q10Url}
         />
       </div>
       <ProductInfoTab productDetail={productDetail} ingredients={ingredients} />

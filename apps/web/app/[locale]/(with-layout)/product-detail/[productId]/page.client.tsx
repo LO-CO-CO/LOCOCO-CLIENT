@@ -5,18 +5,13 @@ import ProductDetailSection from './components/product-detail-section';
 import ReviewList from './components/review-list';
 import StarRating from './components/star-rating';
 import UserUploadVideoCarousel from './components/user-upload-video-carousel';
-import YoutubeCarousel from './components/youtube-carousel';
-import { ProductDetailData, YoutubeListData } from './types';
+import { ProductDetailData } from './types';
 
 interface ClientPageProps {
   productData: ProductDetailData;
-  youtubeListData: YoutubeListData;
 }
 
-export default function ClientPage({
-  productData,
-  youtubeListData,
-}: ClientPageProps) {
+export default function ClientPage({ productData }: ClientPageProps) {
   return (
     <div className="flex w-full flex-col lg:flex lg:justify-center">
       <ProductBreadCrumbSection
@@ -37,12 +32,8 @@ export default function ClientPage({
             reviewCount={productData.reviewCount}
             rating={productData.rating}
             isLiked={productData.isLiked}
-            productOptions={productData.productOptions}
             normalPrice={productData.normalPrice}
-            oliveYoungUrl={productData.oliveYoungUrl}
-            q10Url={productData.q10Url}
           />
-          <YoutubeCarousel youtubeListData={youtubeListData} />
           <StarRating
             reviewCount={productData.reviewCount}
             rating={productData.rating}
