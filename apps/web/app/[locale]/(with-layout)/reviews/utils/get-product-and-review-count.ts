@@ -1,4 +1,4 @@
-import { queryOptions } from '@tanstack/react-query';
+import { keepPreviousData, queryOptions } from '@tanstack/react-query';
 import { apiRequest } from 'app/api/apiRequest';
 import { REVIEW_KEYS } from 'constants/query-key';
 import { ApiResponseProductAndReviewCountResponse } from 'swagger-codegen/data-contracts';
@@ -18,5 +18,6 @@ export const getProductAndReviewCount = ({
         method: 'GET',
         params: brandName ? { brandName } : undefined,
       }),
+    placeholderData: keepPreviousData,
   });
 };

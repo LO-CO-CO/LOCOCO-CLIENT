@@ -12,18 +12,24 @@ import ReviewNotFoundSection from '../../search/components/review-not-found';
 import { getImageReviewsByBrand } from '../utils/get-image-reviews-by-brand';
 import { getVideoReviewsByBrand } from '../utils/get-video-reviews-by-brand';
 
-export default function ReviewsByBrand() {
+export default function ReviewsByBrand({
+  productBrandName,
+}: {
+  productBrandName: string;
+}) {
   const t = useTranslations('reviews');
   const { data: videoData, isPending: isVideoPending } = useQuery(
     getVideoReviewsByBrand({
       page: 0,
       size: 8,
+      brandName: productBrandName,
     })
   );
   const { data: imageData, isPending: isImagePending } = useQuery(
     getImageReviewsByBrand({
       page: 0,
       size: 8,
+      brandName: productBrandName,
     })
   );
 
@@ -41,15 +47,15 @@ export default function ReviewsByBrand() {
   };
 
   return (
-    <div className="flex w-full max-w-[1366px] flex-col items-center justify-center gap-[3.2rem] pt-[3.2rem]">
-      <section className="flex flex-col gap-[3.2rem]">
+    <div className="mx-auto flex w-full max-w-[1366px] flex-col items-center gap-[3.2rem] px-[11.9rem] pb-[3.2rem]">
+      <section className="flex w-full flex-col gap-[3.2rem]">
         <p className="head3 font-bold text-gray-700">{t('videoReviews')}</p>
         {isVideoPending ? (
           <CardSkeletonWrapper type="REVIEW_VIDEO" />
         ) : !videoReviews.length ? (
           <ReviewNotFoundSection />
         ) : (
-          <div className="grid max-w-[1366px] grid-cols-4 gap-[2.4rem]">
+          <div className="grid grid-cols-4 gap-[2.4rem]">
             {videoReviews.map(
               ({
                 reviewId,
@@ -74,14 +80,14 @@ export default function ReviewsByBrand() {
         )}
       </section>
 
-      <section className="flex flex-col gap-[3.2rem]">
+      <section className="flex w-full flex-col gap-[3.2rem]">
         <p className="head3 font-bold text-gray-700">{t('photoReviews')}</p>
         {isImagePending ? (
           <CardSkeletonWrapper type="REVIEW_IMAGE" />
         ) : !imageReviews.length ? (
           <ReviewNotFoundSection />
         ) : (
-          <div className="grid max-w-[1366px] grid-cols-4 gap-[2.4rem]">
+          <div className="grid grid-cols-4 gap-[2.4rem]">
             {imageReviews.map(
               ({
                 reviewId,
