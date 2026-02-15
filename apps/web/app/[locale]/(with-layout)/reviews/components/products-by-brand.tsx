@@ -12,7 +12,11 @@ import { Pagenation } from '@lococo/design-system/pagenation';
 import ProductNotFoundSection from '../../search/components/product-not-found';
 import { getProductsByBrandName } from '../utils/get-products-by-brand-name';
 
-export default function ProductsByBrand() {
+export default function ProductsByBrand({
+  productBrandName,
+}: {
+  productBrandName: string;
+}) {
   const [pagination, setPagination] = useState({
     page: 0,
     size: 12,
@@ -21,6 +25,7 @@ export default function ProductsByBrand() {
     getProductsByBrandName({
       page: pagination.page,
       size: pagination.size,
+      productBrandName,
     })
   );
 
@@ -32,15 +37,15 @@ export default function ProductsByBrand() {
   };
 
   return (
-    <div className="flex w-full max-w-[1366px] flex-col items-center justify-center gap-[3.2rem] pt-[3.2rem]">
+    <div className="flex w-full flex-col items-center justify-center gap-[3.2rem] pb-[3.2rem]">
       {isPending ? (
-        <div className="mx-auto w-[1366px] gap-[2.4rem] px-[11.9rem] pb-[12rem] pt-0">
+        <div className="mx-auto gap-[2.4rem] px-[11.9rem] pb-[12rem] pt-0">
           <CardSkeletonWrapper type="PRODUCT" />
         </div>
       ) : !products.length ? (
         <ProductNotFoundSection />
       ) : (
-        <section className="mx-auto grid w-[1366px] grid-cols-4 gap-[2.4rem] px-[11.9rem] pb-[12rem] pt-0">
+        <section className="mx-auto grid grid-cols-4 gap-[2.4rem] px-[11.9rem] pb-[12rem] pt-0">
           {products.map(
             (
               {

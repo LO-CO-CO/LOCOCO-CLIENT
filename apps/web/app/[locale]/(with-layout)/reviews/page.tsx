@@ -6,8 +6,7 @@ import { useTranslations } from 'next-intl';
 
 import { useQuery } from '@tanstack/react-query';
 
-import { Tab, TabContainer } from '@lococo/design-system/tab';
-
+import AlphabetIndex from './components/alphabet-index';
 import ProductsByBrand from './components/products-by-brand';
 import ReviewsByBrand from './components/reviews-by-brand';
 import { getProductAndReviewCount } from './utils/get-product-and-review-count';
@@ -34,23 +33,12 @@ function Reviews() {
   };
 
   return (
-    <div className="mb-[6rem] flex flex-col gap-[2.4rem]">
-      <TabContainer className="w-full">
-        <Tab
-          label={`${t('products')} (${productCount})`}
-          value="products"
-          className="w-full max-w-[564px]"
-          selected={activeTab === 'products'}
-          onClick={() => setActiveTab('products')}
-        />
-        <Tab
-          label={`${t('reviews')} (${reviewCount})`}
-          value="reviews"
-          className="w-full max-w-[564px]"
-          selected={activeTab === 'reviews'}
-          onClick={() => setActiveTab('reviews')}
-        />
-      </TabContainer>
+      <AlphabetIndex
+        activeTab={activeBrandTab}
+        setActiveTab={setActiveBrandTab}
+        setSelectedBrandName={setSelectedBrandName}
+        selectedBrandName={selectedBrandName}
+      />
       {renderContent()}
     </div>
   );
