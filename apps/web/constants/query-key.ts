@@ -66,6 +66,11 @@ export const REVIEW_KEYS = {
     'summary',
     brandName,
   ],
+  BRAND_LISTS: () => [...REVIEW_KEYS.ALL, 'brand', 'list'],
+  BRAND_LIST: (startsWith?: string) => [
+    ...REVIEW_KEYS.BRAND_LISTS(),
+    startsWith,
+  ],
 } as const;
 
 export const CONNECT_SNS_KEYS = {

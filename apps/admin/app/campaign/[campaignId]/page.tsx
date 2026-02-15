@@ -63,7 +63,6 @@ function buildPublishPayload(
     );
 
   return {
-    brandName: values.brandName,
     campaignTitle: values.campaignTitle,
     language: values.language,
     campaignType: values.campaignType,
