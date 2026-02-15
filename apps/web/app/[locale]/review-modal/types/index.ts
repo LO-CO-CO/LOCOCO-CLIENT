@@ -8,6 +8,7 @@ export interface ReviewDetailBase {
   profileImageUrl: string | null;
   rating: number;
   likeCount: number;
+  isLiked: boolean;
   brandName: string;
   productName: string;
   productImageUrl: string;

@@ -68,7 +68,7 @@ export default function ReviewModalSwiper({
               uploadAt: review.writtenTime,
             }}
             likeCount={review.likeCount}
-            isLiked={false}
+            isLiked={review.isLiked}
             brandName={review.brandName}
             productName={review.productName}
             rating={review.rating}

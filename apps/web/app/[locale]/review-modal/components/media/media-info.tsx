@@ -47,13 +47,14 @@ export default function MediaInfo({
         <ReactionToggle
           variant="vertical"
           pressed={isLiked}
-          onPressedChange={() => {
+          onClick={() => {
             if (isLoggedIn) {
               likeMutation.mutate(reviewId);
             } else {
               router.push('/?roleModal=show');
             }
           }}
+          disabled={likeMutation.isPending}
           className="text-white"
         >
           {isLiked ? <SvgGoodFill /> : <SvgGoodOutline />}

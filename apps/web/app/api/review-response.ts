@@ -5,6 +5,7 @@ export interface VideoReviewResponse {
   brandName: string;
   productName: string;
   likeCount: number;
+  isLiked?: boolean;
   url: string;
 }
 
@@ -13,6 +14,7 @@ export interface ImageReviewResponse {
   brandName: string;
   productName: string;
   likeCount: number;
+  isLiked?: boolean;
   url: string;
 }
 
@@ -32,6 +34,7 @@ export interface ApiReviewItem {
   brandName: string;
   productName: string;
   likeCount: number;
+  isLiked?: boolean;
   url?: string;
   videoUrl?: string;
   images?: string[];
