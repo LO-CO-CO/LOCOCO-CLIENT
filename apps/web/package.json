@@ -34,6 +34,7 @@
     "overlay-kit": "^1.8.4",
     "postcss": "^8.5.6",
     "react": "^19.1.0",
+    "react-circle-flags": "^0.0.27",
     "react-daum-postcode": "^3.2.0",
     "react-dom": "^19.1.0",
     "react-hook-form": "^7.60.0",
