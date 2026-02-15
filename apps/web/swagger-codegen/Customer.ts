@@ -15,6 +15,7 @@ import {
   ApiResponseCustomerProfileImageResponse,
   ApiResponseCustomerSnsConnectedResponse,
   ApiResponseVoid,
+  CustomerInfoRegisterRequest,
   CustomerMyPageRequest,
   CustomerProfileImageRequest,
 } from "./data-contracts";
@@ -38,6 +39,27 @@ export class Customer<
   ) =>
     this.request<ApiResponseCustomerProfileImageResponse, any>({
       path: `/api/customer/profile/image`,
+      method: "POST",
+      body: data,
+      secure: true,
+      type: ContentType.Json,
+      ...params,
+    });
+  /**
+   * No description
+   *
+   * @tags CUSTOMER
+   * @name RegisterAdditionalInfo
+   * @summary Customer 대상 추가 정보 입력을 진행하는 API 입니다.
+   * @request POST:/api/customer/info
+   * @secure
+   */
+  registerAdditionalInfo = (
+    data: CustomerInfoRegisterRequest,
+    params: RequestParams = {},
+  ) =>
+    this.request<ApiResponseVoid, any>({
+      path: `/api/customer/info`,
       method: "POST",
       body: data,
       secure: true,
