@@ -1196,6 +1196,8 @@
     "writeReview": "Write a Review",
     "reviewTitle": "Review",
     "volume": "Volume",
+    "details": "Details",
+    "ingredients": "Ingredients",
     "openReviewImageModal": "Open review image modal",
     "reviewImageAlt": "Review image",
     "noPhotoReviews": "There are no registered photo reviews.",

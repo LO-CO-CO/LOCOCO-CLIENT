@@ -1200,6 +1200,8 @@
     "writeReview": "리뷰 작성하기",
     "reviewTitle": "리뷰",
     "volume": "용량",
+    "details": "상세 정보",
+    "ingredients": "전성분",
     "openReviewImageModal": "리뷰 이미지 모달 열기",
     "reviewImageAlt": "리뷰 이미지",
     "noPhotoReviews": "등록된 사진 리뷰가 없습니다.",

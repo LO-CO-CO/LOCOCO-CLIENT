@@ -1196,6 +1196,8 @@
     "writeReview": "Escribir una reseña",
     "reviewTitle": "Reseña",
     "volume": "Volumen",
+    "details": "Detalles",
+    "ingredients": "Ingredientes",
     "openReviewImageModal": "Abrir modal de imagen de reseña",
     "reviewImageAlt": "Imagen de reseña",
     "noPhotoReviews": "No hay reseñas de foto registradas.",
