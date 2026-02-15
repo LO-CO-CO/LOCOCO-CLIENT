@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import {
   useMutation,
@@ -103,6 +103,11 @@ export const useReviewLikeToggle = (
   const [likeCount, setLikeCount] = useState<number>(initialLikeCount);
   const queryClient = useQueryClient();
 
+  useEffect(() => {
+    setIsLiked(initialIsLiked);
+    setLikeCount(initialLikeCount);
+  }, [initialIsLiked, initialLikeCount]);
+
   const likeMutation = useMutation({
     mutationFn: async (reviewId: number) => {
       return apiRequest({
@@ -137,6 +142,12 @@ export const useReviewLikeToggle = (
     onSettled: () => {
       queryClient.invalidateQueries({
         queryKey: REVIEW_KEYS.ALL,
+      });
+      queryClient.invalidateQueries({
+        queryKey: ['REVIEW_LIST'],
+      });
+      queryClient.invalidateQueries({
+        queryKey: ['USER_VIDEO_REVIEW_LIST'],
       });
     },
   });
