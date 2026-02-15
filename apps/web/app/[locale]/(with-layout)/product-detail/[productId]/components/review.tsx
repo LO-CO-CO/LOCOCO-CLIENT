@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { CircleFlag } from 'react-circle-flags';
 
 import { useLocale, useTimeZone } from 'next-intl';
@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { useParams, useRouter } from 'next/navigation';
 
 import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { REVIEW_KEYS } from 'constants/query-key';
 import dayjs from 'dayjs';
 import timezone from 'dayjs/plugin/timezone';
 import utc from 'dayjs/plugin/utc';
@@ -17,7 +18,7 @@ import { IconButton } from '@lococo/design-system/icon-button';
 import { ReactionToggle } from '@lococo/design-system/reaction-toggle';
 import { Star } from '@lococo/design-system/star';
 import { Tag } from '@lococo/design-system/tag';
-import { SvgDelete, SvgGoodOutline } from '@lococo/icons';
+import { SvgDelete, SvgGoodOutline, SvgZoom } from '@lococo/icons';
 
 import { postReviewLike } from '../apis';
 import { PRODUCT_DETAIL_QUERY_KEYS } from '../queries';
@@ -55,6 +56,11 @@ export default function Review({
     ? getCountryNameByCode(countryCode, locale)
     : null;
 
+  useEffect(() => {
+    setIsLiked(initialIsLiked);
+    setLikeCount(initialLikeCount);
+  }, [initialIsLiked, initialLikeCount]);
+
   const { mutate: reviewLikeMutation } = useMutation({
     mutationKey: ['reviewLike'],
     mutationFn: (reviewId: number) => postReviewLike(reviewId),
@@ -78,6 +84,9 @@ export default function Review({
     onSettled: () => {
       queryClient.invalidateQueries({
         queryKey: PRODUCT_DETAIL_QUERY_KEYS.REVIEW_LIST(Number(productId)),
+      });
+      queryClient.invalidateQueries({
+        queryKey: REVIEW_KEYS.ALL,
       });
     },
   });
@@ -106,21 +115,30 @@ export default function Review({
         <CommentBox type="positive" text={positiveComment} />
         <div className="h-[0.1rem] w-full border-t border-dashed border-pink-500" />
         <CommentBox type="negative" text={negativeComment} />
-        <div className="flex gap-[1.26em]">
+        <div className="flex gap-[1.6em]">
           {images?.map((image, index) => (
-            <Image
+            <button
+              type="button"
+              title="open review image modal"
               key={image + index}
-              src={image.trimEnd()}
-              alt="reviewImage"
-              width={100}
-              height={100}
-              className="h-[10rem] w-[10rem] cursor-pointer object-cover"
+              className="relative h-[9.2rem] w-[9.2rem] cursor-pointer overflow-hidden rounded-[1.6rem] border border-gray-200"
               onClick={() => {
                 router.push(
                   `/review-modal/${reviewId}/detail/image?productId=${productId}`
                 );
               }}
-            />
+            >
+              <Image
+                src={image.trimEnd()}
+                alt="reviewImage"
+                width={100}
+                height={100}
+                className="h-full w-full object-cover"
+              />
+              <span className="pointer-events-none absolute bottom-[0.6rem] right-[0.7rem] inline-flex h-[1.8rem] w-[1.8rem] items-center justify-center rounded-full bg-black/35 text-white">
+                <SvgZoom size={14} />
+              </span>
+            </button>
           ))}
         </div>
         <div className="flex items-center justify-end">

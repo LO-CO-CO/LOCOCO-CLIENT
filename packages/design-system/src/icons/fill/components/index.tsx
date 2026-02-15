@@ -77,3 +77,4 @@ export { SvgVideo } from './Video';
 export { SvgWrite } from './Write';
 export { SvgX } from './X';
 export { SvgXTwitterFill } from './XTwitterFill';
+export { SvgZoom } from './Zoom';
