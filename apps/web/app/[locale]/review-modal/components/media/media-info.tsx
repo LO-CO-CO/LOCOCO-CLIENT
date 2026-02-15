@@ -1,8 +1,7 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
-
 import { useAuth } from 'hooks/use-auth';
+import { useRouter } from 'i18n/navigation';
 
 import { Avatar } from '@lococo/design-system/avatar';
 import { ReactionToggle } from '@lococo/design-system/reaction-toggle';
@@ -52,7 +51,7 @@ export default function MediaInfo({
             if (isLoggedIn) {
               likeMutation.mutate(reviewId);
             } else {
-              router.push('/login');
+              router.push('/?roleModal=show');
             }
           }}
           className="text-white"
