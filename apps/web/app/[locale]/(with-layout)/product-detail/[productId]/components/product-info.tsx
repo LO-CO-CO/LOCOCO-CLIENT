@@ -1,5 +1,6 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
 import { useAuth } from 'hooks/use-auth';
 import { useRouter } from 'i18n/navigation';
 import { formatJPY } from 'utils/formatJPY';
@@ -29,6 +30,7 @@ export default function ProductInfo({
   rating,
   normalPrice,
 }: ProductInfoProps) {
+  const t = useTranslations('reviews');
   const router = useRouter();
   const { isLoggedIn } = useAuth();
 
@@ -54,7 +56,9 @@ export default function ProductInfo({
         </div>
         <div className="flex flex-col gap-[0.8rem]">
           <p className="text-red head2 font-bold">${formatJPY(normalPrice)}</p>
-          <p className="body2 text-gray-600">Volume: {unit}</p>
+          <p className="body2 text-gray-600">
+            {t('volume')}: {unit}
+          </p>
           <div className="flex items-center gap-[0.4rem]">
             <SvgStar className="fill-yellow" />
             <span className="body1 text-gray-800">
@@ -75,7 +79,7 @@ export default function ProductInfo({
           className="title2 font-bold"
           onClick={() => handleClickReviewBtn()}
         >
-          <SvgWrite /> Write a review
+          <SvgWrite /> {t('writeReview')}
         </Button>
       </div>
     </div>

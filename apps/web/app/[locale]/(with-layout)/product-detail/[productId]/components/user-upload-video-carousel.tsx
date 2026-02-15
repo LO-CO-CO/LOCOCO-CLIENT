@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 
+import { useTranslations } from 'next-intl';
 import { useParams, useRouter } from 'next/navigation';
 
 import { useQuery } from '@tanstack/react-query';
@@ -24,6 +25,7 @@ import './user-uploaded-video-carousel.css';
 export default function UserUploadVideoCarousel() {
   const params = useParams();
   const router = useRouter();
+  const t = useTranslations('reviews');
 
   const [swiperRef, setSwiperRef] = useState<SwiperType | null>(null);
   const [isNextButton, setIsNextButton] = useState(true);
@@ -58,7 +60,7 @@ export default function UserUploadVideoCarousel() {
   return (
     <div className="flex flex-col gap-[3.2rem]">
       <h2 className="head2 inline-flex items-center gap-[1.2rem] font-bold">
-        Video Reviews
+        {t('videoReviews')}
       </h2>
       <div className="relative h-[35.2rem] w-full">
         {userUploadedVideoListData && userUploadedVideoListData.length > 0 ? (
@@ -123,9 +125,7 @@ export default function UserUploadVideoCarousel() {
         ) : (
           <div className="flex h-full flex-col items-center justify-center gap-[2.4rem]">
             <SvgImgVideo size={100} className="fill-pink-300" />
-            <p className="body1 font-[700]">
-              There are no registered video reviews.
-            </p>
+            <p className="body1 font-[700]">{t('noVideoReviews')}</p>
           </div>
         )}
       </div>

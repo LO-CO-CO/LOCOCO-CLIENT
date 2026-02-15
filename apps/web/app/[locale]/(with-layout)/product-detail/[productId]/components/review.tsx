@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { CircleFlag } from 'react-circle-flags';
 
-import { useLocale, useTimeZone } from 'next-intl';
+import { useLocale, useTimeZone, useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { useParams, useRouter } from 'next/navigation';
 
@@ -46,6 +46,7 @@ export default function Review({
   const queryClient = useQueryClient();
   const router = useRouter();
   const { productId } = useParams();
+  const t = useTranslations('reviews');
   const locale = useLocale();
   const timeZone = useTimeZone() || 'UTC';
   const { isLoggedIn } = useAuth();
@@ -119,7 +120,7 @@ export default function Review({
           {images?.map((image, index) => (
             <button
               type="button"
-              title="open review image modal"
+              title={t('openReviewImageModal')}
               key={image + index}
               className="relative h-[9.2rem] w-[9.2rem] cursor-pointer overflow-hidden rounded-[1.6rem] border border-gray-200"
               onClick={() => {
@@ -130,7 +131,7 @@ export default function Review({
             >
               <Image
                 src={image.trimEnd()}
-                alt="reviewImage"
+                alt={t('reviewImageAlt')}
                 width={100}
                 height={100}
                 className="h-full w-full object-cover"
@@ -143,7 +144,7 @@ export default function Review({
         </div>
         <div className="flex items-center justify-end">
           <div className="flex items-center gap-[1.2rem]">
-            <p className="title3 font-bold text-gray-800">It was helpful.</p>
+            <p className="title3 font-bold text-gray-800">{t('helpful')}</p>
 
             <ReactionToggle
               variant="horizontal"

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/navigation';
 
 import { IconButton } from '@lococo/design-system/icon-button';
@@ -32,6 +33,7 @@ export default function ReviewInfo({
   brandName,
   onClose,
 }: ReviewInfoProps) {
+  const t = useTranslations('reviews');
   const router = useRouter();
   const handleProductClick = () => {
     router.push(`/product-detail/${productId}`);
@@ -40,7 +42,7 @@ export default function ReviewInfo({
   return (
     <div className="relative flex h-full flex-col overflow-hidden rounded-r-xl">
       <header className="body1 sticky top-0 z-10 flex h-[4.8rem] items-center justify-between border-b border-pink-500 bg-white pl-[1.6rem] font-bold">
-        <span>Review</span>
+        <span>{t('reviewTitle')}</span>
         <IconButton
           icon={<SvgClose />}
           color="tertiary"

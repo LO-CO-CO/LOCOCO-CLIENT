@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 
+import { useTranslations } from 'next-intl';
 import LoadingSvg from 'components/loading/loading-svg';
 import { useAuth } from 'hooks/use-auth';
 
@@ -39,6 +40,7 @@ export default function ReviewModalContent({
 }: ReviewModalContentProps) {
   const [isOnboardingOpen, setIsOnboardingOpen] = useState(false);
   const { isLoggedIn } = useAuth();
+  const t = useTranslations('reviews');
 
   useEffect(() => {
     if (isLoggedIn !== null) {
@@ -71,11 +73,11 @@ export default function ReviewModalContent({
 
   // TODO: 추후 에러 페이지로 변경
   if (listError || allReviews.length === 0) {
-    return <div>리뷰 목록을 불러올 수 없습니다.</div>;
+    return <div>{t('unableToLoadReviewList')}</div>;
   }
 
   if (currentIndex === -1) {
-    return <div>리뷰를 찾을 수 없습니다.</div>;
+    return <div>{t('reviewNotFound')}</div>;
   }
 
   return (

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { useTranslations } from 'next-intl';
 
 import { Button } from '@lococo/design-system/button';
 import { SvgAdd, SvgBad, SvgGoodFill, SvgRemove } from '@lococo/icons';
@@ -9,6 +10,7 @@ interface CommentBoxProps {
   type: 'positive' | 'negative';
 }
 export default function CommentBox({ text, type }: CommentBoxProps) {
+  const t = useTranslations('reviews');
   const [isExpanded, setIsExpanded] = useState(false);
   const [isShowButton, setIsShowButton] = useState(false);
   const textRef = useRef<HTMLDivElement>(null);
@@ -36,7 +38,7 @@ export default function CommentBox({ text, type }: CommentBoxProps) {
           <SvgBad />
         )}
         <span className="body1 font-bold text-gray-600">
-          {type === 'positive' ? 'Good' : 'Bad'}
+          {type === 'positive' ? t('good') : t('bad')}
         </span>
       </div>
 
@@ -60,7 +62,7 @@ export default function CommentBox({ text, type }: CommentBoxProps) {
           onClick={() => setIsExpanded(!isExpanded)}
         >
           <SvgAdd />
-          <span className="title3 font-bold">もっと見る</span>
+          <span className="title3 font-bold">{t('seeMore')}</span>
         </Button>
       )}
       {isExpanded && (
@@ -72,7 +74,7 @@ export default function CommentBox({ text, type }: CommentBoxProps) {
           onClick={() => setIsExpanded(!isExpanded)}
         >
           <SvgRemove />
-          <span className="title3 font-bold">閉じる</span>
+          <span className="title3 font-bold">{t('close')}</span>
         </Button>
       )}
     </div>

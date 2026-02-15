@@ -1,5 +1,7 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
+
 import { SvgClose, SvgVector, SvgVector469, SvgVector470 } from '@lococo/icons';
 
 function LeftAnimation() {
@@ -34,6 +36,8 @@ export default function ReviewOnboardingModal({
 }: {
   handleCloseOnboarding: () => void;
 }) {
+  const t = useTranslations('reviews');
+
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/80"
@@ -51,10 +55,11 @@ export default function ReviewOnboardingModal({
             <RightAnimation />
           </div>
           <div className="text-center text-lg font-medium text-white">
-            タッチパッドを<p className="inline text-pink-500">スワイプ</p>
-            するか、マウスを
-            <p className="inline text-pink-500"> スクロール</p>
-            してより多くのビデオレビューをご覧ください
+            {t('onboardingPrefix')}
+            <span className="text-pink-500">{t('onboardingSwipe')}</span>
+            {t('onboardingMiddle')}
+            <span className="text-pink-500">{t('onboardingScroll')}</span>
+            {t('onboardingSuffix')}
           </div>
         </div>
       </div>
