@@ -15,59 +15,12 @@ import {
   ApiResponsePopularProductsByCategoryResponse,
   ApiResponseProductDetailResponse,
   ApiResponseProductYoutubeResponse,
-  ImageReviewListResponse,
-  KeywordImageReviewListResponse,
-  KeywordVideoReviewListResponse,
-  ProductsByCategoryResponse,
-  SearchProductsResponse,
-  VideoReviewListResponse,
 } from "./data-contracts";
 import { HttpClient, RequestParams } from "./http-client";
 
 export class Product<
   SecurityDataType = unknown,
 > extends HttpClient<SecurityDataType> {
-  /**
-   * No description
-   *
-   * @tags PRODUCT
-   * @name Search
-   * @summary 상품명 또는 브랜드명 상품 및 리뷰 검색
-   * @request GET:/api/products/search
-   * @secure
-   */
-  search = (
-    query: {
-      keyword: string;
-      /** @default "false" */
-      searchType?: "PRODUCT" | "REVIEW";
-      mediaType?: "IMAGE" | "VIDEO";
-      /**
-       * @format int32
-       * @default 0
-       */
-      page?: number;
-      /**
-       * @format int32
-       * @default 20
-       */
-      size?: number;
-    },
-    params: RequestParams = {},
-  ) =>
-    this.request<
-      | SearchProductsResponse
-      | KeywordVideoReviewListResponse
-      | KeywordImageReviewListResponse,
-      any
-    >({
-      path: `/api/products/search`,
-      method: "GET",
-      query: query,
-      secure: true,
-      format: "json",
-      ...params,
-    });
   /**
    * No description
    *
@@ -98,65 +51,6 @@ export class Product<
       path: `/api/products/details/${productId}/youtube`,
       method: "GET",
       secure: true,
-      ...params,
-    });
-  /**
-   * No description
-   *
-   * @tags PRODUCT
-   * @name SearchProductsByCategory
-   * @summary 카테고리 별 상품 및 리뷰 검색
-   * @request GET:/api/products/categories/search
-   * @secure
-   */
-  searchProductsByCategory = (
-    query: {
-      middleCategory:
-        | "FACIAL_CARE"
-        | "FACE_MAKEUP"
-        | "EYE_MAKEUP"
-        | "LIP_MAKEUP";
-      subCategory?:
-        | "TONER"
-        | "MOISTURIZER"
-        | "ESSENCE_SERUM"
-        | "CREAM"
-        | "FOUNDATION"
-        | "POWDER_COMPACT"
-        | "CONCEALER"
-        | "BLUSHER"
-        | "EYEBROW"
-        | "EYESHADOW"
-        | "EYELINER"
-        | "LIPSTICK"
-        | "LIP_TINT";
-      /** @default "false" */
-      searchType?: "PRODUCT" | "REVIEW";
-      mediaType?: "IMAGE" | "VIDEO";
-      /**
-       * @format int32
-       * @default 0
-       */
-      page?: number;
-      /**
-       * @format int32
-       * @default 20
-       */
-      size?: number;
-    },
-    params: RequestParams = {},
-  ) =>
-    this.request<
-      | ProductsByCategoryResponse
-      | VideoReviewListResponse
-      | ImageReviewListResponse,
-      any
-    >({
-      path: `/api/products/categories/search`,
-      method: "GET",
-      query: query,
-      secure: true,
-      format: "json",
       ...params,
     });
   /**
