@@ -187,7 +187,8 @@ export default function Review({
               icon={
                 <CircleFlag
                   countryCode={countryCode.toLowerCase()}
-                  height={30}
+                  height={16}
+                  width={16}
                 />
               }
             />
