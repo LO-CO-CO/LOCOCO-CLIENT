@@ -1,12 +1,14 @@
-import { SvgCheckNonBg } from '../../icons/fill/components/CheckNonBg';
+import type { ReactNode } from 'react';
+
 import { cn } from '../../lib/utils';
 
 interface TagProps {
   text: string;
+  icon?: ReactNode;
   className?: string;
 }
 
-export default function Tag({ text, className }: TagProps) {
+export default function Tag({ text, icon, className }: TagProps) {
   return (
     <div
       className={cn(
@@ -14,7 +16,7 @@ export default function Tag({ text, className }: TagProps) {
         className
       )}
     >
-      <SvgCheckNonBg className="fill-green" size={20} />
+      {icon}
       <p>{text}</p>
     </div>
   );
