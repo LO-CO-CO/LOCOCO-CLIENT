@@ -87,6 +87,7 @@ export interface ImageReviewDetailData {
   productName: string;
   isMine: boolean;
   isLiked: boolean;
+  country?: string | null;
   authorId: number;
   isAdmin: boolean;
 }

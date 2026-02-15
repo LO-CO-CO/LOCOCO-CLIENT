@@ -32,12 +32,10 @@ export default function Review({
   profileImageUrl,
   authorName,
   rating,
+  country,
   isMine,
   isLiked: initialIsLiked,
   isAdmin,
-  //brandName,
-  //productName,
-  //authorId,
 }: ImageReviewDetailData) {
   dayjs.extend(utc);
   dayjs.extend(timezone);
@@ -157,7 +155,7 @@ export default function Review({
 
         <div className="flex h-full flex-col gap-[1.2rem]">
           <Star rating={Number(rating)} />
-          <Tag text="Spain" />
+          {country?.trim() ? <Tag text={country} /> : null}
         </div>
 
         <p className="caption1 self-end text-gray-600">

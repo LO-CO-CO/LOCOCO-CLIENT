@@ -41,6 +41,7 @@ export default function ReviewList() {
             profileImageUrl={review.profileImageUrl}
             authorName={review.authorName}
             rating={review.rating}
+            country={review.country}
             receiptUploaded={review.receiptUploaded}
             isMine={review.isMine}
             isLiked={review.isLiked}
