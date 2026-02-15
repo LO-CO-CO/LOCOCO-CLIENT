@@ -267,6 +267,95 @@ export interface CustomerProfileImageResponse {
   profileImageUrl: string;
 }
 
+export interface CustomerInfoRegisterRequest {
+  /**
+   * @minLength 1
+   * @maxLength 15
+   * @pattern ^[a-z0-9._]+$
+   */
+  communityName: string;
+  /**
+   * 생년월일
+   * @minLength 1
+   * @example "2002-08-21"
+   */
+  birthDate: string;
+  /**
+   * 성별
+   * @example "MALE"
+   */
+  gender: "MALE" | "FEMALE" | "NON_BINARY" | "PREFER_NOT_TO_SAY";
+  /**
+   * 이름
+   * @minLength 1
+   * @example "Jessica"
+   */
+  firstName: string;
+  /**
+   * 성
+   * @minLength 1
+   * @example "Anderson"
+   */
+  lastName: string;
+  /**
+   * 국가
+   * @example "US"
+   */
+  country?: string;
+  /**
+   * 국가번호 (최대 5자)
+   * @minLength 0
+   * @maxLength 5
+   * @example "+1"
+   */
+  countryCode: string;
+  /**
+   * 전화번호 (최대 20자)
+   * @minLength 0
+   * @maxLength 20
+   * @example "01012345678"
+   */
+  phoneNumber: string;
+  /**
+   * 피부 타입 (드롭다운 6개)
+   * @example "COMBINATION"
+   */
+  skinType: "NORMAL" | "DRY" | "OILY" | "COMBINATION" | "SENSITIVE" | "OTHER";
+  /**
+   * 피부 톤 (드롭다운 20개)
+   * @example "SHADE_12"
+   */
+  skinTone:
+    | "SHADE_1"
+    | "SHADE_2"
+    | "SHADE_3"
+    | "SHADE_4"
+    | "SHADE_5"
+    | "SHADE_6"
+    | "SHADE_7"
+    | "SHADE_8"
+    | "SHADE_9"
+    | "SHADE_10"
+    | "SHADE_11"
+    | "SHADE_12"
+    | "SHADE_13"
+    | "SHADE_14"
+    | "SHADE_15"
+    | "SHADE_16"
+    | "SHADE_17"
+    | "SHADE_18"
+    | "SHADE_19"
+    | "SHADE_20";
+}
+
+export interface ApiResponseVoid {
+  success?: boolean;
+  /** @format int32 */
+  status?: number;
+  message?: string;
+  data?: any;
+}
+
 export interface ApiResponseCreatorRegisterCompleteResponse {
   success?: boolean;
   /** @format int32 */
@@ -281,14 +370,6 @@ export interface CreatorRegisterCompleteResponse {
    * @example "LOGIN"
    */
   loginStatus: "LOGIN" | "INFO_REQUIRED" | "SNS_REQUIRED" | "REGISTER";
-}
-
-export interface ApiResponseVoid {
-  success?: boolean;
-  /** @format int32 */
-  status?: number;
-  message?: string;
-  data?: any;
 }
 
 export interface CreatorProfileImageRequest {
@@ -578,7 +659,7 @@ export interface AdminProductCreateRequest {
   /**
    * 상품명 (최대 30자)
    * @minLength 0
-   * @maxLength 30
+   * @maxLength 200
    * @example "비타C 브라이트닝 세럼"
    */
   productName: string;
@@ -590,7 +671,6 @@ export interface AdminProductCreateRequest {
   productBrandId: number;
   /**
    * 가격
-   * @format int64
    * @example 19900
    */
   normalPrice: number;
@@ -600,7 +680,7 @@ export interface AdminProductCreateRequest {
    * @maxLength 20
    * @example "30ml"
    */
-  unit: string;
+  unit?: string;
   /**
    * 카테고리
    * @example "SERUM_AMPOULE"
@@ -743,7 +823,6 @@ export interface CustomerMyPageRequest {
   customerName?: string;
   /**
    * 생년월일
-   * @format date
    * @example "2002-08-21"
    */
   birthDate?: string;
@@ -1631,6 +1710,7 @@ export interface ImageReviewProductDetailResponse {
   images: string[];
   isLiked: boolean;
   isMine: boolean;
+  country?: string;
 }
 
 export interface ImageReviewsProductDetailResponse {
@@ -1725,38 +1805,6 @@ export interface ImageReviewResponse {
   url: string;
 }
 
-export interface ProductListItemResponse {
-  /** @format int64 */
-  productId: number;
-  url: string;
-  productName: string;
-  brandName: string;
-  unit: string;
-  /** @format int64 */
-  reviewCount: number;
-  /** @format double */
-  rating: number;
-  isLiked: boolean;
-}
-
-export interface SearchProductsResponse {
-  searchQuery: string;
-  products: ProductListItemResponse[];
-  pageInfo: PageableResponse;
-}
-
-export interface KeywordVideoReviewListResponse {
-  searchQuery: string;
-  reviews: VideoReviewResponse[];
-  pageInfo: PageableResponse;
-}
-
-export interface KeywordImageReviewListResponse {
-  searchQuery: string;
-  reviews: ImageReviewResponse[];
-  pageInfo: PageableResponse;
-}
-
 export interface ApiResponseProductDetailResponse {
   success?: boolean;
   /** @format int32 */
@@ -1777,7 +1825,6 @@ export interface ProductDetailResponse {
   /** @format double */
   rating: number;
   starPercent: RatingPercentResponse[];
-  /** @format int64 */
   normalPrice: number;
   productDetail: string;
   ingredients: string;
@@ -1800,27 +1847,6 @@ export interface ApiResponseProductYoutubeResponse {
 
 export interface ProductYoutubeResponse {
   youtubeUrls: string[];
-}
-
-export interface ProductsByCategoryResponse {
-  searchQuery: string;
-  parentCategoryName: string;
-  products: ProductListItemResponse[];
-  pageInfo: PageableResponse;
-}
-
-export interface VideoReviewListResponse {
-  searchQuery: string;
-  parentCategoryName: string;
-  reviews: VideoReviewResponse[];
-  pageInfo: PageableResponse;
-}
-
-export interface ImageReviewListResponse {
-  searchQuery: string;
-  parentCategoryName: string;
-  reviews: ImageReviewResponse[];
-  pageInfo: PageableResponse;
 }
 
 export interface ApiResponsePopularProductsByCategoryResponse {
@@ -1973,7 +1999,6 @@ export interface CustomerMyPageResponse {
   userName?: string;
   /**
    * 생년월일
-   * @format date
    * @example "2002-08-21"
    */
   birthDate?: string;
@@ -2002,31 +2027,6 @@ export interface CustomerMyPageResponse {
    * @example "US"
    */
   country?: string;
-  /**
-   * State (텍스트 최대 20자)
-   * @example "CA"
-   */
-  stateOrProvince?: string;
-  /**
-   * City/Town (텍스트, 최대 20자)
-   * @example "San Francisco"
-   */
-  cityOrTown?: string;
-  /**
-   * Address Line 1 (최대 100자)
-   * @example 1234
-   */
-  addressLine1?: string;
-  /**
-   * Address Line 2 (최대 100자)
-   * @example "Apt 5B"
-   */
-  addressLine2?: string;
-  /**
-   * ZIP Code (최대 10자)
-   * @example 94103
-   */
-  postalCode?: string;
   /**
    * 피부 타입 (드롭다운 6개)
    * @example "COMBINATION"
