@@ -1207,6 +1207,13 @@
     "onboardingMiddle": " o usa el mouse para ",
     "onboardingScroll": "desplazarte",
     "onboardingSuffix": " y ver más reseñas de video.",
+    "deleteReviewModal": {
+      "title": "Eliminar reseña",
+      "description": "¿Seguro que quieres eliminar esta reseña?",
+      "warning": "Una vez eliminada, esta reseña no se puede restaurar.",
+      "cancel": "Cancelar",
+      "delete": "Eliminar"
+    },
     "noProducts": "No se encontraron productos.",
     "noReviews": "No se encontraron reseñas."
   }

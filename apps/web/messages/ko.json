@@ -1211,6 +1211,13 @@
     "onboardingMiddle": " 하거나 마우스를 ",
     "onboardingScroll": "스크롤",
     "onboardingSuffix": " 해서 더 많은 비디오 리뷰를 확인하세요.",
+    "deleteReviewModal": {
+      "title": "리뷰 삭제",
+      "description": "이 리뷰를 삭제하시겠어요?",
+      "warning": "삭제하면 이 리뷰는 복구할 수 없습니다.",
+      "cancel": "취소",
+      "delete": "삭제"
+    },
     "noProducts": "제품을 찾을 수 없습니다.",
     "noReviews": "리뷰를 찾을 수 없습니다."
   }
