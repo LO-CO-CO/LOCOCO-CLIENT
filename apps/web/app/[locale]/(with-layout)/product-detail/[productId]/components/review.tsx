@@ -1,6 +1,7 @@
 import { useState } from 'react';
+import { CircleFlag } from 'react-circle-flags';
 
-import { useTimeZone } from 'next-intl';
+import { useLocale, useTimeZone } from 'next-intl';
 import Image from 'next/image';
 import { useParams, useRouter } from 'next/navigation';
 
@@ -9,6 +10,7 @@ import dayjs from 'dayjs';
 import timezone from 'dayjs/plugin/timezone';
 import utc from 'dayjs/plugin/utc';
 import { useAuth } from 'hooks/use-auth';
+import { getCountryNameByCode, normalizeCountryCode } from 'utils';
 
 import { Avatar } from '@lococo/design-system/avatar';
 import { IconButton } from '@lococo/design-system/icon-button';
@@ -43,10 +45,15 @@ export default function Review({
   const queryClient = useQueryClient();
   const router = useRouter();
   const { productId } = useParams();
+  const locale = useLocale();
   const timeZone = useTimeZone() || 'UTC';
   const { isLoggedIn } = useAuth();
   const [isLiked, setIsLiked] = useState(initialIsLiked);
   const [likeCount, setLikeCount] = useState(initialLikeCount);
+  const countryCode = normalizeCountryCode(country);
+  const countryName = countryCode
+    ? getCountryNameByCode(countryCode, locale)
+    : null;
 
   const { mutate: reviewLikeMutation } = useMutation({
     mutationKey: ['reviewLike'],
@@ -155,7 +162,17 @@ export default function Review({
 
         <div className="flex h-full flex-col gap-[1.2rem]">
           <Star rating={Number(rating)} />
-          {country?.trim() ? <Tag text={country} /> : null}
+          {countryCode && countryName ? (
+            <Tag
+              text={countryName}
+              icon={
+                <CircleFlag
+                  countryCode={countryCode.toLowerCase()}
+                  height={30}
+                />
+              }
+            />
+          ) : null}
         </div>
 
         <p className="caption1 self-end text-gray-600">

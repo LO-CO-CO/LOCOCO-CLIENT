@@ -6,14 +6,41 @@ import { getCountries, getCountryCallingCode } from 'libphonenumber-js';
 
 [en, es, ko].forEach((locale) => countries.registerLocale(locale));
 
+const SUPPORTED_LOCALES = ['ko', 'en', 'es'] as const;
+
+const normalizeLocale = (locale: string = 'en') =>
+  SUPPORTED_LOCALES.includes(locale as (typeof SUPPORTED_LOCALES)[number])
+    ? locale
+    : 'en';
+
 const convertToCountryName = (countryCode: string, locale: string = 'en') => {
   try {
-    const countryName = countries.getName(countryCode, locale);
+    const countryName = countries.getName(
+      countryCode.toUpperCase(),
+      normalizeLocale(locale)
+    );
     return countryName || countryCode;
   } catch {
     return countryCode;
   }
 };
+
+export const normalizeCountryCode = (country?: string | null) => {
+  if (!country) return null;
+
+  const trimmed = country.trim();
+  if (!trimmed) return null;
+
+  const upper = trimmed.toUpperCase();
+  if (/^[A-Z]{2}$/.test(upper)) return upper;
+
+  return countries.getAlpha2Code(trimmed, 'en') || null;
+};
+
+export const getCountryNameByCode = (
+  countryCode: string,
+  locale: string = 'en'
+) => convertToCountryName(countryCode, normalizeLocale(locale));
 
 export const countryNameOptions = (locale: string = 'en') => {
   const countryCodes = getCountries();
